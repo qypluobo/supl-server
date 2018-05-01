@@ -1,0 +1,1418 @@
+SSLeay_add_ssl_algorithms
+Connecting to server: supl.vodafone.com
+Connected to server: supl.vodafone.com
+Estalishing SSL connection...
+Estalished SSL connection
+Encoding SUPL_START
+Sending SUPL_START
+Send 27 bytes
+<ULP-PDU>
+    <length>27</length>
+    <version>
+        <maj>1</maj>
+        <min>0</min>
+        <servind>0</servind>
+    </version>
+    <sessionID>
+        <setSessionID>
+            <sessionId>1</sessionId>
+            <setId>
+                <imsi>FF FF 91 94 48 45 83 98</imsi>
+            </setId>
+        </setSessionID>
+    </sessionID>
+    <message>
+        <msSUPLSTART>
+            <sETCapabilities>
+                <posTechnology>
+                    <agpsSETassisted><false/></agpsSETassisted>
+                    <agpsSETBased><true/></agpsSETBased>
+                    <autonomousGPS><false/></autonomousGPS>
+                    <aFLT><false/></aFLT>
+                    <eCID><false/></eCID>
+                    <eOTD><false/></eOTD>
+                    <oTDOA><false/></oTDOA>
+                </posTechnology>
+                <prefMethod><agpsSETBasedPreferred/></prefMethod>
+                <posProtocol>
+                    <tia801><false/></tia801>
+                    <rrlp><true/></rrlp>
+                    <rrc><false/></rrc>
+                </posProtocol>
+            </sETCapabilities>
+            <locationId>
+                <cellInfo>
+                    <gsmCell>
+                        <refMCC>244</refMCC>
+                        <refMNC>5</refMNC>
+                        <refLAC>23010</refLAC>
+                        <refCI>12720</refCI>
+                    </gsmCell>
+                </cellInfo>
+                <status><current/></status>
+            </locationId>
+        </msSUPLSTART>
+    </message>
+</ULP-PDU>
+Sent SUPL_START
+Waiting SUPL_RESPONSE
+Recv 36 bytes
+<ULP-PDU>
+    <length>36</length>
+    <version>
+        <maj>1</maj>
+        <min>0</min>
+        <servind>0</servind>
+    </version>
+    <sessionID>
+        <setSessionID>
+            <sessionId>1</sessionId>
+            <setId>
+                <imsi>FF FF 91 94 48 45 83 98</imsi>
+            </setId>
+        </setSessionID>
+        <slpSessionID>
+            <sessionID>32 2C 4A 34</sessionID>
+            <slpId>
+                <fQDN>supl.vodafone.com</fQDN>
+            </slpId>
+        </slpSessionID>
+    </sessionID>
+    <message>
+        <msSUPLRESPONSE>
+            <posMethod><agpsSETbased/></posMethod>
+        </msSUPLRESPONSE>
+    </message>
+</ULP-PDU>
+Received SUPL_RESPONSE, decoding
+Encoding SUPL_POS_INIT
+Sending SUPL_POS_INIT
+Send 46 bytes
+<ULP-PDU>
+    <length>46</length>
+    <version>
+        <maj>1</maj>
+        <min>0</min>
+        <servind>0</servind>
+    </version>
+    <sessionID>
+        <setSessionID>
+            <sessionId>1</sessionId>
+            <setId>
+                <imsi>FF FF 91 94 48 45 83 98</imsi>
+            </setId>
+        </setSessionID>
+        <slpSessionID>
+            <sessionID>32 2C 4A 34</sessionID>
+            <slpId>
+                <fQDN>supl.vodafone.com</fQDN>
+            </slpId>
+        </slpSessionID>
+    </sessionID>
+    <message>
+        <msSUPLPOSINIT>
+            <sETCapabilities>
+                <posTechnology>
+                    <agpsSETassisted><false/></agpsSETassisted>
+                    <agpsSETBased><true/></agpsSETBased>
+                    <autonomousGPS><false/></autonomousGPS>
+                    <aFLT><false/></aFLT>
+                    <eCID><false/></eCID>
+                    <eOTD><false/></eOTD>
+                    <oTDOA><false/></oTDOA>
+                </posTechnology>
+                <prefMethod><agpsSETBasedPreferred/></prefMethod>
+                <posProtocol>
+                    <tia801><false/></tia801>
+                    <rrlp><true/></rrlp>
+                    <rrc><false/></rrc>
+                </posProtocol>
+            </sETCapabilities>
+            <requestedAssistData>
+                <almanacRequested><true/></almanacRequested>
+                <utcModelRequested><true/></utcModelRequested>
+                <ionosphericModelRequested><true/></ionosphericModelRequested>
+                <dgpsCorrectionsRequested><false/></dgpsCorrectionsRequested>
+                <referenceLocationRequested><true/></referenceLocationRequested>
+                <referenceTimeRequested><true/></referenceTimeRequested>
+                <acquisitionAssistanceRequested><true/></acquisitionAssistanceRequested>
+                <realTimeIntegrityRequested><true/></realTimeIntegrityRequested>
+                <navigationModelRequested><true/></navigationModelRequested>
+            </requestedAssistData>
+            <locationId>
+                <cellInfo>
+                    <gsmCell>
+                        <refMCC>244</refMCC>
+                        <refMNC>5</refMNC>
+                        <refLAC>23010</refLAC>
+                        <refCI>12720</refCI>
+                    </gsmCell>
+                </cellInfo>
+                <status><current/></status>
+            </locationId>
+        </msSUPLPOSINIT>
+    </message>
+</ULP-PDU>
+Sent SUPL_POS_INIT
+Waiting SUPL_POS
+Recv 1685 bytes
+<ULP-PDU>
+    <length>1685</length>
+    <version>
+        <maj>1</maj>
+        <min>0</min>
+        <servind>0</servind>
+    </version>
+    <sessionID>
+        <setSessionID>
+            <sessionId>1</sessionId>
+            <setId>
+                <imsi>FF FF 91 94 48 45 83 98</imsi>
+            </setId>
+        </setSessionID>
+        <slpSessionID>
+            <sessionID>32 2C 4A 34</sessionID>
+            <slpId>
+                <fQDN>supl.vodafone.com</fQDN>
+            </slpId>
+        </slpSessionID>
+    </sessionID>
+    <message>
+        <msSUPLPOS>
+            <posPayLoad>
+                <rrlpPayload>
+                    25 1B 7A AA 9B 2D F3 6D 80 F3 60 B0 F3 60 10 F3 
+                    61 E0 F3 60 50 F3 61 C0 F3 60 D0 F3 61 F0 F3 61 
+                    20 F3 60 20 F3 60 30 F3 61 70 F3 61 B2 0B 8C 0F 
+                    82 51 3D E0 0C 8E EE E0 0C 2B F6 C0 40 01 54 D1 
+                    34 22 8D C0 ED 92 40 87 FB CA 34 D9 FA 01 FF 2C 
+                    D4 9C 97 7E BB 31 99 D1 CC 5F 77 93 60 3D 13 E0 
+                    98 4E 8A 10 D3 D6 C3 67 E7 DF F3 76 50 CA BD E0 
+                    0D E9 EC D9 BC AA A6 68 96 06 2F 1F E8 9D 5B 1C 
+                    2C 20 00 24 68 9A 11 46 E0 76 C9 20 43 FD E4 CA 
+                    6C FB 00 FF D9 58 E1 D3 B1 D5 78 3D 7E 7B 07 3B 
+                    BB 20 1D 6A 39 E4 39 BD 08 66 CD 89 B3 E9 8F F6 
+                    1B 75 B0 07 10 05 15 06 8D 66 75 23 74 E1 78 47 
+                    0F F4 9F AD 47 82 10 00 3A 34 4D 08 A3 70 3B 64 
+                    90 21 FE F2 54 36 7E 80 7F 9D 92 9A BA 1E 0A C9 
+                    D3 CA 50 21 92 19 6C 24 95 77 8A 47 9A 84 36 F2 
+                    AC D9 F9 F8 04 72 C2 EE 5F 57 FD 1A 6B 12 54 59 
+                    98 53 3F 4A 4B B7 FA A6 B9 DC 1E 08 00 0C 1A 26 
+                    84 51 B8 1D B2 48 10 FF 79 31 9B 3F 40 3F F4 C8 
+                    61 27 1F 65 66 43 80 A6 FF 73 1C 80 08 F6 26 21 
+                    1A 6F 42 1A 5B D2 6C FC FC 01 ED 7D 6D FA E4 01 
+                    05 3A 10 6C 64 FF 83 D4 45 47 FB FD 25 9C 5A 22 
+                    84 00 05 8D 13 42 28 DC 0E D9 24 08 7F BC A2 8D 
+                    9F 60 1F FC 2D 61 DF 86 EF AF 76 EB 67 D2 75 86 
+                    35 00 9E D4 66 91 31 A1 0C D5 3E 36 7D 25 FF 60 
+                    B9 33 98 66 00 2E 9E 21 7E 1A 71 59 49 AA BE B1 
+                    FE A4 BA 71 27 02 00 0A 66 89 A1 14 6E 07 6C 92 
+                    04 3F DE 4D 46 CF D0 0F F9 57 9D 76 BA B9 D3 F9 
+                    36 A6 D3 1C BB 65 80 2C EB 72 4D E0 50 86 DC 75 
+                    9B 3F 3F 00 2E 0C 76 E9 CD 00 1F 50 30 77 9F 21 
+                    CD 4D 9C D8 24 FF 59 E2 FB 99 A1 00 03 83 44 D0 
+                    8A 37 03 B6 49 02 1F EF 26 B3 67 E8 07 FF D7 36 
+                    32 20 D1 2B A3 4B 96 C5 DC A0 B8 C1 3B 4B C2 66 
+                    EF E8 43 85 C6 8D 9F 9F 80 44 86 E9 B4 01 7F FA 
+                    A7 2E 67 91 8F 24 30 31 2C 62 7F AC 0E 77 95 F0 
+                    80 00 E9 A2 68 45 1B 81 DB 24 81 0F F7 94 09 B3 
+                    F4 04 01 09 DF 07 70 34 96 1D 8B 76 3D 4B 10 30 
+                    00 20 63 1B 33 79 74 21 A9 51 46 CF CF C0 02 C1 
+                    BB 5E EA C0 05 53 82 B0 F7 C7 99 0A B0 3C 08 BF 
+                    D4 C9 B8 90 90 40 00 50 D1 34 22 8D C0 ED 92 40 
+                    87 FB C9 7C D9 FA 02 00 61 17 BB 17 83 3A 89 AB 
+                    27 CF 4F D7 8F F0 50 6B F4 69 BF 9A 10 DB 81 A3 
+                    67 E7 DF EF 81 EE 0C EE DF F2 E9 FC 34 04 E4 69 
+                    2B C3 C0 3D 9F EA FF 5E A6 08 20 00 3A 68 9A 11 
+                    46 E0 76 C9 20 43 FD E5 0A 6C FD 01 00 8B 0D C2 
+                    4B DB D5 B4 E6 06 D7 FE C3 DD 70 05 43 7D 3C 4D 
+                    8D 08 71 5B 01 B3 F3 B0 02 0B 24 B2 2F 50 04 D4 
+                    E4 7E F4 F4 7B B2 3E E3 2C 8F F4 81 0E C9 06 10 
+                    FC 10 34 4D 08 A3 70 3B 64 90 21 FE F2 56 36 7E 
+                    80 80 1B 87 05 41 DF 33 00 31 BA 17 EB 35 E3 9C 
+                    14 1E EF 66 13 6E 84 35 F9 5C D9 F9 F7 FE CD A4 
+                    56 8A 58 05 5A 7E 5D 48 9A AA 7A 53 F4 38 57 FA 
+                    23 F6 E0 57 08 00 03 9A 26 84 51 B8 1D B2 48 10 
+                    FF 79 43 1B 3F 40 3F FE 3C CF C9 22 45 6F 05 DC 
+                    62 24 61 1D 3C 07 0F 3A 15 19 C7 42 1A 7E 8C 6C 
+                    FC CB FF 55 66 26 85 23 FE 7D 33 0B 68 54 FA D4 
+                    B1 BC B1 F3 FD 21 04 8E 31 70 4F EF F5 70 4F AF 
+                    AF FF FF AF FF FF FF CC 79 B2 51 30 F2 59 AF 00 
+                    7C FE C7 24 B6 FA BE 01 42 1A 00 5D 29 BB 32 03 
+                    68 3F C6 BE F5 1F F8 32 4C 0C 70 97 4F AA 40 14 
+                    21 AB A5 83 F0 66 7F 58 25 BD 8F 52 4D FE 84 15 
+                    44 C7 17 B0 FA 86 01 42 1B 6E B2 2B BB 23 B7 57 
+                    F8 9B 7B 0E 60 10 85 70 4C 70 69 AF A6 C0 14 21 
+                    9E 4B 06 F4 73 19 B5 D3 39 61 2F DA 00 0A 13 D6 
+                    C7 24 5E FA C2 01 42 19 02 5C 7B E6 A5 2B 0E 4D 
+                    8A 1F 6B 1F F8 CB B1 4C 71 56 EF A9 A0 14 21 A0 
+                    D5 E3 B4 23 10 B3 40 75 2A D3 5D FF 0E 39 48 C7 
+                    23 02 FA 96 01 42 18 1E 06 70 C8 D9 35 BB 09 16 
+                    C8 E6 60 01 01 0D CC 70 E0 6F A9 E0 14 21 96 90 
+                    66 B7 B9 60 9B EF DF CC 38 66 00 12 38 B2 C7 17 
+                    D4 FA 88 01 42 19 A8 B1 E3 2C 1F 79 71 93 4E 73 
+                    2F 60 09 51 25 8C 6C F1 8F A5 40 14 21 91 63 A9 
+                    40 B8 EC CA A0 5D FC 83 EE 00 16 75 A4 C7 39 BA 
+                    FA 84 01 42 18 F9 B7 3B A3 4E 49 E7 D6 7D 2D 58 
+                    DF F9 83 94 EC 72 29 CF AB C0 14 21 9C 71 11 97 
+                    98 29 57 E7 D9 25 6E 72 00 1A 9D F6 C7 18 E4 FA 
+                    B2 01 42 1B 43 0D B5 52 60 6A A8 D3 5E 86 E6 E0 
+                    01 CA 74 8C 6E E2 0F A6 80 14 21 A9 70 0B C7 33 
+                    70 03 8A A0 C8 2A 2E 00 1E A4 7C C7 3A 50 FA 84 
+                    01 42 19 23 B8 C5 EB 28 EF 1B 3C 30 73 07 60 02 
+                    0C 90 2C 73 48 CF AB 40 14 21 C0 E0 B7 D5 E6 EE 
+                    34 AE 43 F3 EE 46 00 A2 EB D0 C7 08 86 FA 9A 01 
+                    42 19 DA 59 63 B9 69 D0 70 28 78 2A FF E0 0A 4A 
+                    0F 0C 73 14 6F AB 80 14 21 AB 80 F5 29 F5 E4 1B 
+                    DD B9 23 28 C2 00 A6 45 BA C6 ED 02 FA 4C 01 42 
+                    2C 34 A9 59 4F 9C BB 2E 69 4A C9 84 E0 02 99 0C 
+                    0C 70 10 4F A9 40 14 21 AC 45 8D 3F E8 05 6C 7A 
+                    D2 33 A9 5E 00 AA 7A 3E C6 E8 CA FA 42 01 42 17 
+                    78 AD 6E 64 7F F4 D6 BC EE 74 A0 DF E2 CC 99 2C 
+                    70 21 0F A9 00 14 21 81 30 65 0E 43 EA 67 28 5C 
+                    53 4C 72 00 2E 71 14 C6 FF 68 FA 84 01 42 19 A3 
+                    59 6A 21 2C 7B 04 53 28 AC F3 60 03 07 A2 8C 72 
+                    99 EF A6 E0 14 21 9B DB 26 66 B4 4D 69 1B 0E 41 
+                    26 A1 FF 32 2D A4 C7 11 8E FA 4E 01 42 19 6D B0 
+                    AA 67 08 B9 B1 85 5E A8 D1 A0 23 45 FE 6C 72 DB 
+                    2F AA 40 14 21 A3 A0 71 AC B1 FF 8E CF 34 09 D6 
+                    12 00 37 40 08 C7 38 D4 FA 80 01 42 1A 15 B9 1F 
+                    16 83 EA 93 38 96 2F B9 A0 0B 80 B5 2C 73 63 0F 
+                    AB 80 14 21 AB 00 C5 93 F4 E3 1E 95 0C 29 57 99 
+                    FF 3A 35 A0 C7 02 A6 FA 7E 01 42 1B 37 61 03 6C 
+                    01 C8 88 12 F4 5F 15 DF FB C8 F6 6C 71 B7 EF AA 
+                    40 14 21 99 95 F3 CC 0F 52 96 9F 76 23 92 19 FF 
+                    BE 20 9C C7 13 C0 FA AA 01 42 19 A9 06 CF 20 2B 
+                    4A 61 2D AB 7A 78 20 08 86 88 0A 08 00 00 00 00
+                </rrlpPayload>
+            </posPayLoad>
+        </msSUPLPOS>
+    </message>
+</ULP-PDU>
+Received SUPL_POS, decoding RRLP payload
+Embedded RRLP message
+<PDU>
+    <referenceNumber>1</referenceNumber>
+    <component>
+        <assistanceData>
+            <gps-AssistData>
+                <controlHeader>
+                    <referenceTime>
+                        <gpsTime>
+                            <gpsTOW23b>2792237</gpsTOW23b>
+                            <gpsWeek>973</gpsWeek>
+                        </gpsTime>
+                        <gpsTowAssist>
+                            <GPSTOWAssistElement>
+                                <satelliteID>24</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>11</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>1</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>30</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>5</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>28</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>13</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>31</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>18</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>2</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>3</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                            <GPSTOWAssistElement>
+                                <satelliteID>23</satelliteID>
+                                <tlmWord>973</tlmWord>
+                                <antiSpoof>1</antiSpoof>
+                                <alert>0</alert>
+                                <tlmRsvdBits>0</tlmRsvdBits>
+                            </GPSTOWAssistElement>
+                        </gpsTowAssist>
+                    </referenceTime>
+                    <refLocation>
+                        <threeDLocation>90 5C 60 7C 12 89 EF 00 64 77 77 00 61 5F</threeDLocation>
+                    </refLocation>
+                    <navigationModel>
+                        <navModelList>
+                            <NavModelElement>
+                                <satelliteID>24</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>85</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>13</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-53</ephemAF1>
+                                        <ephemAF0>-1226295</ephemAF0>
+                                        <ephemCrs>-2069</ephemCrs>
+                                        <ephemDeltaN>13081</ephemDeltaN>
+                                        <ephemM0>488424951</ephemM0>
+                                        <ephemCuc>-1738</ephemCuc>
+                                        <ephemE>64044553</ephemE>
+                                        <ephemCus>1256</ephemCus>
+                                        <ephemAPowerHalf>2701999468</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>-51</ephemCic>
+                                        <ephemOmegaA0>1497574135</ephemOmegaA0>
+                                        <ephemCis>55</ephemCis>
+                                        <ephemI0>666068722</ephemI0>
+                                        <ephemCrc>10905</ephemCrc>
+                                        <ephemW>576198844</ephemW>
+                                        <ephemOmegaADot>-23947</ephemOmegaADot>
+                                        <ephemIDot>-1252</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>11</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>18</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-27</ephemTgd>
+                                        <ephemToc>13949</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-20</ephemAF1>
+                                        <ephemAF0>728122</ephemAF0>
+                                        <ephemCrs>-2502</ephemCrs>
+                                        <ephemDeltaN>12039</ephemDeltaN>
+                                        <ephemM0>802119911</ephemM0>
+                                        <ephemCuc>-2204</ephemCuc>
+                                        <ephemE>61687612</ephemE>
+                                        <ephemCus>1847</ephemCus>
+                                        <ephemAPowerHalf>2701973937</ephemAPowerHalf>
+                                        <ephemToe>13949</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>12</ephemAODA>
+                                        <ephemCic>-80</ephemCic>
+                                        <ephemOmegaA0>1538097208</ephemOmegaA0>
+                                        <ephemCis>40</ephemCis>
+                                        <ephemI0>674523955</ephemI0>
+                                        <ephemCrc>10523</ephemCrc>
+                                        <ephemW>655082040</ephemW>
+                                        <ephemOmegaADot>-23299</ephemOmegaADot>
+                                        <ephemIDot>-1393</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>1</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>58</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-44</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-99</ephemAF1>
+                                        <ephemAF0>304814</ephemAF0>
+                                        <ephemCrs>1922</ephemCrs>
+                                        <ephemDeltaN>12916</ephemDeltaN>
+                                        <ephemM0>1922304100</ephemM0>
+                                        <ephemCuc>1627</ephemCuc>
+                                        <ephemE>153443810</ephemE>
+                                        <ephemCus>4582</ephemCus>
+                                        <ephemAPowerHalf>2702032043</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>71</ephemCic>
+                                        <ephemOmegaA0>-1406212619</ephemOmegaA0>
+                                        <ephemCis>-47</ephemCis>
+                                        <ephemI0>649143621</ephemI0>
+                                        <ephemCrc>6533</ephemCrc>
+                                        <ephemW>-1275812677</ephemW>
+                                        <ephemOmegaADot>-21909</ephemOmegaADot>
+                                        <ephemIDot>1904</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>30</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>24</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-29</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-23</ephemAF1>
+                                        <ephemAF0>274579</ephemAF0>
+                                        <ephemCrs>4018</ephemCrs>
+                                        <ephemDeltaN>13089</ephemDeltaN>
+                                        <ephemM0>1079214009</ephemM0>
+                                        <ephemCuc>3648</ephemCuc>
+                                        <ephemE>75174672</ephemE>
+                                        <ephemCus>3383</ephemCus>
+                                        <ephemAPowerHalf>2701995497</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>61</ephemCic>
+                                        <ephemOmegaA0>799915868</ephemOmegaA0>
+                                        <ephemCis>32</ephemCis>
+                                        <ephemI0>658640268</ephemI0>
+                                        <ephemCrc>8176</ephemCrc>
+                                        <ephemW>-91707137</ephemW>
+                                        <ephemOmegaADot>-23373</ephemOmegaADot>
+                                        <ephemIDot>721</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>5</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>22</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>10</ephemTgd>
+                                        <ephemToc>13949</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-16</ephemAF1>
+                                        <ephemAF0>877023</ephemAF0>
+                                        <ephemCrs>1775</ephemCrs>
+                                        <ephemDeltaN>12150</ephemDeltaN>
+                                        <ephemM0>1801966197</ephemM0>
+                                        <ephemCuc>1589</ephemCuc>
+                                        <ephemE>10409062</ephemE>
+                                        <ephemCus>4401</ephemCus>
+                                        <ephemAPowerHalf>2701972798</ephemAPowerHalf>
+                                        <ephemToe>13949</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>9</ephemAODA>
+                                        <ephemCic>-40</ephemCic>
+                                        <ephemOmegaA0>-1370692071</ephemOmegaA0>
+                                        <ephemCis>11</ephemCis>
+                                        <ephemI0>663248774</ephemI0>
+                                        <ephemCrc>7254</ephemCrc>
+                                        <ephemW>-764760148</ephemW>
+                                        <ephemOmegaADot>-22226</ephemOmegaADot>
+                                        <ephemIDot>1810</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>28</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>83</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-22</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-54</ephemAF1>
+                                        <ephemAF0>998125</ephemAF0>
+                                        <ephemCrs>-2701</ephemCrs>
+                                        <ephemDeltaN>10226</ephemDeltaN>
+                                        <ephemM0>-313678279</ephemM0>
+                                        <ephemCuc>-2357</ephemCuc>
+                                        <ephemE>5887716</ephemE>
+                                        <ephemCus>7104</ephemCus>
+                                        <ephemAPowerHalf>2702031083</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>23</ephemCic>
+                                        <ephemOmegaA0>-2042923802</ephemOmegaA0>
+                                        <ephemCis>15</ephemCis>
+                                        <ephemI0>672676815</ephemI0>
+                                        <ephemCrc>4326</ephemCrc>
+                                        <ephemW>651062290</ephemW>
+                                        <ephemOmegaADot>-21263</ephemOmegaADot>
+                                        <ephemIDot>-141</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>13</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>56</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-21</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-3</ephemAF1>
+                                        <ephemAF0>-206648</ephemAF0>
+                                        <ephemCrs>836</ephemCrs>
+                                        <ephemDeltaN>11917</ephemDeltaN>
+                                        <ephemM0>-1369761934</ephemM0>
+                                        <ephemCuc>739</ephemCuc>
+                                        <ephemE>82652937</ephemE>
+                                        <ephemCus>7103</ephemCus>
+                                        <ephemAPowerHalf>2702055194</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>68</ephemCic>
+                                        <ephemOmegaA0>115979265</ephemOmegaA0>
+                                        <ephemCis>-6</ephemCis>
+                                        <ephemI0>657352593</ephemI0>
+                                        <ephemCrc>3876</ephemCrc>
+                                        <ephemW>-1338954654</ephemW>
+                                        <ephemOmegaADot>-21490</ephemOmegaADot>
+                                        <ephemIDot>-539</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>31</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>29</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>1</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>33</ephemAF1>
+                                        <ephemAF0>-1116101</ephemAF0>
+                                        <ephemCrs>420</ephemCrs>
+                                        <ephemDeltaN>12524</ephemDeltaN>
+                                        <ephemM0>-609097128</ephemM0>
+                                        <ephemCuc>384</ephemCuc>
+                                        <ephemE>16980185</ephemE>
+                                        <ephemCus>7115</ephemCus>
+                                        <ephemAPowerHalf>2702002826</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>5</ephemCic>
+                                        <ephemOmegaA0>58113493</ephemOmegaA0>
+                                        <ephemCis>10</ephemCis>
+                                        <ephemI0>654664175</ephemI0>
+                                        <ephemCrc>3890</ephemCrc>
+                                        <ephemW>-1788839919</ephemW>
+                                        <ephemOmegaADot>-22125</ephemOmegaADot>
+                                        <ephemIDot>-952</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>18</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>20</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-33</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>24</ephemAF1>
+                                        <ephemAF0>-951375</ephemAF0>
+                                        <ephemCrs>-1997</ephemCrs>
+                                        <ephemDeltaN>10394</ephemDeltaN>
+                                        <ephemM0>847049981</ephemM0>
+                                        <ephemCuc>-1793</ephemCuc>
+                                        <ephemE>84328262</ephemE>
+                                        <ephemCus>7161</ephemCus>
+                                        <ephemAPowerHalf>2702030874</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>-66</ephemCic>
+                                        <ephemOmegaA0>-2017971269</ephemOmegaA0>
+                                        <ephemCis>-53</ephemCis>
+                                        <ephemI0>670093331</ephemI0>
+                                        <ephemCrc>4516</ephemCrc>
+                                        <ephemW>789512438</ephemW>
+                                        <ephemOmegaADot>-21507</ephemOmegaADot>
+                                        <ephemIDot>-346</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>2</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>29</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>5</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>69</ephemAF1>
+                                        <ephemAF0>112713</ephemAF0>
+                                        <ephemCrs>-1158</ephemCrs>
+                                        <ephemDeltaN>13980</ephemDeltaN>
+                                        <ephemM0>1088094168</ephemM0>
+                                        <ephemCuc>-1106</ephemCuc>
+                                        <ephemE>11038631</ephemE>
+                                        <ephemCus>2481</ephemCus>
+                                        <ephemAPowerHalf>2702060384</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>29</ephemAODA>
+                                        <ephemCic>16</ephemCic>
+                                        <ephemOmegaA0>-651849350</ephemOmegaA0>
+                                        <ephemCis>38</ephemCis>
+                                        <ephemI0>656668583</ephemI0>
+                                        <ephemCrc>9181</ephemCrc>
+                                        <ephemW>301406564</ephemW>
+                                        <ephemOmegaADot>-23544</ephemOmegaADot>
+                                        <ephemIDot>-622</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>3</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>63</ephemSVhealth>
+                                        <ephemIODC>16</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>-42</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>27</ephemAF1>
+                                        <ephemAF0>115024</ephemAF0>
+                                        <ephemCrs>-2100</ephemCrs>
+                                        <ephemDeltaN>16396</ephemDeltaN>
+                                        <ephemM0>-293209395</ephemM0>
+                                        <ephemCuc>-1817</ephemCuc>
+                                        <ephemE>84392921</ephemE>
+                                        <ephemCus>1243</ephemCus>
+                                        <ephemAPowerHalf>2702016087</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>31</ephemAODA>
+                                        <ephemCic>-20</ephemCic>
+                                        <ephemOmegaA0>1514498213</ephemOmegaA0>
+                                        <ephemCis>85</ephemCis>
+                                        <ephemI0>669373577</ephemI0>
+                                        <ephemCrc>10919</ephemCrc>
+                                        <ephemW>624903045</ephemW>
+                                        <ephemOmegaADot>-24001</ephemOmegaADot>
+                                        <ephemIDot>-1151</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                            <NavModelElement>
+                                <satelliteID>23</satelliteID>
+                                <satStatus>
+                                    <newSatelliteAndModelUC>
+                                        <ephemCodeOnL2>1</ephemCodeOnL2>
+                                        <ephemURA>0</ephemURA>
+                                        <ephemSVhealth>0</ephemSVhealth>
+                                        <ephemIODC>7</ephemIODC>
+                                        <ephemL2Pflag>0</ephemL2Pflag>
+                                        <ephemSF1Rsvd>
+                                            <reserved1>3427592</reserved1>
+                                            <reserved2>10711099</reserved2>
+                                            <reserved3>6590497</reserved3>
+                                            <reserved4>65266</reserved4>
+                                        </ephemSF1Rsvd>
+                                        <ephemTgd>6</ephemTgd>
+                                        <ephemToc>13950</ephemToc>
+                                        <ephemAF2>0</ephemAF2>
+                                        <ephemAF1>-4</ephemAF1>
+                                        <ephemAF0>-104476</ephemAF0>
+                                        <ephemCrs>4386</ephemCrs>
+                                        <ephemDeltaN>14210</ephemDeltaN>
+                                        <ephemM0>1848709680</ephemM0>
+                                        <ephemCuc>3742</ephemCuc>
+                                        <ephemE>59219210</ephemE>
+                                        <ephemCus>3299</ephemCus>
+                                        <ephemAPowerHalf>2701999942</ephemAPowerHalf>
+                                        <ephemToe>13950</ephemToe>
+                                        <ephemFitFlag>0</ephemFitFlag>
+                                        <ephemAODA>25</ephemAODA>
+                                        <ephemCic>-22</ephemCic>
+                                        <ephemOmegaA0>751095972</ephemOmegaA0>
+                                        <ephemCis>-49</ephemCis>
+                                        <ephemI0>643919114</ephemI0>
+                                        <ephemCrc>8026</ephemCrc>
+                                        <ephemW>372741694</ephemW>
+                                        <ephemOmegaADot>-23520</ephemOmegaADot>
+                                        <ephemIDot>1137</ephemIDot>
+                                    </newSatelliteAndModelUC>
+                                </satStatus>
+                            </NavModelElement>
+                        </navModelList>
+                    </navigationModel>
+                    <ionosphericModel>
+                        <alfa0>11</alfa0>
+                        <alfa1>2</alfa1>
+                        <alfa2>-1</alfa2>
+                        <alfa3>-1</alfa3>
+                        <beta0>43</beta0>
+                        <beta1>2</beta1>
+                        <beta2>-3</beta2>
+                        <beta3>-3</beta3>
+                    </ionosphericModel>
+                    <utcModel>
+                        <utcA1>-3</utcA1>
+                        <utcA0>-2</utcA0>
+                        <utcTot>99</utcTot>
+                        <utcWNt>205</utcWNt>
+                        <utcDeltaTls>18</utcDeltaTls>
+                        <utcWNlsf>137</utcWNlsf>
+                        <utcDN>7</utcDN>
+                        <utcDeltaTlsf>18</utcDeltaTlsf>
+                    </utcModel>
+                    <almanac>
+                        <alamanacWNa>205</alamanacWNa>
+                        <almanacList>
+                            <AlmanacElement>
+                                <satelliteID>0</satelliteID>
+                                <almanacE>15999</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>4699</almanacKsii>
+                                <almanacOmegaDot>-673</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554624</almanacAPowerHalf>
+                                <almanacOmega0>-5335843</almanacOmega0>
+                                <almanacW>1638836</almanacW>
+                                <almanacM0>-6298785</almanacM0>
+                                <almanacAF0>-44</almanacAF0>
+                                <almanacAF1>-1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>1</satelliteID>
+                                <almanacE>37472</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>1210</almanacKsii>
+                                <almanacOmegaDot>-686</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554717</almanacAPowerHalf>
+                                <almanacOmega0>-5496957</almanacOmega0>
+                                <almanacW>-4982079</almanacW>
+                                <almanacM0>-5378950</almanacM0>
+                                <almanacAF0>147</almanacAF0>
+                                <almanacAF1>-3</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>2</satelliteID>
+                                <almanacE>2722</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>3032</almanacKsii>
+                                <almanacOmegaDot>-701</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554807</almanacAPowerHalf>
+                                <almanacOmega0>-2550307</almanacOmega0>
+                                <almanacW>1170347</almanacW>
+                                <almanacM0>8146365</almanacM0>
+                                <almanacAF0>57</almanacAF0>
+                                <almanacAF1>2</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>4</satelliteID>
+                                <almanacE>11138</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>845</almanacKsii>
+                                <almanacOmegaDot>-714</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554610</almanacAPowerHalf>
+                                <almanacOmega0>-2607197</almanacOmega0>
+                                <almanacW>1625518</almanacW>
+                                <almanacM0>1690377</almanacM0>
+                                <almanacAF0>-10</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>5</satelliteID>
+                                <almanacE>2539</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>4655</almanacKsii>
+                                <almanacOmegaDot>-671</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554497</almanacAPowerHalf>
+                                <almanacOmega0>-5358093</almanacOmega0>
+                                <almanacW>-2976377</almanacW>
+                                <almanacM0>-5847793</almanacM0>
+                                <almanacAF0>428</almanacAF0>
+                                <almanacAF1>-1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>6</satelliteID>
+                                <almanacE>23946</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>2743</almanacKsii>
+                                <almanacOmegaDot>-691</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554630</almanacAPowerHalf>
+                                <almanacOmega0>3087777</almanacOmega0>
+                                <almanacW>-6781542</almanacW>
+                                <almanacM0>-8148650</almanacM0>
+                                <almanacAF0>215</almanacAF0>
+                                <almanacAF1>-2</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>7</satelliteID>
+                                <almanacE>7332</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>4481</almanacKsii>
+                                <almanacOmegaDot>-693</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554383</almanacAPowerHalf>
+                                <almanacOmega0>-8177564</almanacOmega0>
+                                <almanacW>-1271075</almanacW>
+                                <almanacM0>297828</almanacM0>
+                                <almanacAF0>-103</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>8</satelliteID>
+                                <almanacE>2158</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>1795</almanacKsii>
+                                <almanacOmegaDot>-689</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554548</almanacAPowerHalf>
+                                <almanacOmega0>210365</almanacOmega0>
+                                <almanacW>4916447</almanacW>
+                                <almanacM0>-65951</almanacM0>
+                                <almanacAF0>537</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>9</satelliteID>
+                                <almanacE>7257</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>3050</almanacKsii>
+                                <almanacOmegaDot>-700</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554580</almanacAPowerHalf>
+                                <almanacOmega0>-2559594</almanacOmega0>
+                                <almanacW>-7357256</almanacW>
+                                <almanacM0>4826937</almanacM0>
+                                <almanacAF0>189</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>10</satelliteID>
+                                <almanacE>35116</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>-6260</almanacKsii>
+                                <almanacOmegaDot>-726</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554507</almanacAPowerHalf>
+                                <almanacOmega0>-6469115</almanacOmega0>
+                                <almanacW>4679253</almanacW>
+                                <almanacM0>-8196124</almanacM0>
+                                <almanacAF0>-773</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>11</satelliteID>
+                                <almanacE>15058</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>7389</almanacKsii>
+                                <almanacOmegaDot>-702</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554492</almanacAPowerHalf>
+                                <almanacOmega0>6004177</almanacOmega0>
+                                <almanacW>2565363</almanacW>
+                                <almanacM0>7028374</almanacM0>
+                                <almanacAF0>355</almanacAF0>
+                                <almanacAF1>-1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>12</satelliteID>
+                                <almanacE>7335</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>4430</almanacKsii>
+                                <almanacOmegaDot>-674</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554595</almanacAPowerHalf>
+                                <almanacOmega0>560316</almanacOmega0>
+                                <almanacW>4278975</almanacW>
+                                <almanacM0>-4273877</almanacM0>
+                                <almanacAF0>-100</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>13</satelliteID>
+                                <almanacE>20219</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>3186</almanacKsii>
+                                <almanacOmegaDot>-679</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554785</almanacAPowerHalf>
+                                <almanacOmega0>449193</almanacOmega0>
+                                <almanacW>-5229228</almanacW>
+                                <almanacM0>-1462461</almanacM0>
+                                <almanacAF0>-101</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>14</satelliteID>
+                                <almanacE>21412</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>-2288</almanacKsii>
+                                <almanacOmegaDot>-716</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554699</almanacAPowerHalf>
+                                <almanacOmega0>24121</almanacOmega0>
+                                <almanacW>1802268</almanacW>
+                                <almanacM0>-2816447</almanacM0>
+                                <almanacAF0>-373</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>15</satelliteID>
+                                <almanacE>21054</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>7464</almanacKsii>
+                                <almanacOmegaDot>-702</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554513</almanacAPowerHalf>
+                                <almanacOmega0>6054645</almanacOmega0>
+                                <almanacW>1341325</almanacW>
+                                <almanacM0>1972281</almanacM0>
+                                <almanacAF0>29</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>16</satelliteID>
+                                <almanacE>25729</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>6726</almanacKsii>
+                                <almanacOmegaDot>-678</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554887</almanacAPowerHalf>
+                                <almanacOmega0>-8012113</almanacOmega0>
+                                <almanacW>-4755035</almanacW>
+                                <almanacM0>-909409</almanacM0>
+                                <almanacAF0>-111</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>17</satelliteID>
+                                <almanacE>30184</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>1091</almanacKsii>
+                                <almanacOmegaDot>-691</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554605</almanacAPowerHalf>
+                                <almanacOmega0>-5459492</almanacOmega0>
+                                <almanacW>3467320</almanacW>
+                                <almanacM0>-7062507</almanacM0>
+                                <almanacAF0>-1</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>18</satelliteID>
+                                <almanacE>20600</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>6307</almanacKsii>
+                                <almanacOmegaDot>-676</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554716</almanacAPowerHalf>
+                                <almanacOmega0>-7886513</almanacOmega0>
+                                <almanacW>3088606</almanacW>
+                                <almanacM0>7194905</almanacM0>
+                                <almanacAF0>-464</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>19</satelliteID>
+                                <almanacE>8925</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>-2431</almanacKsii>
+                                <almanacOmegaDot>-730</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10556954</almanacAPowerHalf>
+                                <almanacOmega0>-2839385</almanacOmega0>
+                                <almanacW>5135767</almanacW>
+                                <almanacM0>-4938396</almanacM0>
+                                <almanacAF0>531</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>20</satelliteID>
+                                <almanacE>51296</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>130</almanacKsii>
+                                <almanacOmegaDot>-694</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554722</almanacAPowerHalf>
+                                <almanacOmega0>-5477889</almanacOmega0>
+                                <almanacW>-4183197</almanacW>
+                                <almanacM0>5673373</almanacM0>
+                                <almanacAF0>-425</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>21</satelliteID>
+                                <almanacE>15647</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>-2971</almanacKsii>
+                                <almanacOmegaDot>-735</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554300</almanacAPowerHalf>
+                                <almanacOmega0>-2705614</almanacOmega0>
+                                <almanacW>-4195733</almanacW>
+                                <almanacM0>-2197702</almanacM0>
+                                <almanacAF0>-381</almanacAF0>
+                                <almanacAF1>-4</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>22</satelliteID>
+                                <almanacE>25801</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>264</almanacKsii>
+                                <almanacOmegaDot>-696</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554377</almanacAPowerHalf>
+                                <almanacOmega0>206962</almanacOmega0>
+                                <almanacW>-6335687</almanacW>
+                                <almanacM0>-4005222</almanacM0>
+                                <almanacAF0>-228</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>23</satelliteID>
+                                <almanacE>14474</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>-76</almanacKsii>
+                                <almanacOmegaDot>-702</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554577</almanacAPowerHalf>
+                                <almanacOmega0>2929936</almanacOmega0>
+                                <almanacW>1457538</almanacW>
+                                <almanacM0>-5663658</almanacM0>
+                                <almanacAF0>-51</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>24</satelliteID>
+                                <almanacE>15636</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>5327</almanacKsii>
+                                <almanacOmegaDot>-713</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554590</almanacAPowerHalf>
+                                <almanacOmega0>5845813</almanacOmega0>
+                                <almanacW>2255688</almanacW>
+                                <almanacM0>5796361</almanacM0>
+                                <almanacAF0>-600</almanacAF0>
+                                <almanacAF1>-2</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>25</satelliteID>
+                                <almanacE>5842</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>2247</almanacKsii>
+                                <almanacOmegaDot>-729</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554550</almanacAPowerHalf>
+                                <almanacOmega0>5788979</almanacOmega0>
+                                <almanacW>285912</almanacW>
+                                <almanacM0>4370260</almanacM0>
+                                <almanacAF0>-186</almanacAF0>
+                                <almanacAF1>4</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>26</satelliteID>
+                                <almanacE>12275</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>5849</almanacKsii>
+                                <almanacOmegaDot>-686</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554653</almanacAPowerHalf>
+                                <almanacOmega0>-8155803</almanacOmega0>
+                                <almanacW>1047670</almanacW>
+                                <almanacM0>-417714</almanacM0>
+                                <almanacAF0>388</almanacAF0>
+                                <almanacAF1>0</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>27</satelliteID>
+                                <almanacE>40964</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>7274</almanacKsii>
+                                <almanacOmegaDot>-704</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554634</almanacAPowerHalf>
+                                <almanacOmega0>6066059</almanacOmega0>
+                                <almanacW>-4065975</almanacW>
+                                <almanacM0>1854231</almanacM0>
+                                <almanacAF0>742</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>28</satelliteID>
+                                <almanacE>1449</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>6936</almanacKsii>
+                                <almanacOmegaDot>-676</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554712</almanacAPowerHalf>
+                                <almanacOmega0>-7983969</almanacOmega0>
+                                <almanacW>2562292</almanacW>
+                                <almanacM0>2646346</almanacM0>
+                                <almanacAF0>486</almanacAF0>
+                                <almanacAF1>-2</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>29</satelliteID>
+                                <almanacE>6864</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>339</almanacKsii>
+                                <almanacOmegaDot>-705</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554779</almanacAPowerHalf>
+                                <almanacOmega0>3178934</almanacOmega0>
+                                <almanacW>-8330172</almanacW>
+                                <almanacM0>-7767505</almanacM0>
+                                <almanacAF0>87</almanacAF0>
+                                <almanacAF1>-1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>30</satelliteID>
+                                <almanacE>18355</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>3519</almanacKsii>
+                                <almanacOmegaDot>-686</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554572</almanacAPowerHalf>
+                                <almanacOmega0>3120736</almanacOmega0>
+                                <almanacW>-355148</almanacW>
+                                <almanacM0>8106268</almanacM0>
+                                <almanacAF0>134</almanacAF0>
+                                <almanacAF1>-1</almanacAF1>
+                            </AlmanacElement>
+                            <AlmanacElement>
+                                <satelliteID>31</satelliteID>
+                                <almanacE>4174</almanacE>
+                                <alamanacToa>99</alamanacToa>
+                                <almanacKsii>2528</almanacKsii>
+                                <almanacOmegaDot>-683</almanacOmegaDot>
+                                <almanacSVhealth>0</almanacSVhealth>
+                                <almanacAPowerHalf>10554580</almanacAPowerHalf>
+                                <almanacOmega0>223120</almanacOmega0>
+                                <almanacW>-6970064</almanacW>
+                                <almanacM0>1496509</almanacM0>
+                                <almanacAF0>-544</almanacAF0>
+                                <almanacAF1>1</almanacAF1>
+                            </AlmanacElement>
+                        </almanacList>
+                    </almanac>
+                    <realTimeIntegrity>
+                        <SatelliteID>3</SatelliteID>
+                        <SatelliteID>17</SatelliteID>
+                    </realTimeIntegrity>
+                </controlHeader>
+            </gps-AssistData>
+            <moreAssDataToBeSent><noMoreMessages/></moreAssDataToBeSent>
+            <rel5-AssistanceData-Extension>
+                <extended-reference>
+                    <smlc-code>0</smlc-code>
+                    <transaction-ID>0</transaction-ID>
+                </extended-reference>
+            </rel5-AssistanceData-Extension>
+        </assistanceData>
+    </component>
+</PDU>
+Save RRLP assistance data
+Finished RRLP protocol exchange
+Finished SUPL session without sending SUPL_END
+Close SSL connection and TCP connection
+T 973 2792237 1523973778 371053
+U -2 -3 18 99 205 137 7 18
+L 64.952502 26.070192 119
+I 11 2 -1 43 2 -3 -3
+E 12
+e 25 13081 488424951 -1592967828 1497574135 666068722 576198844 -23947 -1252 64044553 -1738 1256 10905 -2069 -51 55 13950 85 13950 -1226295 -53 0 1 0 0 13 31
+e 12 12039 802119911 -1592993359 1538097208 674523955 655082040 -23299 -1393 61687612 -2204 1847 10523 -2502 -80 40 13949 18 13949 728122 -20 0 1 0 0 -27 12
+e 2 12916 1922304100 -1592935253 -1406212619 649143621 -1275812677 -21909 1904 153443810 1627 4582 6533 1922 71 -47 13950 58 13950 304814 -99 0 1 0 0 -44 31
+e 31 13089 1079214009 -1592971799 799915868 658640268 -91707137 -23373 721 75174672 3648 3383 8176 4018 61 32 13950 24 13950 274579 -23 0 1 0 0 -29 31
+e 6 12150 1801966197 -1592994498 -1370692071 663248774 -764760148 -22226 1810 10409062 1589 4401 7254 1775 -40 11 13949 22 13949 877023 -16 0 1 0 0 10 9
+e 29 10226 -313678279 -1592936213 -2042923802 672676815 651062290 -21263 -141 5887716 -2357 7104 4326 -2701 23 15 13950 83 13950 998125 -54 0 1 0 0 -22 31
+e 14 11917 -1369761934 -1592912102 115979265 657352593 -1338954654 -21490 -539 82652937 739 7103 3876 836 68 -6 13950 56 13950 -206648 -3 0 1 0 0 -21 31
+e 32 12524 -609097128 -1592964470 58113493 654664175 -1788839919 -22125 -952 16980185 384 7115 3890 420 5 10 13950 29 13950 -1116101 33 0 1 0 0 1 31
+e 19 10394 847049981 -1592936422 -2017971269 670093331 789512438 -21507 -346 84328262 -1793 7161 4516 -1997 -66 -53 13950 20 13950 -951375 24 0 1 0 0 -33 31
+e 3 13980 1088094168 -1592906912 -651849350 656668583 301406564 -23544 -622 11038631 -1106 2481 9181 -1158 16 38 13950 29 13950 112713 69 0 1 0 0 5 29
+e 4 16396 -293209395 -1592951209 1514498213 669373577 624903045 -24001 -1151 84392921 -1817 1243 10919 -2100 -20 85 13950 16 13950 115024 27 0 1 0 63 -42 31
+e 24 14210 1848709680 -1592967354 751095972 643919114 372741694 -23520 1137 59219210 3742 3299 8026 4386 -22 -49 13950 7 13950 -104476 -4 0 1 0 0 6 25
+A 31
+a 1 15999 99 4699 -673 10554624 -5335843 1638836 -6298785 -44 -1
+a 2 37472 99 1210 -686 10554717 -5496957 -4982079 -5378950 147 -3
+a 3 2722 99 3032 -701 10554807 -2550307 1170347 8146365 57 2
+a 5 11138 99 845 -714 10554610 -2607197 1625518 1690377 -10 0
+a 6 2539 99 4655 -671 10554497 -5358093 -2976377 -5847793 428 -1
+a 7 23946 99 2743 -691 10554630 3087777 -6781542 -8148650 215 -2
+a 8 7332 99 4481 -693 10554383 -8177564 -1271075 297828 -103 0
+a 9 2158 99 1795 -689 10554548 210365 4916447 -65951 537 0
+a 10 7257 99 3050 -700 10554580 -2559594 -7357256 4826937 189 1
+a 11 35116 99 -6260 -726 10554507 -6469115 4679253 -8196124 -773 0
+a 12 15058 99 7389 -702 10554492 6004177 2565363 7028374 355 -1
+a 13 7335 99 4430 -674 10554595 560316 4278975 -4273877 -100 0
+a 14 20219 99 3186 -679 10554785 449193 -5229228 -1462461 -101 0
+a 15 21412 99 -2288 -716 10554699 24121 1802268 -2816447 -373 0
+a 16 21054 99 7464 -702 10554513 6054645 1341325 1972281 29 0
+a 17 25729 99 6726 -678 10554887 -8012113 -4755035 -909409 -111 1
+a 18 30184 99 1091 -691 10554605 -5459492 3467320 -7062507 -1 1
+a 19 20600 99 6307 -676 10554716 -7886513 3088606 7194905 -464 1
+a 20 8925 99 -2431 -730 10556954 -2839385 5135767 -4938396 531 0
+a 21 51296 99 130 -694 10554722 -5477889 -4183197 5673373 -425 1
+a 22 15647 99 -2971 -735 10554300 -2705614 -4195733 -2197702 -381 -4
+a 23 25801 99 264 -696 10554377 206962 -6335687 -4005222 -228 0
+a 24 14474 99 -76 -702 10554577 2929936 1457538 -5663658 -51 0
+a 25 15636 99 5327 -713 10554590 5845813 2255688 5796361 -600 -2
+a 26 5842 99 2247 -729 10554550 5788979 285912 4370260 -186 4
+a 27 12275 99 5849 -686 10554653 -8155803 1047670 -417714 388 0
+a 28 40964 99 7274 -704 10554634 6066059 -4065975 1854231 742 1
+a 29 1449 99 6936 -676 10554712 -7983969 2562292 2646346 486 -2
+a 30 6864 99 339 -705 10554779 3178934 -8330172 -7767505 87 -1
+a 31 18355 99 3519 -686 10554572 3120736 -355148 8106268 134 -1
+a 32 4174 99 2528 -683 10554580 223120 -6970064 1496509 -544 1

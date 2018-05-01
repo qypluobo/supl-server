@@ -1,0 +1,776 @@
+{
+referenceNumber: 'INTEGER',
+component: {
+ msrPositionReq: {
+  positionInstruct: {
+   methodType: {
+    msAssisted: {
+     accuracy: 'INTEGER'
+     },
+    msBased: 'INTEGER',
+    msBasedPref: 'INTEGER',
+    msAssistedPref: 'INTEGER'
+    },
+   positionMethod: 'ENUMERATED',
+   measureResponseTime: 'INTEGER',
+   useMultipleSets: 'ENUMERATED',
+   environmentCharacter: 'ENUMERATED'
+   },
+  referenceAssistData: {
+   bcchCarrier: 'INTEGER',
+   bsic: 'INTEGER',
+   timeSlotScheme: 'ENUMERATED',
+   btsPosition: 'OCTET STRING'
+   },
+  msrAssistData: {
+   msrAssistList: [{
+    bcchCarrier: 'INTEGER',
+    bsic: 'INTEGER',
+    multiFrameOffset: 'INTEGER',
+    timeSlotScheme: 'ENUMERATED',
+    roughRTD: 'INTEGER',
+    calcAssistanceBTS: {
+     fineRTD: 'INTEGER',
+     referenceWGS84: {
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAlt: 'INTEGER'
+      }
+     }
+    }]
+   },
+  systemInfoAssistData: {
+   systemInfoAssistList: [{
+    notPresent: 'NULL',
+    present: {
+     bsic: 'INTEGER',
+     multiFrameOffset: 'INTEGER',
+     timeSlotScheme: 'ENUMERATED',
+     roughRTD: 'INTEGER',
+     calcAssistanceBTS: {
+      fineRTD: 'INTEGER',
+      referenceWGS84: {
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAlt: 'INTEGER'
+       }
+      }
+     }
+    }]
+   },
+  gps-AssistData: {
+   controlHeader: {
+    referenceTime: {
+     gpsTime: {
+      gpsTOW23b: 'INTEGER',
+      gpsWeek: 'INTEGER'
+      },
+     gsmTime: {
+      bcchCarrier: 'INTEGER',
+      bsic: 'INTEGER',
+      frameNumber: 'INTEGER',
+      timeSlot: 'INTEGER',
+      bitNumber: 'INTEGER'
+      },
+     gpsTowAssist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    refLocation: {
+     threeDLocation: 'OCTET STRING'
+     },
+    dgpsCorrections: {
+     gpsTOW: 'INTEGER',
+     status: 'INTEGER',
+     satList: [{
+      satelliteID: 'INTEGER',
+      iode: 'INTEGER',
+      udre: 'INTEGER',
+      pseudoRangeCor: 'INTEGER',
+      rangeRateCor: 'INTEGER',
+      deltaPseudoRangeCor2: 'INTEGER',
+      deltaRangeRateCor2: 'INTEGER',
+      deltaPseudoRangeCor3: 'INTEGER',
+      deltaRangeRateCor3: 'INTEGER'
+      }]
+     },
+    navigationModel: {
+     navModelList: [{
+      satelliteID: 'INTEGER',
+      satStatus: {
+       newSatelliteAndModelUC: {
+        ephemCodeOnL2: 'INTEGER',
+        ephemURA: 'INTEGER',
+        ephemSVhealth: 'INTEGER',
+        ephemIODC: 'INTEGER',
+        ephemL2Pflag: 'INTEGER',
+        ephemSF1Rsvd: {
+         reserved1: 'INTEGER',
+         reserved2: 'INTEGER',
+         reserved3: 'INTEGER',
+         reserved4: 'INTEGER'
+         },
+        ephemTgd: 'INTEGER',
+        ephemToc: 'INTEGER',
+        ephemAF2: 'INTEGER',
+        ephemAF1: 'INTEGER',
+        ephemAF0: 'INTEGER',
+        ephemCrs: 'INTEGER',
+        ephemDeltaN: 'INTEGER',
+        ephemM0: 'INTEGER',
+        ephemCuc: 'INTEGER',
+        ephemE: 'INTEGER',
+        ephemCus: 'INTEGER',
+        ephemAPowerHalf: 'INTEGER',
+        ephemToe: 'INTEGER',
+        ephemFitFlag: 'INTEGER',
+        ephemAODA: 'INTEGER',
+        ephemCic: 'INTEGER',
+        ephemOmegaA0: 'INTEGER',
+        ephemCis: 'INTEGER',
+        ephemI0: 'INTEGER',
+        ephemCrc: 'INTEGER',
+        ephemW: 'INTEGER',
+        ephemOmegaADot: 'INTEGER',
+        ephemIDot: 'INTEGER'
+        },
+       oldSatelliteAndModel: 'NULL',
+       newNaviModelUC: {
+        ephemCodeOnL2: 'INTEGER',
+        ephemURA: 'INTEGER',
+        ephemSVhealth: 'INTEGER',
+        ephemIODC: 'INTEGER',
+        ephemL2Pflag: 'INTEGER',
+        ephemSF1Rsvd: {
+         reserved1: 'INTEGER',
+         reserved2: 'INTEGER',
+         reserved3: 'INTEGER',
+         reserved4: 'INTEGER'
+         },
+        ephemTgd: 'INTEGER',
+        ephemToc: 'INTEGER',
+        ephemAF2: 'INTEGER',
+        ephemAF1: 'INTEGER',
+        ephemAF0: 'INTEGER',
+        ephemCrs: 'INTEGER',
+        ephemDeltaN: 'INTEGER',
+        ephemM0: 'INTEGER',
+        ephemCuc: 'INTEGER',
+        ephemE: 'INTEGER',
+        ephemCus: 'INTEGER',
+        ephemAPowerHalf: 'INTEGER',
+        ephemToe: 'INTEGER',
+        ephemFitFlag: 'INTEGER',
+        ephemAODA: 'INTEGER',
+        ephemCic: 'INTEGER',
+        ephemOmegaA0: 'INTEGER',
+        ephemCis: 'INTEGER',
+        ephemI0: 'INTEGER',
+        ephemCrc: 'INTEGER',
+        ephemW: 'INTEGER',
+        ephemOmegaADot: 'INTEGER',
+        ephemIDot: 'INTEGER'
+        }
+       }
+      }]
+     },
+    ionosphericModel: {
+     alfa0: 'INTEGER',
+     alfa1: 'INTEGER',
+     alfa2: 'INTEGER',
+     alfa3: 'INTEGER',
+     beta0: 'INTEGER',
+     beta1: 'INTEGER',
+     beta2: 'INTEGER',
+     beta3: 'INTEGER'
+     },
+    utcModel: {
+     utcA1: 'INTEGER',
+     utcA0: 'INTEGER',
+     utcTot: 'INTEGER',
+     utcWNt: 'INTEGER',
+     utcDeltaTls: 'INTEGER',
+     utcWNlsf: 'INTEGER',
+     utcDN: 'INTEGER',
+     utcDeltaTlsf: 'INTEGER'
+     },
+    almanac: {
+     alamanacWNa: 'INTEGER',
+     almanacList: [{
+      satelliteID: 'INTEGER',
+      almanacE: 'INTEGER',
+      alamanacToa: 'INTEGER',
+      almanacKsii: 'INTEGER',
+      almanacOmegaDot: 'INTEGER',
+      almanacSVhealth: 'INTEGER',
+      almanacAPowerHalf: 'INTEGER',
+      almanacOmega0: 'INTEGER',
+      almanacW: 'INTEGER',
+      almanacM0: 'INTEGER',
+      almanacAF0: 'INTEGER',
+      almanacAF1: 'INTEGER'
+      }]
+     },
+    acquisAssist: {
+     timeRelation: {
+      gpsTOW: 'INTEGER',
+      gsmTime: {
+       bcchCarrier: 'INTEGER',
+       bsic: 'INTEGER',
+       frameNumber: 'INTEGER',
+       timeSlot: 'INTEGER',
+       bitNumber: 'INTEGER'
+       }
+      },
+     acquisList: [{
+      svid: 'INTEGER',
+      doppler0: 'INTEGER',
+      addionalDoppler: {
+       doppler1: 'INTEGER',
+       dopplerUncertainty: 'INTEGER'
+       },
+      codePhase: 'INTEGER',
+      intCodePhase: 'INTEGER',
+      gpsBitNumber: 'INTEGER',
+      codePhaseSearchWindow: 'INTEGER',
+      addionalAngle: {
+       azimuth: 'INTEGER',
+       elevation: 'INTEGER'
+       }
+      }]
+     },
+    realTimeIntegrity: ['INTEGER']
+    }
+   },
+  extensionContainer: 'INTEGER',
+  rel98-MsrPosition-Req-extension: {
+   rel98-Ext-ExpOTD: {
+    msrAssistData-R98-ExpOTD: {
+     msrAssistList-R98-ExpOTD: [{
+      expectedOTD: 'INTEGER',
+      expOTDUncertainty: 'INTEGER'
+      }]
+     },
+    systemInfoAssistData-R98-ExpOTD: {
+     systemInfoAssistListR98-ExpOTD: [{
+      notPresent: 'NULL',
+      present: {
+       expectedOTD: 'INTEGER',
+       expOTDuncertainty: 'INTEGER'
+       }
+      }]
+     }
+    },
+   gpsTimeAssistanceMeasurementRequest: 'NULL',
+   gpsReferenceTimeUncertainty: 'INTEGER'
+   },
+  rel5-MsrPosition-Req-extension: {
+   extended-reference: {
+    smlc-code: 'INTEGER',
+    transaction-ID: 'INTEGER'
+    }
+   }
+  },
+ msrPositionRsp: {
+  multipleSets: {
+   nbrOfSets: 'INTEGER',
+   nbrOfReferenceBTSs: 'INTEGER',
+   referenceRelation: 'ENUMERATED'
+   },
+  referenceIdentity: {
+   refBTSList: [{
+    bsicAndCarrier: {
+     carrier: 'INTEGER',
+     bsic: 'INTEGER'
+     },
+    ci: 'INTEGER',
+    requestIndex: 'INTEGER',
+    systemInfoIndex: 'INTEGER',
+    ciAndLAC: {
+     referenceLAC: 'INTEGER',
+     referenceCI: 'INTEGER'
+     }
+    }]
+   },
+  otd-MeasureInfo: {
+   otdMsrFirstSets: {
+    refFrameNumber: 'INTEGER',
+    referenceTimeSlot: 'INTEGER',
+    toaMeasurementsOfRef: {
+     refQuality: 'INTEGER',
+     numOfMeasurements: 'INTEGER'
+     },
+    stdResolution: 'INTEGER',
+    taCorrection: 'INTEGER',
+    otd-FirstSetMsrs: [{
+     neighborIdentity: {
+      bsicAndCarrier: {
+       carrier: 'INTEGER',
+       bsic: 'INTEGER'
+       },
+      ci: 'INTEGER',
+      multiFrameCarrier: {
+       bcchCarrier: 'INTEGER',
+       multiFrameOffset: 'INTEGER'
+       },
+      requestIndex: 'INTEGER',
+      systemInfoIndex: 'INTEGER',
+      ciAndLAC: {
+       referenceLAC: 'INTEGER',
+       referenceCI: 'INTEGER'
+       }
+      },
+     nborTimeSlot: 'INTEGER',
+     eotdQuality: {
+      nbrOfMeasurements: 'INTEGER',
+      stdOfEOTD: 'INTEGER'
+      },
+     otdValue: 'INTEGER'
+     }]
+    },
+   otdMsrRestSets: [{
+    refFrameNumber: 'INTEGER',
+    referenceTimeSlot: 'INTEGER',
+    toaMeasurementsOfRef: {
+     refQuality: 'INTEGER',
+     numOfMeasurements: 'INTEGER'
+     },
+    stdResolution: 'INTEGER',
+    taCorrection: 'INTEGER',
+    otd-MsrsOfOtherSets: [{
+     identityNotPresent: {
+      nborTimeSlot: 'INTEGER',
+      eotdQuality: {
+       nbrOfMeasurements: 'INTEGER',
+       stdOfEOTD: 'INTEGER'
+       },
+      otdValue: 'INTEGER'
+      },
+     identityPresent: {
+      neighborIdentity: {
+       bsicAndCarrier: {
+        carrier: 'INTEGER',
+        bsic: 'INTEGER'
+        },
+       ci: 'INTEGER',
+       multiFrameCarrier: {
+        bcchCarrier: 'INTEGER',
+        multiFrameOffset: 'INTEGER'
+        },
+       requestIndex: 'INTEGER',
+       systemInfoIndex: 'INTEGER',
+       ciAndLAC: {
+        referenceLAC: 'INTEGER',
+        referenceCI: 'INTEGER'
+        }
+       },
+      nborTimeSlot: 'INTEGER',
+      eotdQuality: {
+       nbrOfMeasurements: 'INTEGER',
+       stdOfEOTD: 'INTEGER'
+       },
+      otdValue: 'INTEGER'
+      }
+     }]
+    }]
+   },
+  locationInfo: {
+   refFrame: 'INTEGER',
+   gpsTOW: 'INTEGER',
+   fixType: 'INTEGER',
+   posEstimate: 'OCTET STRING'
+   },
+  gps-MeasureInfo: {
+   gpsMsrSetList: [{
+    refFrame: 'INTEGER',
+    gpsTOW: 'INTEGER',
+    gps-msrList: [{
+     satelliteID: 'INTEGER',
+     cNo: 'INTEGER',
+     doppler: 'INTEGER',
+     wholeChips: 'INTEGER',
+     fracChips: 'INTEGER',
+     mpathIndic: 'ENUMERATED',
+     pseuRangeRMSErr: 'INTEGER'
+     }]
+    }]
+   },
+  locationError: {
+   locErrorReason: 'ENUMERATED',
+   additionalAssistanceData: {
+    gpsAssistanceData: 'OCTET STRING',
+    extensionContainer: 'INTEGER',
+    ganssAssistanceData: 'OCTET STRING'
+    }
+   },
+  extensionContainer: 'INTEGER',
+  rel-98-MsrPosition-Rsp-Extension: {
+   rel-98-Ext-MeasureInfo: {
+    otd-MeasureInfo-R98-Ext: {
+     otdMsrFirstSets-R98-Ext: {
+      otd-FirstSetMsrs-R98-Ext: [{
+       neighborIdentity: {
+        bsicAndCarrier: {
+         carrier: 'INTEGER',
+         bsic: 'INTEGER'
+         },
+        ci: 'INTEGER',
+        multiFrameCarrier: {
+         bcchCarrier: 'INTEGER',
+         multiFrameOffset: 'INTEGER'
+         },
+        requestIndex: 'INTEGER',
+        systemInfoIndex: 'INTEGER',
+        ciAndLAC: {
+         referenceLAC: 'INTEGER',
+         referenceCI: 'INTEGER'
+         }
+        },
+       nborTimeSlot: 'INTEGER',
+       eotdQuality: {
+        nbrOfMeasurements: 'INTEGER',
+        stdOfEOTD: 'INTEGER'
+        },
+       otdValue: 'INTEGER'
+       }]
+      }
+     }
+    },
+   timeAssistanceMeasurements: {
+    referenceFrameMSB: 'INTEGER',
+    gpsTowSubms: 'INTEGER',
+    deltaTow: 'INTEGER',
+    gpsReferenceTimeUncertainty: 'INTEGER'
+    }
+   },
+  rel-5-MsrPosition-Rsp-Extension: {
+   extended-reference: {
+    smlc-code: 'INTEGER',
+    transaction-ID: 'INTEGER'
+    },
+   otd-MeasureInfo-5-Ext: [{
+    refFrameNumber: 'INTEGER',
+    referenceTimeSlot: 'INTEGER',
+    toaMeasurementsOfRef: {
+     refQuality: 'INTEGER',
+     numOfMeasurements: 'INTEGER'
+     },
+    stdResolution: 'INTEGER',
+    taCorrection: 'INTEGER',
+    otd-MsrsOfOtherSets: [{
+     identityNotPresent: {
+      nborTimeSlot: 'INTEGER',
+      eotdQuality: {
+       nbrOfMeasurements: 'INTEGER',
+       stdOfEOTD: 'INTEGER'
+       },
+      otdValue: 'INTEGER'
+      },
+     identityPresent: {
+      neighborIdentity: {
+       bsicAndCarrier: {
+        carrier: 'INTEGER',
+        bsic: 'INTEGER'
+        },
+       ci: 'INTEGER',
+       multiFrameCarrier: {
+        bcchCarrier: 'INTEGER',
+        multiFrameOffset: 'INTEGER'
+        },
+       requestIndex: 'INTEGER',
+       systemInfoIndex: 'INTEGER',
+       ciAndLAC: {
+        referenceLAC: 'INTEGER',
+        referenceCI: 'INTEGER'
+        }
+       },
+      nborTimeSlot: 'INTEGER',
+      eotdQuality: {
+       nbrOfMeasurements: 'INTEGER',
+       stdOfEOTD: 'INTEGER'
+       },
+      otdValue: 'INTEGER'
+      }
+     }]
+    }],
+   ulPseudoSegInd: 'ENUMERATED'
+   }
+  },
+ assistanceData: {
+  referenceAssistData: {
+   bcchCarrier: 'INTEGER',
+   bsic: 'INTEGER',
+   timeSlotScheme: 'ENUMERATED',
+   btsPosition: 'OCTET STRING'
+   },
+  msrAssistData: {
+   msrAssistList: [{
+    bcchCarrier: 'INTEGER',
+    bsic: 'INTEGER',
+    multiFrameOffset: 'INTEGER',
+    timeSlotScheme: 'ENUMERATED',
+    roughRTD: 'INTEGER',
+    calcAssistanceBTS: {
+     fineRTD: 'INTEGER',
+     referenceWGS84: {
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAlt: 'INTEGER'
+      }
+     }
+    }]
+   },
+  systemInfoAssistData: {
+   systemInfoAssistList: [{
+    notPresent: 'NULL',
+    present: {
+     bsic: 'INTEGER',
+     multiFrameOffset: 'INTEGER',
+     timeSlotScheme: 'ENUMERATED',
+     roughRTD: 'INTEGER',
+     calcAssistanceBTS: {
+      fineRTD: 'INTEGER',
+      referenceWGS84: {
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAlt: 'INTEGER'
+       }
+      }
+     }
+    }]
+   },
+  gps-AssistData: {
+   controlHeader: {
+    referenceTime: {
+     gpsTime: {
+      gpsTOW23b: 'INTEGER',
+      gpsWeek: 'INTEGER'
+      },
+     gsmTime: {
+      bcchCarrier: 'INTEGER',
+      bsic: 'INTEGER',
+      frameNumber: 'INTEGER',
+      timeSlot: 'INTEGER',
+      bitNumber: 'INTEGER'
+      },
+     gpsTowAssist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    refLocation: {
+     threeDLocation: 'OCTET STRING'
+     },
+    dgpsCorrections: {
+     gpsTOW: 'INTEGER',
+     status: 'INTEGER',
+     satList: [{
+      satelliteID: 'INTEGER',
+      iode: 'INTEGER',
+      udre: 'INTEGER',
+      pseudoRangeCor: 'INTEGER',
+      rangeRateCor: 'INTEGER',
+      deltaPseudoRangeCor2: 'INTEGER',
+      deltaRangeRateCor2: 'INTEGER',
+      deltaPseudoRangeCor3: 'INTEGER',
+      deltaRangeRateCor3: 'INTEGER'
+      }]
+     },
+    navigationModel: {
+     navModelList: [{
+      satelliteID: 'INTEGER',
+      satStatus: {
+       newSatelliteAndModelUC: {
+        ephemCodeOnL2: 'INTEGER',
+        ephemURA: 'INTEGER',
+        ephemSVhealth: 'INTEGER',
+        ephemIODC: 'INTEGER',
+        ephemL2Pflag: 'INTEGER',
+        ephemSF1Rsvd: {
+         reserved1: 'INTEGER',
+         reserved2: 'INTEGER',
+         reserved3: 'INTEGER',
+         reserved4: 'INTEGER'
+         },
+        ephemTgd: 'INTEGER',
+        ephemToc: 'INTEGER',
+        ephemAF2: 'INTEGER',
+        ephemAF1: 'INTEGER',
+        ephemAF0: 'INTEGER',
+        ephemCrs: 'INTEGER',
+        ephemDeltaN: 'INTEGER',
+        ephemM0: 'INTEGER',
+        ephemCuc: 'INTEGER',
+        ephemE: 'INTEGER',
+        ephemCus: 'INTEGER',
+        ephemAPowerHalf: 'INTEGER',
+        ephemToe: 'INTEGER',
+        ephemFitFlag: 'INTEGER',
+        ephemAODA: 'INTEGER',
+        ephemCic: 'INTEGER',
+        ephemOmegaA0: 'INTEGER',
+        ephemCis: 'INTEGER',
+        ephemI0: 'INTEGER',
+        ephemCrc: 'INTEGER',
+        ephemW: 'INTEGER',
+        ephemOmegaADot: 'INTEGER',
+        ephemIDot: 'INTEGER'
+        },
+       oldSatelliteAndModel: 'NULL',
+       newNaviModelUC: {
+        ephemCodeOnL2: 'INTEGER',
+        ephemURA: 'INTEGER',
+        ephemSVhealth: 'INTEGER',
+        ephemIODC: 'INTEGER',
+        ephemL2Pflag: 'INTEGER',
+        ephemSF1Rsvd: {
+         reserved1: 'INTEGER',
+         reserved2: 'INTEGER',
+         reserved3: 'INTEGER',
+         reserved4: 'INTEGER'
+         },
+        ephemTgd: 'INTEGER',
+        ephemToc: 'INTEGER',
+        ephemAF2: 'INTEGER',
+        ephemAF1: 'INTEGER',
+        ephemAF0: 'INTEGER',
+        ephemCrs: 'INTEGER',
+        ephemDeltaN: 'INTEGER',
+        ephemM0: 'INTEGER',
+        ephemCuc: 'INTEGER',
+        ephemE: 'INTEGER',
+        ephemCus: 'INTEGER',
+        ephemAPowerHalf: 'INTEGER',
+        ephemToe: 'INTEGER',
+        ephemFitFlag: 'INTEGER',
+        ephemAODA: 'INTEGER',
+        ephemCic: 'INTEGER',
+        ephemOmegaA0: 'INTEGER',
+        ephemCis: 'INTEGER',
+        ephemI0: 'INTEGER',
+        ephemCrc: 'INTEGER',
+        ephemW: 'INTEGER',
+        ephemOmegaADot: 'INTEGER',
+        ephemIDot: 'INTEGER'
+        }
+       }
+      }]
+     },
+    ionosphericModel: {
+     alfa0: 'INTEGER',
+     alfa1: 'INTEGER',
+     alfa2: 'INTEGER',
+     alfa3: 'INTEGER',
+     beta0: 'INTEGER',
+     beta1: 'INTEGER',
+     beta2: 'INTEGER',
+     beta3: 'INTEGER'
+     },
+    utcModel: {
+     utcA1: 'INTEGER',
+     utcA0: 'INTEGER',
+     utcTot: 'INTEGER',
+     utcWNt: 'INTEGER',
+     utcDeltaTls: 'INTEGER',
+     utcWNlsf: 'INTEGER',
+     utcDN: 'INTEGER',
+     utcDeltaTlsf: 'INTEGER'
+     },
+    almanac: {
+     alamanacWNa: 'INTEGER',
+     almanacList: [{
+      satelliteID: 'INTEGER',
+      almanacE: 'INTEGER',
+      alamanacToa: 'INTEGER',
+      almanacKsii: 'INTEGER',
+      almanacOmegaDot: 'INTEGER',
+      almanacSVhealth: 'INTEGER',
+      almanacAPowerHalf: 'INTEGER',
+      almanacOmega0: 'INTEGER',
+      almanacW: 'INTEGER',
+      almanacM0: 'INTEGER',
+      almanacAF0: 'INTEGER',
+      almanacAF1: 'INTEGER'
+      }]
+     },
+    acquisAssist: {
+     timeRelation: {
+      gpsTOW: 'INTEGER',
+      gsmTime: {
+       bcchCarrier: 'INTEGER',
+       bsic: 'INTEGER',
+       frameNumber: 'INTEGER',
+       timeSlot: 'INTEGER',
+       bitNumber: 'INTEGER'
+       }
+      },
+     acquisList: [{
+      svid: 'INTEGER',
+      doppler0: 'INTEGER',
+      addionalDoppler: {
+       doppler1: 'INTEGER',
+       dopplerUncertainty: 'INTEGER'
+       },
+      codePhase: 'INTEGER',
+      intCodePhase: 'INTEGER',
+      gpsBitNumber: 'INTEGER',
+      codePhaseSearchWindow: 'INTEGER',
+      addionalAngle: {
+       azimuth: 'INTEGER',
+       elevation: 'INTEGER'
+       }
+      }]
+     },
+    realTimeIntegrity: ['INTEGER']
+    }
+   },
+  moreAssDataToBeSent: 'ENUMERATED',
+  extensionContainer: 'INTEGER',
+  rel98-AssistanceData-Extension: {
+   rel98-Ext-ExpOTD: {
+    msrAssistData-R98-ExpOTD: {
+     msrAssistList-R98-ExpOTD: [{
+      expectedOTD: 'INTEGER',
+      expOTDUncertainty: 'INTEGER'
+      }]
+     },
+    systemInfoAssistData-R98-ExpOTD: {
+     systemInfoAssistListR98-ExpOTD: [{
+      notPresent: 'NULL',
+      present: {
+       expectedOTD: 'INTEGER',
+       expOTDuncertainty: 'INTEGER'
+       }
+      }]
+     }
+    },
+   gpsTimeAssistanceMeasurementRequest: 'NULL',
+   gpsReferenceTimeUncertainty: 'INTEGER'
+   },
+  rel5-AssistanceData-Extension: {
+   extended-reference: {
+    smlc-code: 'INTEGER',
+    transaction-ID: 'INTEGER'
+    }
+   }
+  },
+ assistanceDataAck: 'NULL',
+ protocolError: {
+  errorCause: 'ENUMERATED',
+  extensionContainer: 'INTEGER',
+  rel-5-ProtocolError-Extension: {
+   extended-reference: {
+    smlc-code: 'INTEGER',
+    transaction-ID: 'INTEGER'
+    }
+   }
+  }
+ }
+}

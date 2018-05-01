@@ -1,0 +1,3536 @@
+{
+length: 'INTEGER',
+version: {
+ maj: 'INTEGER',
+ min: 'INTEGER',
+ servind: 'INTEGER'
+ },
+sessionID: {
+ setSessionID: {
+  sessionId: 'INTEGER',
+  setId: {
+   msisdn: 'OCTET STRING',
+   mdn: 'OCTET STRING',
+   min: 'BIT STRING',
+   imsi: 'OCTET STRING',
+   nai: 'IA5String',
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    }
+   }
+  },
+ slpSessionID: {
+  sessionID: 'OCTET STRING',
+  slpId: {
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    },
+   fqdn: 'VisibleString'
+   }
+  }
+ },
+message: {
+ msSUPLINIT: {
+  posMethod: 'ENUMERATED',
+  notification: {
+   notificationType: 'ENUMERATED',
+   encodingType: 'ENUMERATED',
+   requestorId: 'OCTET STRING',
+   requestorIdType: 'ENUMERATED',
+   clientName: 'OCTET STRING',
+   clientNameType: 'ENUMERATED',
+   ver2-Notification-extension: {
+    emergencyCallLocation: 'NULL'
+    }
+   },
+  sLPAddress: {
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    },
+   fqdn: 'VisibleString'
+   },
+  qoP: {
+   horacc: 'INTEGER',
+   veracc: 'INTEGER',
+   maxLocAge: 'INTEGER',
+   delay: 'INTEGER'
+   },
+  sLPMode: 'ENUMERATED',
+  mac: 'BIT STRING',
+  keyIdentity: 'BIT STRING',
+  ver2-SUPL-INIT-extension: {
+   notificationMode: 'ENUMERATED',
+   supportedNetworkInformation: {
+    wlan: 'BOOLEAN',
+    supportedWLANInfo: {
+     apTP: 'BOOLEAN',
+     apAG: 'BOOLEAN',
+     apSN: 'BOOLEAN',
+     apDevType: 'BOOLEAN',
+     apRSSI: 'BOOLEAN',
+     apChanFreq: 'BOOLEAN',
+     apRTD: 'BOOLEAN',
+     setTP: 'BOOLEAN',
+     setAG: 'BOOLEAN',
+     setSN: 'BOOLEAN',
+     setRSSI: 'BOOLEAN',
+     apRepLoc: 'BOOLEAN'
+     },
+    supportedWLANApsList: {
+     supportedWLANApDataList: [{
+      apMACAddress: 'BIT STRING',
+      apDevType: 'ENUMERATED'
+      }],
+     supportedWLANapsChannel11a: {
+      ch34: 'BOOLEAN',
+      ch36: 'BOOLEAN',
+      ch38: 'BOOLEAN',
+      ch40: 'BOOLEAN',
+      ch42: 'BOOLEAN',
+      ch44: 'BOOLEAN',
+      ch46: 'BOOLEAN',
+      ch48: 'BOOLEAN',
+      ch52: 'BOOLEAN',
+      ch56: 'BOOLEAN',
+      ch60: 'BOOLEAN',
+      ch64: 'BOOLEAN',
+      ch149: 'BOOLEAN',
+      ch153: 'BOOLEAN',
+      ch157: 'BOOLEAN',
+      ch161: 'BOOLEAN'
+      },
+     supportedWLANapsChannel11bg: {
+      ch1: 'BOOLEAN',
+      ch2: 'BOOLEAN',
+      ch3: 'BOOLEAN',
+      ch4: 'BOOLEAN',
+      ch5: 'BOOLEAN',
+      ch6: 'BOOLEAN',
+      ch7: 'BOOLEAN',
+      ch8: 'BOOLEAN',
+      ch9: 'BOOLEAN',
+      ch10: 'BOOLEAN',
+      ch11: 'BOOLEAN',
+      ch12: 'BOOLEAN',
+      ch13: 'BOOLEAN',
+      ch14: 'BOOLEAN'
+      }
+     },
+    gsm: 'BOOLEAN',
+    wcdma: 'BOOLEAN',
+    supportedWCDMAInfo: {
+     mrl: 'BOOLEAN'
+     },
+    cdma: 'BOOLEAN',
+    hrdp: 'BOOLEAN',
+    umb: 'BOOLEAN',
+    lte: 'BOOLEAN',
+    wimax: 'BOOLEAN',
+    historic: 'BOOLEAN',
+    nonServing: 'BOOLEAN',
+    uTRANGPSReferenceTime: 'BOOLEAN',
+    uTRANGANSSReferenceTime: 'BOOLEAN'
+    },
+   triggerType: 'ENUMERATED',
+   e-SLPAddress: {
+    iPAddress: {
+     ipv4Address: 'OCTET STRING',
+     ipv6Address: 'OCTET STRING'
+     },
+    fqdn: 'VisibleString'
+    },
+   historicReporting: {
+    allowedReportingType: 'ENUMERATED',
+    reportingCriteria: {
+     timeWindow: {
+      startTime: 'INTEGER',
+      stopTime: 'INTEGER'
+      },
+     maxNumberofReports: 'INTEGER',
+     minTimeInterval: 'INTEGER'
+     }
+    },
+   protectionLevel: {
+    protlevel: 'ENUMERATED',
+    basicProtectionParams: {
+     keyIdentifier: 'OCTET STRING',
+     basicReplayCounter: 'INTEGER',
+     basicMAC: 'BIT STRING'
+     }
+    },
+   gnssPosTechnology: {
+    gps: 'BOOLEAN',
+    galileo: 'BOOLEAN',
+    sbas: 'BOOLEAN',
+    modernized-gps: 'BOOLEAN',
+    qzss: 'BOOLEAN',
+    glonass: 'BOOLEAN',
+    bds: 'BOOLEAN'
+    },
+   minimumMajorVersion: 'INTEGER'
+   }
+  },
+ msSUPLSTART: {
+  sETCapabilities: {
+   posTechnology: {
+    agpsSETassisted: 'BOOLEAN',
+    agpsSETBased: 'BOOLEAN',
+    autonomousGPS: 'BOOLEAN',
+    aflt: 'BOOLEAN',
+    ecid: 'BOOLEAN',
+    eotd: 'BOOLEAN',
+    otdoa: 'BOOLEAN',
+    ver2-PosTechnology-extension: {
+     gANSSPositionMethods: [{
+      ganssId: 'INTEGER',
+      ganssSBASid: 'BIT STRING',
+      gANSSPositioningMethodTypes: {
+       setAssisted: 'BOOLEAN',
+       setBased: 'BOOLEAN',
+       autonomous: 'BOOLEAN'
+       },
+      gANSSSignals: 'BIT STRING'
+      }]
+     }
+    },
+   prefMethod: 'ENUMERATED',
+   posProtocol: {
+    tia801: 'BOOLEAN',
+    rrlp: 'BOOLEAN',
+    rrc: 'BOOLEAN',
+    ver2-PosProtocol-extension: {
+     lpp: 'BOOLEAN',
+     posProtocolVersionRRLP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionRRC: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionTIA801: [{
+      revisionNumber: 'BIT STRING',
+      pointReleaseNumber: 'INTEGER',
+      internalEditLevel: 'INTEGER'
+      }],
+     posProtocolVersionLPP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     lppe: 'BOOLEAN',
+     posProtocolVersionLPPe: {
+      majorVersionField: 'INTEGER',
+      minorVersionField: 'INTEGER'
+      }
+     }
+    },
+   ver2-SETCapabilities-extension: {
+    serviceCapabilities: {
+     servicesSupported: {
+      periodicTrigger: 'BOOLEAN',
+      areaEventTrigger: 'BOOLEAN'
+      },
+     reportingCapabilities: {
+      minInt: 'INTEGER',
+      maxInt: 'INTEGER',
+      repMode: {
+       realtime: 'BOOLEAN',
+       quasirealtime: 'BOOLEAN',
+       batch: 'BOOLEAN'
+       },
+      batchRepCap: {
+       report-position: 'BOOLEAN',
+       report-measurements: 'BOOLEAN',
+       max-num-positions: 'INTEGER',
+       max-num-measurements: 'INTEGER'
+       }
+      },
+     eventTriggerCapabilities: {
+      geoAreaShapesSupported: {
+       ellipticalArea: 'BOOLEAN',
+       polygonArea: 'BOOLEAN'
+       },
+      maxNumGeoAreaSupported: 'INTEGER',
+      maxAreaIdListSupported: 'INTEGER',
+      maxAreaIdSupportedPerList: 'INTEGER'
+      },
+     sessionCapabilities: {
+      maxNumberTotalSessions: 'INTEGER',
+      maxNumberPeriodicSessions: 'INTEGER',
+      maxNumberTriggeredSessions: 'INTEGER'
+      }
+     },
+    supportedBearers: {
+     gsm: 'BOOLEAN',
+     wcdma: 'BOOLEAN',
+     lte: 'BOOLEAN',
+     cdma: 'BOOLEAN',
+     hprd: 'BOOLEAN',
+     umb: 'BOOLEAN',
+     wlan: 'BOOLEAN',
+     wiMAX: 'BOOLEAN'
+     }
+    }
+   },
+  locationId: {
+   cellInfo: {
+    gsmCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refLAC: 'INTEGER',
+     refCI: 'INTEGER',
+     nmr: [{
+      arfcn: 'INTEGER',
+      bsic: 'INTEGER',
+      rxLev: 'INTEGER'
+      }],
+     ta: 'INTEGER'
+     },
+    wcdmaCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refUC: 'INTEGER',
+     frequencyInfo: {
+      modeSpecificInfo: {
+       fdd: {
+        uarfcn-UL: 'INTEGER',
+        uarfcn-DL: 'INTEGER'
+        },
+       tdd: {
+        uarfcn-Nt: 'INTEGER'
+        }
+       }
+      },
+     primaryScramblingCode: 'INTEGER',
+     measuredResultsList: [{
+      frequencyInfo: {
+       modeSpecificInfo: {
+        fdd: {
+         uarfcn-UL: 'INTEGER',
+         uarfcn-DL: 'INTEGER'
+         },
+        tdd: {
+         uarfcn-Nt: 'INTEGER'
+         }
+        }
+       },
+      utra-CarrierRSSI: 'INTEGER',
+      cellMeasuredResultsList: [{
+       cellIdentity: 'INTEGER',
+       modeSpecificInfo: {
+        fdd: {
+         primaryCPICH-Info: {
+          primaryScramblingCode: 'INTEGER'
+          },
+         cpich-Ec-N0: 'INTEGER',
+         cpich-RSCP: 'INTEGER',
+         pathloss: 'INTEGER'
+         },
+        tdd: {
+         cellParametersID: 'INTEGER',
+         proposedTGSN: 'INTEGER',
+         primaryCCPCH-RSCP: 'INTEGER',
+         pathloss: 'INTEGER',
+         timeslotISCP-List: ['INTEGER']
+         }
+        }
+       }]
+      }],
+     cellParametersId: 'INTEGER',
+     timingAdvance: {
+      ta: 'INTEGER',
+      tAResolution: 'ENUMERATED',
+      chipRate: 'ENUMERATED'
+      }
+     },
+    cdmaCell: {
+     refNID: 'INTEGER',
+     refSID: 'INTEGER',
+     refBASEID: 'INTEGER',
+     refBASELAT: 'INTEGER',
+     reBASELONG: 'INTEGER',
+     refREFPN: 'INTEGER',
+     refWeekNumber: 'INTEGER',
+     refSeconds: 'INTEGER'
+     },
+    ver2-CellInfo-extension: {
+     hrpdCell: {
+      refSECTORID: 'BIT STRING',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     umbCell: {
+      refSECTORID: 'BIT STRING',
+      refMCC: 'INTEGER',
+      refMNC: 'INTEGER',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     lteCell: {
+      cellGlobalIdEUTRA: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       cellIdentity: 'BIT STRING'
+       },
+      physCellId: 'INTEGER',
+      trackingAreaCode: 'BIT STRING',
+      rsrpResult: 'INTEGER',
+      rsrqResult: 'INTEGER',
+      ta: 'INTEGER',
+      measResultListEUTRA: [{
+       physCellId: 'INTEGER',
+       cgi-Info: {
+        cellGlobalId: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        trackingAreaCode: 'BIT STRING'
+        },
+       measResult: {
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        }
+       }],
+      earfcn: 'INTEGER',
+      earfcn-ext: 'INTEGER'
+      },
+     wlanAP: {
+      apMACAddress: 'BIT STRING',
+      apTransmitPower: 'INTEGER',
+      apAntennaGain: 'INTEGER',
+      apSignaltoNoise: 'INTEGER',
+      apDeviceType: 'ENUMERATED',
+      apSignalStrength: 'INTEGER',
+      apChannelFrequency: 'INTEGER',
+      apRoundTripDelay: {
+       rTDValue: 'INTEGER',
+       rTDUnits: 'ENUMERATED',
+       rTDAccuracy: 'INTEGER'
+       },
+      setTransmitPower: 'INTEGER',
+      setAntennaGain: 'INTEGER',
+      setSignaltoNoise: 'INTEGER',
+      setSignalStrength: 'INTEGER',
+      apReportedLocation: {
+       locationEncodingDescriptor: 'ENUMERATED',
+       locationData: {
+        locationAccuracy: 'INTEGER',
+        locationValue: 'OCTET STRING'
+        }
+       },
+      apRepLocation: {
+       lciLocData: {
+        locationDataLCI: {
+         latitudeResolution: 'BIT STRING',
+         latitude: 'BIT STRING',
+         longitudeResolution: 'BIT STRING',
+         longitude: 'BIT STRING',
+         altitudeType: 'BIT STRING',
+         altitudeResolution: 'BIT STRING',
+         altitude: 'BIT STRING',
+         datum: 'BIT STRING'
+         }
+        }
+       },
+      apSignalStrengthDelta: 'INTEGER',
+      apSignaltoNoiseDelta: 'INTEGER',
+      setSignalStrengthDelta: 'INTEGER',
+      setSignaltoNoiseDelta: 'INTEGER',
+      operatingClass: 'INTEGER',
+      apSSID: 'OCTET STRING',
+      apPHYType: 'ENUMERATED',
+      setMACAddress: 'BIT STRING'
+      },
+     wimaxBS: {
+      wimaxBsID: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       },
+      wimaxRTD: {
+       rtd: 'INTEGER',
+       rTDstd: 'INTEGER'
+       },
+      wimaxNMRList: [{
+       wimaxBsID: {
+        bsID-MSB: 'BIT STRING',
+        bsID-LSB: 'BIT STRING'
+        },
+       relDelay: 'INTEGER',
+       relDelaystd: 'INTEGER',
+       rssi: 'INTEGER',
+       rSSIstd: 'INTEGER',
+       bSTxPower: 'INTEGER',
+       cinr: 'INTEGER',
+       cINRstd: 'INTEGER',
+       bSLocation: {
+        locationEncodingDescriptor: 'ENUMERATED',
+        locationData: {
+         locationAccuracy: 'INTEGER',
+         locationValue: 'OCTET STRING'
+         }
+        }
+       }]
+      }
+     }
+    },
+   status: 'ENUMERATED'
+   },
+  qoP: {
+   horacc: 'INTEGER',
+   veracc: 'INTEGER',
+   maxLocAge: 'INTEGER',
+   delay: 'INTEGER'
+   },
+  ver2-SUPL-START-extension: {
+   multipleLocationIds: [{
+    locationId: {
+     cellInfo: {
+      gsmCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refCI: 'INTEGER',
+       nmr: [{
+        arfcn: 'INTEGER',
+        bsic: 'INTEGER',
+        rxLev: 'INTEGER'
+        }],
+       ta: 'INTEGER'
+       },
+      wcdmaCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refUC: 'INTEGER',
+       frequencyInfo: {
+        modeSpecificInfo: {
+         fdd: {
+          uarfcn-UL: 'INTEGER',
+          uarfcn-DL: 'INTEGER'
+          },
+         tdd: {
+          uarfcn-Nt: 'INTEGER'
+          }
+         }
+        },
+       primaryScramblingCode: 'INTEGER',
+       measuredResultsList: [{
+        frequencyInfo: {
+         modeSpecificInfo: {
+          fdd: {
+           uarfcn-UL: 'INTEGER',
+           uarfcn-DL: 'INTEGER'
+           },
+          tdd: {
+           uarfcn-Nt: 'INTEGER'
+           }
+          }
+         },
+        utra-CarrierRSSI: 'INTEGER',
+        cellMeasuredResultsList: [{
+         cellIdentity: 'INTEGER',
+         modeSpecificInfo: {
+          fdd: {
+           primaryCPICH-Info: {
+            primaryScramblingCode: 'INTEGER'
+            },
+           cpich-Ec-N0: 'INTEGER',
+           cpich-RSCP: 'INTEGER',
+           pathloss: 'INTEGER'
+           },
+          tdd: {
+           cellParametersID: 'INTEGER',
+           proposedTGSN: 'INTEGER',
+           primaryCCPCH-RSCP: 'INTEGER',
+           pathloss: 'INTEGER',
+           timeslotISCP-List: ['INTEGER']
+           }
+          }
+         }]
+        }],
+       cellParametersId: 'INTEGER',
+       timingAdvance: {
+        ta: 'INTEGER',
+        tAResolution: 'ENUMERATED',
+        chipRate: 'ENUMERATED'
+        }
+       },
+      cdmaCell: {
+       refNID: 'INTEGER',
+       refSID: 'INTEGER',
+       refBASEID: 'INTEGER',
+       refBASELAT: 'INTEGER',
+       reBASELONG: 'INTEGER',
+       refREFPN: 'INTEGER',
+       refWeekNumber: 'INTEGER',
+       refSeconds: 'INTEGER'
+       },
+      ver2-CellInfo-extension: {
+       hrpdCell: {
+        refSECTORID: 'BIT STRING',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       umbCell: {
+        refSECTORID: 'BIT STRING',
+        refMCC: 'INTEGER',
+        refMNC: 'INTEGER',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       lteCell: {
+        cellGlobalIdEUTRA: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        physCellId: 'INTEGER',
+        trackingAreaCode: 'BIT STRING',
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        ta: 'INTEGER',
+        measResultListEUTRA: [{
+         physCellId: 'INTEGER',
+         cgi-Info: {
+          cellGlobalId: {
+           plmn-Identity: {
+            mcc: ['INTEGER'],
+            mnc: ['INTEGER']
+            },
+           cellIdentity: 'BIT STRING'
+           },
+          trackingAreaCode: 'BIT STRING'
+          },
+         measResult: {
+          rsrpResult: 'INTEGER',
+          rsrqResult: 'INTEGER',
+          earfcn: 'INTEGER',
+          earfcn-ext: 'INTEGER'
+          }
+         }],
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        },
+       wlanAP: {
+        apMACAddress: 'BIT STRING',
+        apTransmitPower: 'INTEGER',
+        apAntennaGain: 'INTEGER',
+        apSignaltoNoise: 'INTEGER',
+        apDeviceType: 'ENUMERATED',
+        apSignalStrength: 'INTEGER',
+        apChannelFrequency: 'INTEGER',
+        apRoundTripDelay: {
+         rTDValue: 'INTEGER',
+         rTDUnits: 'ENUMERATED',
+         rTDAccuracy: 'INTEGER'
+         },
+        setTransmitPower: 'INTEGER',
+        setAntennaGain: 'INTEGER',
+        setSignaltoNoise: 'INTEGER',
+        setSignalStrength: 'INTEGER',
+        apReportedLocation: {
+         locationEncodingDescriptor: 'ENUMERATED',
+         locationData: {
+          locationAccuracy: 'INTEGER',
+          locationValue: 'OCTET STRING'
+          }
+         },
+        apRepLocation: {
+         lciLocData: {
+          locationDataLCI: {
+           latitudeResolution: 'BIT STRING',
+           latitude: 'BIT STRING',
+           longitudeResolution: 'BIT STRING',
+           longitude: 'BIT STRING',
+           altitudeType: 'BIT STRING',
+           altitudeResolution: 'BIT STRING',
+           altitude: 'BIT STRING',
+           datum: 'BIT STRING'
+           }
+          }
+         },
+        apSignalStrengthDelta: 'INTEGER',
+        apSignaltoNoiseDelta: 'INTEGER',
+        setSignalStrengthDelta: 'INTEGER',
+        setSignaltoNoiseDelta: 'INTEGER',
+        operatingClass: 'INTEGER',
+        apSSID: 'OCTET STRING',
+        apPHYType: 'ENUMERATED',
+        setMACAddress: 'BIT STRING'
+        },
+       wimaxBS: {
+        wimaxBsID: {
+         bsID-MSB: 'BIT STRING',
+         bsID-LSB: 'BIT STRING'
+         },
+        wimaxRTD: {
+         rtd: 'INTEGER',
+         rTDstd: 'INTEGER'
+         },
+        wimaxNMRList: [{
+         wimaxBsID: {
+          bsID-MSB: 'BIT STRING',
+          bsID-LSB: 'BIT STRING'
+          },
+         relDelay: 'INTEGER',
+         relDelaystd: 'INTEGER',
+         rssi: 'INTEGER',
+         rSSIstd: 'INTEGER',
+         bSTxPower: 'INTEGER',
+         cinr: 'INTEGER',
+         cINRstd: 'INTEGER',
+         bSLocation: {
+          locationEncodingDescriptor: 'ENUMERATED',
+          locationData: {
+           locationAccuracy: 'INTEGER',
+           locationValue: 'OCTET STRING'
+           }
+          }
+         }]
+        }
+       }
+      },
+     status: 'ENUMERATED'
+     },
+    relativetimestamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   thirdParty: [{
+    logicalName: 'IA5String',
+    msisdn: 'OCTET STRING',
+    emailaddr: 'IA5String',
+    sip-uri: 'VisibleString',
+    ims-public-identity: 'VisibleString',
+    min: 'BIT STRING',
+    mdn: 'OCTET STRING',
+    uri: 'VisibleString'
+    }],
+   applicationID: {
+    appProvider: 'IA5String',
+    appName: 'IA5String',
+    appVersion: 'IA5String'
+    },
+   position: {
+    timestamp: 'UTCTime',
+    positionEstimate: {
+     latitudeSign: 'ENUMERATED',
+     latitude: 'INTEGER',
+     longitude: 'INTEGER',
+     uncertainty: {
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER'
+      },
+     confidence: 'INTEGER',
+     altitudeInfo: {
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      altUncertainty: 'INTEGER'
+      }
+     },
+    velocity: {
+     horvel: {
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING'
+      },
+     horandvervel: {
+      verdirect: 'BIT STRING',
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      verspeed: 'BIT STRING'
+      },
+     horveluncert: {
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      uncertspeed: 'BIT STRING'
+      },
+     horandveruncert: {
+      verdirect: 'BIT STRING',
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      verspeed: 'BIT STRING',
+      horuncertspeed: 'BIT STRING',
+      veruncertspeed: 'BIT STRING'
+      }
+     }
+    }
+   }
+  },
+ msSUPLRESPONSE: {
+  posMethod: 'ENUMERATED',
+  sLPAddress: {
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    },
+   fqdn: 'VisibleString'
+   },
+  sETAuthKey: {
+   shortKey: 'BIT STRING',
+   longKey: 'BIT STRING'
+   },
+  keyIdentity4: 'BIT STRING',
+  ver2-SUPL-RESPONSE-extension: {
+   supportedNetworkInformation: {
+    wlan: 'BOOLEAN',
+    supportedWLANInfo: {
+     apTP: 'BOOLEAN',
+     apAG: 'BOOLEAN',
+     apSN: 'BOOLEAN',
+     apDevType: 'BOOLEAN',
+     apRSSI: 'BOOLEAN',
+     apChanFreq: 'BOOLEAN',
+     apRTD: 'BOOLEAN',
+     setTP: 'BOOLEAN',
+     setAG: 'BOOLEAN',
+     setSN: 'BOOLEAN',
+     setRSSI: 'BOOLEAN',
+     apRepLoc: 'BOOLEAN'
+     },
+    supportedWLANApsList: {
+     supportedWLANApDataList: [{
+      apMACAddress: 'BIT STRING',
+      apDevType: 'ENUMERATED'
+      }],
+     supportedWLANapsChannel11a: {
+      ch34: 'BOOLEAN',
+      ch36: 'BOOLEAN',
+      ch38: 'BOOLEAN',
+      ch40: 'BOOLEAN',
+      ch42: 'BOOLEAN',
+      ch44: 'BOOLEAN',
+      ch46: 'BOOLEAN',
+      ch48: 'BOOLEAN',
+      ch52: 'BOOLEAN',
+      ch56: 'BOOLEAN',
+      ch60: 'BOOLEAN',
+      ch64: 'BOOLEAN',
+      ch149: 'BOOLEAN',
+      ch153: 'BOOLEAN',
+      ch157: 'BOOLEAN',
+      ch161: 'BOOLEAN'
+      },
+     supportedWLANapsChannel11bg: {
+      ch1: 'BOOLEAN',
+      ch2: 'BOOLEAN',
+      ch3: 'BOOLEAN',
+      ch4: 'BOOLEAN',
+      ch5: 'BOOLEAN',
+      ch6: 'BOOLEAN',
+      ch7: 'BOOLEAN',
+      ch8: 'BOOLEAN',
+      ch9: 'BOOLEAN',
+      ch10: 'BOOLEAN',
+      ch11: 'BOOLEAN',
+      ch12: 'BOOLEAN',
+      ch13: 'BOOLEAN',
+      ch14: 'BOOLEAN'
+      }
+     },
+    gsm: 'BOOLEAN',
+    wcdma: 'BOOLEAN',
+    supportedWCDMAInfo: {
+     mrl: 'BOOLEAN'
+     },
+    cdma: 'BOOLEAN',
+    hrdp: 'BOOLEAN',
+    umb: 'BOOLEAN',
+    lte: 'BOOLEAN',
+    wimax: 'BOOLEAN',
+    historic: 'BOOLEAN',
+    nonServing: 'BOOLEAN',
+    uTRANGPSReferenceTime: 'BOOLEAN',
+    uTRANGANSSReferenceTime: 'BOOLEAN'
+    },
+   sPCSETKey: 'BIT STRING',
+   spctid: {
+    rand: 'BIT STRING',
+    slpFQDN: 'VisibleString'
+    },
+   sPCSETKeylifetime: 'INTEGER',
+   initialApproximateposition: {
+    timestamp: 'UTCTime',
+    positionEstimate: {
+     latitudeSign: 'ENUMERATED',
+     latitude: 'INTEGER',
+     longitude: 'INTEGER',
+     uncertainty: {
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER'
+      },
+     confidence: 'INTEGER',
+     altitudeInfo: {
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      altUncertainty: 'INTEGER'
+      }
+     },
+    velocity: {
+     horvel: {
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING'
+      },
+     horandvervel: {
+      verdirect: 'BIT STRING',
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      verspeed: 'BIT STRING'
+      },
+     horveluncert: {
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      uncertspeed: 'BIT STRING'
+      },
+     horandveruncert: {
+      verdirect: 'BIT STRING',
+      bearing: 'BIT STRING',
+      horspeed: 'BIT STRING',
+      verspeed: 'BIT STRING',
+      horuncertspeed: 'BIT STRING',
+      veruncertspeed: 'BIT STRING'
+      }
+     }
+    },
+   gnssPosTechnology: {
+    gps: 'BOOLEAN',
+    galileo: 'BOOLEAN',
+    sbas: 'BOOLEAN',
+    modernized-gps: 'BOOLEAN',
+    qzss: 'BOOLEAN',
+    glonass: 'BOOLEAN',
+    bds: 'BOOLEAN'
+    }
+   }
+  },
+ msSUPLPOSINIT: {
+  sETCapabilities: {
+   posTechnology: {
+    agpsSETassisted: 'BOOLEAN',
+    agpsSETBased: 'BOOLEAN',
+    autonomousGPS: 'BOOLEAN',
+    aflt: 'BOOLEAN',
+    ecid: 'BOOLEAN',
+    eotd: 'BOOLEAN',
+    otdoa: 'BOOLEAN',
+    ver2-PosTechnology-extension: {
+     gANSSPositionMethods: [{
+      ganssId: 'INTEGER',
+      ganssSBASid: 'BIT STRING',
+      gANSSPositioningMethodTypes: {
+       setAssisted: 'BOOLEAN',
+       setBased: 'BOOLEAN',
+       autonomous: 'BOOLEAN'
+       },
+      gANSSSignals: 'BIT STRING'
+      }]
+     }
+    },
+   prefMethod: 'ENUMERATED',
+   posProtocol: {
+    tia801: 'BOOLEAN',
+    rrlp: 'BOOLEAN',
+    rrc: 'BOOLEAN',
+    ver2-PosProtocol-extension: {
+     lpp: 'BOOLEAN',
+     posProtocolVersionRRLP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionRRC: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionTIA801: [{
+      revisionNumber: 'BIT STRING',
+      pointReleaseNumber: 'INTEGER',
+      internalEditLevel: 'INTEGER'
+      }],
+     posProtocolVersionLPP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     lppe: 'BOOLEAN',
+     posProtocolVersionLPPe: {
+      majorVersionField: 'INTEGER',
+      minorVersionField: 'INTEGER'
+      }
+     }
+    },
+   ver2-SETCapabilities-extension: {
+    serviceCapabilities: {
+     servicesSupported: {
+      periodicTrigger: 'BOOLEAN',
+      areaEventTrigger: 'BOOLEAN'
+      },
+     reportingCapabilities: {
+      minInt: 'INTEGER',
+      maxInt: 'INTEGER',
+      repMode: {
+       realtime: 'BOOLEAN',
+       quasirealtime: 'BOOLEAN',
+       batch: 'BOOLEAN'
+       },
+      batchRepCap: {
+       report-position: 'BOOLEAN',
+       report-measurements: 'BOOLEAN',
+       max-num-positions: 'INTEGER',
+       max-num-measurements: 'INTEGER'
+       }
+      },
+     eventTriggerCapabilities: {
+      geoAreaShapesSupported: {
+       ellipticalArea: 'BOOLEAN',
+       polygonArea: 'BOOLEAN'
+       },
+      maxNumGeoAreaSupported: 'INTEGER',
+      maxAreaIdListSupported: 'INTEGER',
+      maxAreaIdSupportedPerList: 'INTEGER'
+      },
+     sessionCapabilities: {
+      maxNumberTotalSessions: 'INTEGER',
+      maxNumberPeriodicSessions: 'INTEGER',
+      maxNumberTriggeredSessions: 'INTEGER'
+      }
+     },
+    supportedBearers: {
+     gsm: 'BOOLEAN',
+     wcdma: 'BOOLEAN',
+     lte: 'BOOLEAN',
+     cdma: 'BOOLEAN',
+     hprd: 'BOOLEAN',
+     umb: 'BOOLEAN',
+     wlan: 'BOOLEAN',
+     wiMAX: 'BOOLEAN'
+     }
+    }
+   },
+  requestedAssistData: {
+   almanacRequested: 'BOOLEAN',
+   utcModelRequested: 'BOOLEAN',
+   ionosphericModelRequested: 'BOOLEAN',
+   dgpsCorrectionsRequested: 'BOOLEAN',
+   referenceLocationRequested: 'BOOLEAN',
+   referenceTimeRequested: 'BOOLEAN',
+   acquisitionAssistanceRequested: 'BOOLEAN',
+   realTimeIntegrityRequested: 'BOOLEAN',
+   navigationModelRequested: 'BOOLEAN',
+   navigationModelData: {
+    gpsWeek: 'INTEGER',
+    gpsToe: 'INTEGER',
+    nsat: 'INTEGER',
+    toeLimit: 'INTEGER',
+    satInfo: [{
+     satId: 'INTEGER',
+     iode: 'INTEGER'
+     }]
+    },
+   ver2-RequestedAssistData-extension: {
+    ganssRequestedCommonAssistanceDataList: {
+     ganssReferenceTime: 'BOOLEAN',
+     ganssIonosphericModel: 'BOOLEAN',
+     ganssAdditionalIonosphericModelForDataID00: 'BOOLEAN',
+     ganssAdditionalIonosphericModelForDataID11: 'BOOLEAN',
+     ganssEarthOrientationParameters: 'BOOLEAN',
+     ganssAdditionalIonosphericModelForDataID01: 'BOOLEAN'
+     },
+    ganssRequestedGenericAssistanceDataList: [{
+     ganssId: 'INTEGER',
+     ganssSBASid: 'BIT STRING',
+     ganssRealTimeIntegrity: 'BOOLEAN',
+     ganssDifferentialCorrection: 'BIT STRING',
+     ganssAlmanac: 'BOOLEAN',
+     ganssNavigationModelData: {
+      ganssWeek: 'INTEGER',
+      ganssToe: 'INTEGER',
+      t-toeLimit: 'INTEGER',
+      satellitesListRelatedDataList: [{
+       satId: 'INTEGER',
+       iod: 'INTEGER'
+       }]
+      },
+     ganssTimeModels: 'BIT STRING',
+     ganssReferenceMeasurementInfo: 'BOOLEAN',
+     ganssDataBits: {
+      ganssTODmin: 'INTEGER',
+      reqDataBitAssistanceList: {
+       gnssSignals: 'BIT STRING',
+       ganssDataBitInterval: 'INTEGER',
+       ganssDataBitSatList: ['INTEGER']
+       }
+      },
+     ganssUTCModel: 'BOOLEAN',
+     ganssAdditionalDataChoices: {
+      orbitModelID: 'INTEGER',
+      clockModelID: 'INTEGER',
+      utcModelID: 'INTEGER',
+      almanacModelID: 'INTEGER'
+      },
+     ganssAuxiliaryInformation: 'BOOLEAN',
+     ganssExtendedEphemeris: {
+      validity: 'INTEGER'
+      },
+     ganssExtendedEphemerisCheck: {
+      beginTime: {
+       gANSSday: 'INTEGER',
+       gANSSTODhour: 'INTEGER'
+       },
+      endTime: {
+       gANSSday: 'INTEGER',
+       gANSSTODhour: 'INTEGER'
+       }
+      },
+     bds-DifferentialCorrection: 'BIT STRING',
+     bds-GridModelReq: 'BOOLEAN'
+     }],
+    extendedEphemeris: {
+     validity: 'INTEGER'
+     },
+    extendedEphemerisCheck: {
+     beginTime: {
+      gPSWeek: 'INTEGER',
+      gPSTOWhour: 'INTEGER'
+      },
+     endTime: {
+      gPSWeek: 'INTEGER',
+      gPSTOWhour: 'INTEGER'
+      }
+     }
+    }
+   },
+  locationId: {
+   cellInfo: {
+    gsmCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refLAC: 'INTEGER',
+     refCI: 'INTEGER',
+     nmr: [{
+      arfcn: 'INTEGER',
+      bsic: 'INTEGER',
+      rxLev: 'INTEGER'
+      }],
+     ta: 'INTEGER'
+     },
+    wcdmaCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refUC: 'INTEGER',
+     frequencyInfo: {
+      modeSpecificInfo: {
+       fdd: {
+        uarfcn-UL: 'INTEGER',
+        uarfcn-DL: 'INTEGER'
+        },
+       tdd: {
+        uarfcn-Nt: 'INTEGER'
+        }
+       }
+      },
+     primaryScramblingCode: 'INTEGER',
+     measuredResultsList: [{
+      frequencyInfo: {
+       modeSpecificInfo: {
+        fdd: {
+         uarfcn-UL: 'INTEGER',
+         uarfcn-DL: 'INTEGER'
+         },
+        tdd: {
+         uarfcn-Nt: 'INTEGER'
+         }
+        }
+       },
+      utra-CarrierRSSI: 'INTEGER',
+      cellMeasuredResultsList: [{
+       cellIdentity: 'INTEGER',
+       modeSpecificInfo: {
+        fdd: {
+         primaryCPICH-Info: {
+          primaryScramblingCode: 'INTEGER'
+          },
+         cpich-Ec-N0: 'INTEGER',
+         cpich-RSCP: 'INTEGER',
+         pathloss: 'INTEGER'
+         },
+        tdd: {
+         cellParametersID: 'INTEGER',
+         proposedTGSN: 'INTEGER',
+         primaryCCPCH-RSCP: 'INTEGER',
+         pathloss: 'INTEGER',
+         timeslotISCP-List: ['INTEGER']
+         }
+        }
+       }]
+      }],
+     cellParametersId: 'INTEGER',
+     timingAdvance: {
+      ta: 'INTEGER',
+      tAResolution: 'ENUMERATED',
+      chipRate: 'ENUMERATED'
+      }
+     },
+    cdmaCell: {
+     refNID: 'INTEGER',
+     refSID: 'INTEGER',
+     refBASEID: 'INTEGER',
+     refBASELAT: 'INTEGER',
+     reBASELONG: 'INTEGER',
+     refREFPN: 'INTEGER',
+     refWeekNumber: 'INTEGER',
+     refSeconds: 'INTEGER'
+     },
+    ver2-CellInfo-extension: {
+     hrpdCell: {
+      refSECTORID: 'BIT STRING',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     umbCell: {
+      refSECTORID: 'BIT STRING',
+      refMCC: 'INTEGER',
+      refMNC: 'INTEGER',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     lteCell: {
+      cellGlobalIdEUTRA: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       cellIdentity: 'BIT STRING'
+       },
+      physCellId: 'INTEGER',
+      trackingAreaCode: 'BIT STRING',
+      rsrpResult: 'INTEGER',
+      rsrqResult: 'INTEGER',
+      ta: 'INTEGER',
+      measResultListEUTRA: [{
+       physCellId: 'INTEGER',
+       cgi-Info: {
+        cellGlobalId: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        trackingAreaCode: 'BIT STRING'
+        },
+       measResult: {
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        }
+       }],
+      earfcn: 'INTEGER',
+      earfcn-ext: 'INTEGER'
+      },
+     wlanAP: {
+      apMACAddress: 'BIT STRING',
+      apTransmitPower: 'INTEGER',
+      apAntennaGain: 'INTEGER',
+      apSignaltoNoise: 'INTEGER',
+      apDeviceType: 'ENUMERATED',
+      apSignalStrength: 'INTEGER',
+      apChannelFrequency: 'INTEGER',
+      apRoundTripDelay: {
+       rTDValue: 'INTEGER',
+       rTDUnits: 'ENUMERATED',
+       rTDAccuracy: 'INTEGER'
+       },
+      setTransmitPower: 'INTEGER',
+      setAntennaGain: 'INTEGER',
+      setSignaltoNoise: 'INTEGER',
+      setSignalStrength: 'INTEGER',
+      apReportedLocation: {
+       locationEncodingDescriptor: 'ENUMERATED',
+       locationData: {
+        locationAccuracy: 'INTEGER',
+        locationValue: 'OCTET STRING'
+        }
+       },
+      apRepLocation: {
+       lciLocData: {
+        locationDataLCI: {
+         latitudeResolution: 'BIT STRING',
+         latitude: 'BIT STRING',
+         longitudeResolution: 'BIT STRING',
+         longitude: 'BIT STRING',
+         altitudeType: 'BIT STRING',
+         altitudeResolution: 'BIT STRING',
+         altitude: 'BIT STRING',
+         datum: 'BIT STRING'
+         }
+        }
+       },
+      apSignalStrengthDelta: 'INTEGER',
+      apSignaltoNoiseDelta: 'INTEGER',
+      setSignalStrengthDelta: 'INTEGER',
+      setSignaltoNoiseDelta: 'INTEGER',
+      operatingClass: 'INTEGER',
+      apSSID: 'OCTET STRING',
+      apPHYType: 'ENUMERATED',
+      setMACAddress: 'BIT STRING'
+      },
+     wimaxBS: {
+      wimaxBsID: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       },
+      wimaxRTD: {
+       rtd: 'INTEGER',
+       rTDstd: 'INTEGER'
+       },
+      wimaxNMRList: [{
+       wimaxBsID: {
+        bsID-MSB: 'BIT STRING',
+        bsID-LSB: 'BIT STRING'
+        },
+       relDelay: 'INTEGER',
+       relDelaystd: 'INTEGER',
+       rssi: 'INTEGER',
+       rSSIstd: 'INTEGER',
+       bSTxPower: 'INTEGER',
+       cinr: 'INTEGER',
+       cINRstd: 'INTEGER',
+       bSLocation: {
+        locationEncodingDescriptor: 'ENUMERATED',
+        locationData: {
+         locationAccuracy: 'INTEGER',
+         locationValue: 'OCTET STRING'
+         }
+        }
+       }]
+      }
+     }
+    },
+   status: 'ENUMERATED'
+   },
+  position: {
+   timestamp: 'UTCTime',
+   positionEstimate: {
+    latitudeSign: 'ENUMERATED',
+    latitude: 'INTEGER',
+    longitude: 'INTEGER',
+    uncertainty: {
+     uncertaintySemiMajor: 'INTEGER',
+     uncertaintySemiMinor: 'INTEGER',
+     orientationMajorAxis: 'INTEGER'
+     },
+    confidence: 'INTEGER',
+    altitudeInfo: {
+     altitudeDirection: 'ENUMERATED',
+     altitude: 'INTEGER',
+     altUncertainty: 'INTEGER'
+     }
+    },
+   velocity: {
+    horvel: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING'
+     },
+    horandvervel: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING'
+     },
+    horveluncert: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     uncertspeed: 'BIT STRING'
+     },
+    horandveruncert: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING',
+     horuncertspeed: 'BIT STRING',
+     veruncertspeed: 'BIT STRING'
+     }
+    }
+   },
+  suplpos: {
+   posPayLoad: {
+    tia801payload: 'OCTET STRING',
+    rrcPayload: 'OCTET STRING',
+    rrlpPayload: 'OCTET STRING',
+    ver2-PosPayLoad-extension: {
+     lPPPayload: ['OCTET STRING'],
+     tia801Payload: ['OCTET STRING']
+     }
+    },
+   velocity: {
+    horvel: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING'
+     },
+    horandvervel: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING'
+     },
+    horveluncert: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     uncertspeed: 'BIT STRING'
+     },
+    horandveruncert: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING',
+     horuncertspeed: 'BIT STRING',
+     veruncertspeed: 'BIT STRING'
+     }
+    },
+   ver2-SUPL-POS-extension: {
+    utran-GPSReferenceTimeAssistance: {
+     utran-GPSReferenceTime: {
+      utran-GPSTimingOfCell: {
+       ms-part: 'INTEGER',
+       ls-part: 'INTEGER'
+       },
+      modeSpecificInfo: {
+       fdd: {
+        referenceIdentity: {
+         primaryScramblingCode: 'INTEGER'
+         }
+        },
+       tdd: {
+        referenceIdentity: 'INTEGER'
+        }
+       },
+      sfn: 'INTEGER'
+      },
+     gpsReferenceTimeUncertainty: 'INTEGER',
+     utranGPSDriftRate: 'ENUMERATED'
+     },
+    utran-GPSReferenceTimeResult: {
+     set-GPSTimingOfCell: {
+      ms-part: 'INTEGER',
+      ls-part: 'INTEGER'
+      },
+     modeSpecificInfo: {
+      fdd: {
+       referenceIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        }
+       },
+      tdd: {
+       referenceIdentity: 'INTEGER'
+       }
+      },
+     sfn: 'INTEGER',
+     gpsReferenceTimeUncertainty: 'INTEGER'
+     },
+    utran-GANSSReferenceTimeAssistance: {
+     ganssDay: 'INTEGER',
+     ganssTimeID: 'INTEGER',
+     utran-GANSSReferenceTime: {
+      ganssTOD: 'INTEGER',
+      utran-GANSSTimingOfCell: 'INTEGER',
+      modeSpecificInfo: {
+       fdd: {
+        referenceIdentity: {
+         primaryScramblingCode: 'INTEGER'
+         }
+        },
+       tdd: {
+        referenceIdentity: 'INTEGER'
+        }
+       },
+      sfn: 'INTEGER',
+      ganss-TODUncertainty: 'INTEGER'
+      },
+     utranGANSSDriftRate: 'ENUMERATED'
+     },
+    utran-GANSSReferenceTimeResult: {
+     ganssTimeID: 'INTEGER',
+     set-GANSSReferenceTime: {
+      set-GANSSTimingOfCell: {
+       ms-part: 'INTEGER',
+       ls-part: 'INTEGER'
+       },
+      modeSpecificInfo: {
+       fdd: {
+        referenceIdentity: {
+         primaryScramblingCode: 'INTEGER'
+         }
+        },
+       tdd: {
+        referenceIdentity: 'INTEGER'
+        }
+       },
+      sfn: 'INTEGER',
+      ganss-TODUncertainty: 'INTEGER'
+      }
+     }
+    }
+   },
+  ver: 'BIT STRING',
+  ver2-SUPL-POS-INIT-extension: {
+   multipleLocationIds: [{
+    locationId: {
+     cellInfo: {
+      gsmCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refCI: 'INTEGER',
+       nmr: [{
+        arfcn: 'INTEGER',
+        bsic: 'INTEGER',
+        rxLev: 'INTEGER'
+        }],
+       ta: 'INTEGER'
+       },
+      wcdmaCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refUC: 'INTEGER',
+       frequencyInfo: {
+        modeSpecificInfo: {
+         fdd: {
+          uarfcn-UL: 'INTEGER',
+          uarfcn-DL: 'INTEGER'
+          },
+         tdd: {
+          uarfcn-Nt: 'INTEGER'
+          }
+         }
+        },
+       primaryScramblingCode: 'INTEGER',
+       measuredResultsList: [{
+        frequencyInfo: {
+         modeSpecificInfo: {
+          fdd: {
+           uarfcn-UL: 'INTEGER',
+           uarfcn-DL: 'INTEGER'
+           },
+          tdd: {
+           uarfcn-Nt: 'INTEGER'
+           }
+          }
+         },
+        utra-CarrierRSSI: 'INTEGER',
+        cellMeasuredResultsList: [{
+         cellIdentity: 'INTEGER',
+         modeSpecificInfo: {
+          fdd: {
+           primaryCPICH-Info: {
+            primaryScramblingCode: 'INTEGER'
+            },
+           cpich-Ec-N0: 'INTEGER',
+           cpich-RSCP: 'INTEGER',
+           pathloss: 'INTEGER'
+           },
+          tdd: {
+           cellParametersID: 'INTEGER',
+           proposedTGSN: 'INTEGER',
+           primaryCCPCH-RSCP: 'INTEGER',
+           pathloss: 'INTEGER',
+           timeslotISCP-List: ['INTEGER']
+           }
+          }
+         }]
+        }],
+       cellParametersId: 'INTEGER',
+       timingAdvance: {
+        ta: 'INTEGER',
+        tAResolution: 'ENUMERATED',
+        chipRate: 'ENUMERATED'
+        }
+       },
+      cdmaCell: {
+       refNID: 'INTEGER',
+       refSID: 'INTEGER',
+       refBASEID: 'INTEGER',
+       refBASELAT: 'INTEGER',
+       reBASELONG: 'INTEGER',
+       refREFPN: 'INTEGER',
+       refWeekNumber: 'INTEGER',
+       refSeconds: 'INTEGER'
+       },
+      ver2-CellInfo-extension: {
+       hrpdCell: {
+        refSECTORID: 'BIT STRING',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       umbCell: {
+        refSECTORID: 'BIT STRING',
+        refMCC: 'INTEGER',
+        refMNC: 'INTEGER',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       lteCell: {
+        cellGlobalIdEUTRA: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        physCellId: 'INTEGER',
+        trackingAreaCode: 'BIT STRING',
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        ta: 'INTEGER',
+        measResultListEUTRA: [{
+         physCellId: 'INTEGER',
+         cgi-Info: {
+          cellGlobalId: {
+           plmn-Identity: {
+            mcc: ['INTEGER'],
+            mnc: ['INTEGER']
+            },
+           cellIdentity: 'BIT STRING'
+           },
+          trackingAreaCode: 'BIT STRING'
+          },
+         measResult: {
+          rsrpResult: 'INTEGER',
+          rsrqResult: 'INTEGER',
+          earfcn: 'INTEGER',
+          earfcn-ext: 'INTEGER'
+          }
+         }],
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        },
+       wlanAP: {
+        apMACAddress: 'BIT STRING',
+        apTransmitPower: 'INTEGER',
+        apAntennaGain: 'INTEGER',
+        apSignaltoNoise: 'INTEGER',
+        apDeviceType: 'ENUMERATED',
+        apSignalStrength: 'INTEGER',
+        apChannelFrequency: 'INTEGER',
+        apRoundTripDelay: {
+         rTDValue: 'INTEGER',
+         rTDUnits: 'ENUMERATED',
+         rTDAccuracy: 'INTEGER'
+         },
+        setTransmitPower: 'INTEGER',
+        setAntennaGain: 'INTEGER',
+        setSignaltoNoise: 'INTEGER',
+        setSignalStrength: 'INTEGER',
+        apReportedLocation: {
+         locationEncodingDescriptor: 'ENUMERATED',
+         locationData: {
+          locationAccuracy: 'INTEGER',
+          locationValue: 'OCTET STRING'
+          }
+         },
+        apRepLocation: {
+         lciLocData: {
+          locationDataLCI: {
+           latitudeResolution: 'BIT STRING',
+           latitude: 'BIT STRING',
+           longitudeResolution: 'BIT STRING',
+           longitude: 'BIT STRING',
+           altitudeType: 'BIT STRING',
+           altitudeResolution: 'BIT STRING',
+           altitude: 'BIT STRING',
+           datum: 'BIT STRING'
+           }
+          }
+         },
+        apSignalStrengthDelta: 'INTEGER',
+        apSignaltoNoiseDelta: 'INTEGER',
+        setSignalStrengthDelta: 'INTEGER',
+        setSignaltoNoiseDelta: 'INTEGER',
+        operatingClass: 'INTEGER',
+        apSSID: 'OCTET STRING',
+        apPHYType: 'ENUMERATED',
+        setMACAddress: 'BIT STRING'
+        },
+       wimaxBS: {
+        wimaxBsID: {
+         bsID-MSB: 'BIT STRING',
+         bsID-LSB: 'BIT STRING'
+         },
+        wimaxRTD: {
+         rtd: 'INTEGER',
+         rTDstd: 'INTEGER'
+         },
+        wimaxNMRList: [{
+         wimaxBsID: {
+          bsID-MSB: 'BIT STRING',
+          bsID-LSB: 'BIT STRING'
+          },
+         relDelay: 'INTEGER',
+         relDelaystd: 'INTEGER',
+         rssi: 'INTEGER',
+         rSSIstd: 'INTEGER',
+         bSTxPower: 'INTEGER',
+         cinr: 'INTEGER',
+         cINRstd: 'INTEGER',
+         bSLocation: {
+          locationEncodingDescriptor: 'ENUMERATED',
+          locationData: {
+           locationAccuracy: 'INTEGER',
+           locationValue: 'OCTET STRING'
+           }
+          }
+         }]
+        }
+       }
+      },
+     status: 'ENUMERATED'
+     },
+    relativetimestamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   utran-GPSReferenceTimeResult: {
+    set-GPSTimingOfCell: {
+     ms-part: 'INTEGER',
+     ls-part: 'INTEGER'
+     },
+    modeSpecificInfo: {
+     fdd: {
+      referenceIdentity: {
+       primaryScramblingCode: 'INTEGER'
+       }
+      },
+     tdd: {
+      referenceIdentity: 'INTEGER'
+      }
+     },
+    sfn: 'INTEGER',
+    gpsReferenceTimeUncertainty: 'INTEGER'
+    },
+   utran-GANSSReferenceTimeResult: {
+    ganssTimeID: 'INTEGER',
+    set-GANSSReferenceTime: {
+     set-GANSSTimingOfCell: {
+      ms-part: 'INTEGER',
+      ls-part: 'INTEGER'
+      },
+     modeSpecificInfo: {
+      fdd: {
+       referenceIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        }
+       },
+      tdd: {
+       referenceIdentity: 'INTEGER'
+       }
+      },
+     sfn: 'INTEGER',
+     ganss-TODUncertainty: 'INTEGER'
+     }
+    }
+   }
+  },
+ msSUPLPOS: {
+  posPayLoad: {
+   tia801payload: 'OCTET STRING',
+   rrcPayload: 'OCTET STRING',
+   rrlpPayload: 'OCTET STRING',
+   ver2-PosPayLoad-extension: {
+    lPPPayload: ['OCTET STRING'],
+    tia801Payload: ['OCTET STRING']
+    }
+   },
+  velocity: {
+   horvel: {
+    bearing: 'BIT STRING',
+    horspeed: 'BIT STRING'
+    },
+   horandvervel: {
+    verdirect: 'BIT STRING',
+    bearing: 'BIT STRING',
+    horspeed: 'BIT STRING',
+    verspeed: 'BIT STRING'
+    },
+   horveluncert: {
+    bearing: 'BIT STRING',
+    horspeed: 'BIT STRING',
+    uncertspeed: 'BIT STRING'
+    },
+   horandveruncert: {
+    verdirect: 'BIT STRING',
+    bearing: 'BIT STRING',
+    horspeed: 'BIT STRING',
+    verspeed: 'BIT STRING',
+    horuncertspeed: 'BIT STRING',
+    veruncertspeed: 'BIT STRING'
+    }
+   },
+  ver2-SUPL-POS-extension: {
+   utran-GPSReferenceTimeAssistance: {
+    utran-GPSReferenceTime: {
+     utran-GPSTimingOfCell: {
+      ms-part: 'INTEGER',
+      ls-part: 'INTEGER'
+      },
+     modeSpecificInfo: {
+      fdd: {
+       referenceIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        }
+       },
+      tdd: {
+       referenceIdentity: 'INTEGER'
+       }
+      },
+     sfn: 'INTEGER'
+     },
+    gpsReferenceTimeUncertainty: 'INTEGER',
+    utranGPSDriftRate: 'ENUMERATED'
+    },
+   utran-GPSReferenceTimeResult: {
+    set-GPSTimingOfCell: {
+     ms-part: 'INTEGER',
+     ls-part: 'INTEGER'
+     },
+    modeSpecificInfo: {
+     fdd: {
+      referenceIdentity: {
+       primaryScramblingCode: 'INTEGER'
+       }
+      },
+     tdd: {
+      referenceIdentity: 'INTEGER'
+      }
+     },
+    sfn: 'INTEGER',
+    gpsReferenceTimeUncertainty: 'INTEGER'
+    },
+   utran-GANSSReferenceTimeAssistance: {
+    ganssDay: 'INTEGER',
+    ganssTimeID: 'INTEGER',
+    utran-GANSSReferenceTime: {
+     ganssTOD: 'INTEGER',
+     utran-GANSSTimingOfCell: 'INTEGER',
+     modeSpecificInfo: {
+      fdd: {
+       referenceIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        }
+       },
+      tdd: {
+       referenceIdentity: 'INTEGER'
+       }
+      },
+     sfn: 'INTEGER',
+     ganss-TODUncertainty: 'INTEGER'
+     },
+    utranGANSSDriftRate: 'ENUMERATED'
+    },
+   utran-GANSSReferenceTimeResult: {
+    ganssTimeID: 'INTEGER',
+    set-GANSSReferenceTime: {
+     set-GANSSTimingOfCell: {
+      ms-part: 'INTEGER',
+      ls-part: 'INTEGER'
+      },
+     modeSpecificInfo: {
+      fdd: {
+       referenceIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        }
+       },
+      tdd: {
+       referenceIdentity: 'INTEGER'
+       }
+      },
+     sfn: 'INTEGER',
+     ganss-TODUncertainty: 'INTEGER'
+     }
+    }
+   }
+  },
+ msSUPLEND: {
+  position: {
+   timestamp: 'UTCTime',
+   positionEstimate: {
+    latitudeSign: 'ENUMERATED',
+    latitude: 'INTEGER',
+    longitude: 'INTEGER',
+    uncertainty: {
+     uncertaintySemiMajor: 'INTEGER',
+     uncertaintySemiMinor: 'INTEGER',
+     orientationMajorAxis: 'INTEGER'
+     },
+    confidence: 'INTEGER',
+    altitudeInfo: {
+     altitudeDirection: 'ENUMERATED',
+     altitude: 'INTEGER',
+     altUncertainty: 'INTEGER'
+     }
+    },
+   velocity: {
+    horvel: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING'
+     },
+    horandvervel: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING'
+     },
+    horveluncert: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     uncertspeed: 'BIT STRING'
+     },
+    horandveruncert: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING',
+     horuncertspeed: 'BIT STRING',
+     veruncertspeed: 'BIT STRING'
+     }
+    }
+   },
+  statusCode: 'ENUMERATED',
+  ver: 'BIT STRING',
+  ver2-SUPL-END-extension: {
+   sETCapabilities: {
+    posTechnology: {
+     agpsSETassisted: 'BOOLEAN',
+     agpsSETBased: 'BOOLEAN',
+     autonomousGPS: 'BOOLEAN',
+     aflt: 'BOOLEAN',
+     ecid: 'BOOLEAN',
+     eotd: 'BOOLEAN',
+     otdoa: 'BOOLEAN',
+     ver2-PosTechnology-extension: {
+      gANSSPositionMethods: [{
+       ganssId: 'INTEGER',
+       ganssSBASid: 'BIT STRING',
+       gANSSPositioningMethodTypes: {
+        setAssisted: 'BOOLEAN',
+        setBased: 'BOOLEAN',
+        autonomous: 'BOOLEAN'
+        },
+       gANSSSignals: 'BIT STRING'
+       }]
+      }
+     },
+    prefMethod: 'ENUMERATED',
+    posProtocol: {
+     tia801: 'BOOLEAN',
+     rrlp: 'BOOLEAN',
+     rrc: 'BOOLEAN',
+     ver2-PosProtocol-extension: {
+      lpp: 'BOOLEAN',
+      posProtocolVersionRRLP: {
+       majorVersionField: 'INTEGER',
+       technicalVersionField: 'INTEGER',
+       editorialVersionField: 'INTEGER'
+       },
+      posProtocolVersionRRC: {
+       majorVersionField: 'INTEGER',
+       technicalVersionField: 'INTEGER',
+       editorialVersionField: 'INTEGER'
+       },
+      posProtocolVersionTIA801: [{
+       revisionNumber: 'BIT STRING',
+       pointReleaseNumber: 'INTEGER',
+       internalEditLevel: 'INTEGER'
+       }],
+      posProtocolVersionLPP: {
+       majorVersionField: 'INTEGER',
+       technicalVersionField: 'INTEGER',
+       editorialVersionField: 'INTEGER'
+       },
+      lppe: 'BOOLEAN',
+      posProtocolVersionLPPe: {
+       majorVersionField: 'INTEGER',
+       minorVersionField: 'INTEGER'
+       }
+      }
+     },
+    ver2-SETCapabilities-extension: {
+     serviceCapabilities: {
+      servicesSupported: {
+       periodicTrigger: 'BOOLEAN',
+       areaEventTrigger: 'BOOLEAN'
+       },
+      reportingCapabilities: {
+       minInt: 'INTEGER',
+       maxInt: 'INTEGER',
+       repMode: {
+        realtime: 'BOOLEAN',
+        quasirealtime: 'BOOLEAN',
+        batch: 'BOOLEAN'
+        },
+       batchRepCap: {
+        report-position: 'BOOLEAN',
+        report-measurements: 'BOOLEAN',
+        max-num-positions: 'INTEGER',
+        max-num-measurements: 'INTEGER'
+        }
+       },
+      eventTriggerCapabilities: {
+       geoAreaShapesSupported: {
+        ellipticalArea: 'BOOLEAN',
+        polygonArea: 'BOOLEAN'
+        },
+       maxNumGeoAreaSupported: 'INTEGER',
+       maxAreaIdListSupported: 'INTEGER',
+       maxAreaIdSupportedPerList: 'INTEGER'
+       },
+      sessionCapabilities: {
+       maxNumberTotalSessions: 'INTEGER',
+       maxNumberPeriodicSessions: 'INTEGER',
+       maxNumberTriggeredSessions: 'INTEGER'
+       }
+      },
+     supportedBearers: {
+      gsm: 'BOOLEAN',
+      wcdma: 'BOOLEAN',
+      lte: 'BOOLEAN',
+      cdma: 'BOOLEAN',
+      hprd: 'BOOLEAN',
+      umb: 'BOOLEAN',
+      wlan: 'BOOLEAN',
+      wiMAX: 'BOOLEAN'
+      }
+     }
+    }
+   }
+  },
+ msSUPLAUTHREQ: {
+  ver: 'BIT STRING',
+  sETCapabilities: {
+   posTechnology: {
+    agpsSETassisted: 'BOOLEAN',
+    agpsSETBased: 'BOOLEAN',
+    autonomousGPS: 'BOOLEAN',
+    aflt: 'BOOLEAN',
+    ecid: 'BOOLEAN',
+    eotd: 'BOOLEAN',
+    otdoa: 'BOOLEAN',
+    ver2-PosTechnology-extension: {
+     gANSSPositionMethods: [{
+      ganssId: 'INTEGER',
+      ganssSBASid: 'BIT STRING',
+      gANSSPositioningMethodTypes: {
+       setAssisted: 'BOOLEAN',
+       setBased: 'BOOLEAN',
+       autonomous: 'BOOLEAN'
+       },
+      gANSSSignals: 'BIT STRING'
+      }]
+     }
+    },
+   prefMethod: 'ENUMERATED',
+   posProtocol: {
+    tia801: 'BOOLEAN',
+    rrlp: 'BOOLEAN',
+    rrc: 'BOOLEAN',
+    ver2-PosProtocol-extension: {
+     lpp: 'BOOLEAN',
+     posProtocolVersionRRLP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionRRC: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionTIA801: [{
+      revisionNumber: 'BIT STRING',
+      pointReleaseNumber: 'INTEGER',
+      internalEditLevel: 'INTEGER'
+      }],
+     posProtocolVersionLPP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     lppe: 'BOOLEAN',
+     posProtocolVersionLPPe: {
+      majorVersionField: 'INTEGER',
+      minorVersionField: 'INTEGER'
+      }
+     }
+    },
+   ver2-SETCapabilities-extension: {
+    serviceCapabilities: {
+     servicesSupported: {
+      periodicTrigger: 'BOOLEAN',
+      areaEventTrigger: 'BOOLEAN'
+      },
+     reportingCapabilities: {
+      minInt: 'INTEGER',
+      maxInt: 'INTEGER',
+      repMode: {
+       realtime: 'BOOLEAN',
+       quasirealtime: 'BOOLEAN',
+       batch: 'BOOLEAN'
+       },
+      batchRepCap: {
+       report-position: 'BOOLEAN',
+       report-measurements: 'BOOLEAN',
+       max-num-positions: 'INTEGER',
+       max-num-measurements: 'INTEGER'
+       }
+      },
+     eventTriggerCapabilities: {
+      geoAreaShapesSupported: {
+       ellipticalArea: 'BOOLEAN',
+       polygonArea: 'BOOLEAN'
+       },
+      maxNumGeoAreaSupported: 'INTEGER',
+      maxAreaIdListSupported: 'INTEGER',
+      maxAreaIdSupportedPerList: 'INTEGER'
+      },
+     sessionCapabilities: {
+      maxNumberTotalSessions: 'INTEGER',
+      maxNumberPeriodicSessions: 'INTEGER',
+      maxNumberTriggeredSessions: 'INTEGER'
+      }
+     },
+    supportedBearers: {
+     gsm: 'BOOLEAN',
+     wcdma: 'BOOLEAN',
+     lte: 'BOOLEAN',
+     cdma: 'BOOLEAN',
+     hprd: 'BOOLEAN',
+     umb: 'BOOLEAN',
+     wlan: 'BOOLEAN',
+     wiMAX: 'BOOLEAN'
+     }
+    }
+   }
+  },
+ msSUPLAUTHRESP: {
+  sPCSETKey: 'BIT STRING',
+  spctid: {
+   rand: 'BIT STRING',
+   slpFQDN: 'VisibleString'
+   },
+  sPCSETKeylifetime: 'INTEGER'
+  },
+ msSUPLTRIGGEREDSTART: {
+  sETCapabilities: {
+   posTechnology: {
+    agpsSETassisted: 'BOOLEAN',
+    agpsSETBased: 'BOOLEAN',
+    autonomousGPS: 'BOOLEAN',
+    aflt: 'BOOLEAN',
+    ecid: 'BOOLEAN',
+    eotd: 'BOOLEAN',
+    otdoa: 'BOOLEAN',
+    ver2-PosTechnology-extension: {
+     gANSSPositionMethods: [{
+      ganssId: 'INTEGER',
+      ganssSBASid: 'BIT STRING',
+      gANSSPositioningMethodTypes: {
+       setAssisted: 'BOOLEAN',
+       setBased: 'BOOLEAN',
+       autonomous: 'BOOLEAN'
+       },
+      gANSSSignals: 'BIT STRING'
+      }]
+     }
+    },
+   prefMethod: 'ENUMERATED',
+   posProtocol: {
+    tia801: 'BOOLEAN',
+    rrlp: 'BOOLEAN',
+    rrc: 'BOOLEAN',
+    ver2-PosProtocol-extension: {
+     lpp: 'BOOLEAN',
+     posProtocolVersionRRLP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionRRC: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionTIA801: [{
+      revisionNumber: 'BIT STRING',
+      pointReleaseNumber: 'INTEGER',
+      internalEditLevel: 'INTEGER'
+      }],
+     posProtocolVersionLPP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     lppe: 'BOOLEAN',
+     posProtocolVersionLPPe: {
+      majorVersionField: 'INTEGER',
+      minorVersionField: 'INTEGER'
+      }
+     }
+    },
+   ver2-SETCapabilities-extension: {
+    serviceCapabilities: {
+     servicesSupported: {
+      periodicTrigger: 'BOOLEAN',
+      areaEventTrigger: 'BOOLEAN'
+      },
+     reportingCapabilities: {
+      minInt: 'INTEGER',
+      maxInt: 'INTEGER',
+      repMode: {
+       realtime: 'BOOLEAN',
+       quasirealtime: 'BOOLEAN',
+       batch: 'BOOLEAN'
+       },
+      batchRepCap: {
+       report-position: 'BOOLEAN',
+       report-measurements: 'BOOLEAN',
+       max-num-positions: 'INTEGER',
+       max-num-measurements: 'INTEGER'
+       }
+      },
+     eventTriggerCapabilities: {
+      geoAreaShapesSupported: {
+       ellipticalArea: 'BOOLEAN',
+       polygonArea: 'BOOLEAN'
+       },
+      maxNumGeoAreaSupported: 'INTEGER',
+      maxAreaIdListSupported: 'INTEGER',
+      maxAreaIdSupportedPerList: 'INTEGER'
+      },
+     sessionCapabilities: {
+      maxNumberTotalSessions: 'INTEGER',
+      maxNumberPeriodicSessions: 'INTEGER',
+      maxNumberTriggeredSessions: 'INTEGER'
+      }
+     },
+    supportedBearers: {
+     gsm: 'BOOLEAN',
+     wcdma: 'BOOLEAN',
+     lte: 'BOOLEAN',
+     cdma: 'BOOLEAN',
+     hprd: 'BOOLEAN',
+     umb: 'BOOLEAN',
+     wlan: 'BOOLEAN',
+     wiMAX: 'BOOLEAN'
+     }
+    }
+   },
+  locationId: {
+   cellInfo: {
+    gsmCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refLAC: 'INTEGER',
+     refCI: 'INTEGER',
+     nmr: [{
+      arfcn: 'INTEGER',
+      bsic: 'INTEGER',
+      rxLev: 'INTEGER'
+      }],
+     ta: 'INTEGER'
+     },
+    wcdmaCell: {
+     refMCC: 'INTEGER',
+     refMNC: 'INTEGER',
+     refUC: 'INTEGER',
+     frequencyInfo: {
+      modeSpecificInfo: {
+       fdd: {
+        uarfcn-UL: 'INTEGER',
+        uarfcn-DL: 'INTEGER'
+        },
+       tdd: {
+        uarfcn-Nt: 'INTEGER'
+        }
+       }
+      },
+     primaryScramblingCode: 'INTEGER',
+     measuredResultsList: [{
+      frequencyInfo: {
+       modeSpecificInfo: {
+        fdd: {
+         uarfcn-UL: 'INTEGER',
+         uarfcn-DL: 'INTEGER'
+         },
+        tdd: {
+         uarfcn-Nt: 'INTEGER'
+         }
+        }
+       },
+      utra-CarrierRSSI: 'INTEGER',
+      cellMeasuredResultsList: [{
+       cellIdentity: 'INTEGER',
+       modeSpecificInfo: {
+        fdd: {
+         primaryCPICH-Info: {
+          primaryScramblingCode: 'INTEGER'
+          },
+         cpich-Ec-N0: 'INTEGER',
+         cpich-RSCP: 'INTEGER',
+         pathloss: 'INTEGER'
+         },
+        tdd: {
+         cellParametersID: 'INTEGER',
+         proposedTGSN: 'INTEGER',
+         primaryCCPCH-RSCP: 'INTEGER',
+         pathloss: 'INTEGER',
+         timeslotISCP-List: ['INTEGER']
+         }
+        }
+       }]
+      }],
+     cellParametersId: 'INTEGER',
+     timingAdvance: {
+      ta: 'INTEGER',
+      tAResolution: 'ENUMERATED',
+      chipRate: 'ENUMERATED'
+      }
+     },
+    cdmaCell: {
+     refNID: 'INTEGER',
+     refSID: 'INTEGER',
+     refBASEID: 'INTEGER',
+     refBASELAT: 'INTEGER',
+     reBASELONG: 'INTEGER',
+     refREFPN: 'INTEGER',
+     refWeekNumber: 'INTEGER',
+     refSeconds: 'INTEGER'
+     },
+    ver2-CellInfo-extension: {
+     hrpdCell: {
+      refSECTORID: 'BIT STRING',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     umbCell: {
+      refSECTORID: 'BIT STRING',
+      refMCC: 'INTEGER',
+      refMNC: 'INTEGER',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     lteCell: {
+      cellGlobalIdEUTRA: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       cellIdentity: 'BIT STRING'
+       },
+      physCellId: 'INTEGER',
+      trackingAreaCode: 'BIT STRING',
+      rsrpResult: 'INTEGER',
+      rsrqResult: 'INTEGER',
+      ta: 'INTEGER',
+      measResultListEUTRA: [{
+       physCellId: 'INTEGER',
+       cgi-Info: {
+        cellGlobalId: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        trackingAreaCode: 'BIT STRING'
+        },
+       measResult: {
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        }
+       }],
+      earfcn: 'INTEGER',
+      earfcn-ext: 'INTEGER'
+      },
+     wlanAP: {
+      apMACAddress: 'BIT STRING',
+      apTransmitPower: 'INTEGER',
+      apAntennaGain: 'INTEGER',
+      apSignaltoNoise: 'INTEGER',
+      apDeviceType: 'ENUMERATED',
+      apSignalStrength: 'INTEGER',
+      apChannelFrequency: 'INTEGER',
+      apRoundTripDelay: {
+       rTDValue: 'INTEGER',
+       rTDUnits: 'ENUMERATED',
+       rTDAccuracy: 'INTEGER'
+       },
+      setTransmitPower: 'INTEGER',
+      setAntennaGain: 'INTEGER',
+      setSignaltoNoise: 'INTEGER',
+      setSignalStrength: 'INTEGER',
+      apReportedLocation: {
+       locationEncodingDescriptor: 'ENUMERATED',
+       locationData: {
+        locationAccuracy: 'INTEGER',
+        locationValue: 'OCTET STRING'
+        }
+       },
+      apRepLocation: {
+       lciLocData: {
+        locationDataLCI: {
+         latitudeResolution: 'BIT STRING',
+         latitude: 'BIT STRING',
+         longitudeResolution: 'BIT STRING',
+         longitude: 'BIT STRING',
+         altitudeType: 'BIT STRING',
+         altitudeResolution: 'BIT STRING',
+         altitude: 'BIT STRING',
+         datum: 'BIT STRING'
+         }
+        }
+       },
+      apSignalStrengthDelta: 'INTEGER',
+      apSignaltoNoiseDelta: 'INTEGER',
+      setSignalStrengthDelta: 'INTEGER',
+      setSignaltoNoiseDelta: 'INTEGER',
+      operatingClass: 'INTEGER',
+      apSSID: 'OCTET STRING',
+      apPHYType: 'ENUMERATED',
+      setMACAddress: 'BIT STRING'
+      },
+     wimaxBS: {
+      wimaxBsID: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       },
+      wimaxRTD: {
+       rtd: 'INTEGER',
+       rTDstd: 'INTEGER'
+       },
+      wimaxNMRList: [{
+       wimaxBsID: {
+        bsID-MSB: 'BIT STRING',
+        bsID-LSB: 'BIT STRING'
+        },
+       relDelay: 'INTEGER',
+       relDelaystd: 'INTEGER',
+       rssi: 'INTEGER',
+       rSSIstd: 'INTEGER',
+       bSTxPower: 'INTEGER',
+       cinr: 'INTEGER',
+       cINRstd: 'INTEGER',
+       bSLocation: {
+        locationEncodingDescriptor: 'ENUMERATED',
+        locationData: {
+         locationAccuracy: 'INTEGER',
+         locationValue: 'OCTET STRING'
+         }
+        }
+       }]
+      }
+     }
+    },
+   status: 'ENUMERATED'
+   },
+  ver: 'BIT STRING',
+  qoP: {
+   horacc: 'INTEGER',
+   veracc: 'INTEGER',
+   maxLocAge: 'INTEGER',
+   delay: 'INTEGER'
+   },
+  multipleLocationIds: [{
+   locationId: {
+    cellInfo: {
+     gsmCell: {
+      refMCC: 'INTEGER',
+      refMNC: 'INTEGER',
+      refLAC: 'INTEGER',
+      refCI: 'INTEGER',
+      nmr: [{
+       arfcn: 'INTEGER',
+       bsic: 'INTEGER',
+       rxLev: 'INTEGER'
+       }],
+      ta: 'INTEGER'
+      },
+     wcdmaCell: {
+      refMCC: 'INTEGER',
+      refMNC: 'INTEGER',
+      refUC: 'INTEGER',
+      frequencyInfo: {
+       modeSpecificInfo: {
+        fdd: {
+         uarfcn-UL: 'INTEGER',
+         uarfcn-DL: 'INTEGER'
+         },
+        tdd: {
+         uarfcn-Nt: 'INTEGER'
+         }
+        }
+       },
+      primaryScramblingCode: 'INTEGER',
+      measuredResultsList: [{
+       frequencyInfo: {
+        modeSpecificInfo: {
+         fdd: {
+          uarfcn-UL: 'INTEGER',
+          uarfcn-DL: 'INTEGER'
+          },
+         tdd: {
+          uarfcn-Nt: 'INTEGER'
+          }
+         }
+        },
+       utra-CarrierRSSI: 'INTEGER',
+       cellMeasuredResultsList: [{
+        cellIdentity: 'INTEGER',
+        modeSpecificInfo: {
+         fdd: {
+          primaryCPICH-Info: {
+           primaryScramblingCode: 'INTEGER'
+           },
+          cpich-Ec-N0: 'INTEGER',
+          cpich-RSCP: 'INTEGER',
+          pathloss: 'INTEGER'
+          },
+         tdd: {
+          cellParametersID: 'INTEGER',
+          proposedTGSN: 'INTEGER',
+          primaryCCPCH-RSCP: 'INTEGER',
+          pathloss: 'INTEGER',
+          timeslotISCP-List: ['INTEGER']
+          }
+         }
+        }]
+       }],
+      cellParametersId: 'INTEGER',
+      timingAdvance: {
+       ta: 'INTEGER',
+       tAResolution: 'ENUMERATED',
+       chipRate: 'ENUMERATED'
+       }
+      },
+     cdmaCell: {
+      refNID: 'INTEGER',
+      refSID: 'INTEGER',
+      refBASEID: 'INTEGER',
+      refBASELAT: 'INTEGER',
+      reBASELONG: 'INTEGER',
+      refREFPN: 'INTEGER',
+      refWeekNumber: 'INTEGER',
+      refSeconds: 'INTEGER'
+      },
+     ver2-CellInfo-extension: {
+      hrpdCell: {
+       refSECTORID: 'BIT STRING',
+       refBASELAT: 'INTEGER',
+       reBASELONG: 'INTEGER',
+       refWeekNumber: 'INTEGER',
+       refSeconds: 'INTEGER'
+       },
+      umbCell: {
+       refSECTORID: 'BIT STRING',
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refBASELAT: 'INTEGER',
+       reBASELONG: 'INTEGER',
+       refWeekNumber: 'INTEGER',
+       refSeconds: 'INTEGER'
+       },
+      lteCell: {
+       cellGlobalIdEUTRA: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: 'BIT STRING'
+        },
+       physCellId: 'INTEGER',
+       trackingAreaCode: 'BIT STRING',
+       rsrpResult: 'INTEGER',
+       rsrqResult: 'INTEGER',
+       ta: 'INTEGER',
+       measResultListEUTRA: [{
+        physCellId: 'INTEGER',
+        cgi-Info: {
+         cellGlobalId: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          cellIdentity: 'BIT STRING'
+          },
+         trackingAreaCode: 'BIT STRING'
+         },
+        measResult: {
+         rsrpResult: 'INTEGER',
+         rsrqResult: 'INTEGER',
+         earfcn: 'INTEGER',
+         earfcn-ext: 'INTEGER'
+         }
+        }],
+       earfcn: 'INTEGER',
+       earfcn-ext: 'INTEGER'
+       },
+      wlanAP: {
+       apMACAddress: 'BIT STRING',
+       apTransmitPower: 'INTEGER',
+       apAntennaGain: 'INTEGER',
+       apSignaltoNoise: 'INTEGER',
+       apDeviceType: 'ENUMERATED',
+       apSignalStrength: 'INTEGER',
+       apChannelFrequency: 'INTEGER',
+       apRoundTripDelay: {
+        rTDValue: 'INTEGER',
+        rTDUnits: 'ENUMERATED',
+        rTDAccuracy: 'INTEGER'
+        },
+       setTransmitPower: 'INTEGER',
+       setAntennaGain: 'INTEGER',
+       setSignaltoNoise: 'INTEGER',
+       setSignalStrength: 'INTEGER',
+       apReportedLocation: {
+        locationEncodingDescriptor: 'ENUMERATED',
+        locationData: {
+         locationAccuracy: 'INTEGER',
+         locationValue: 'OCTET STRING'
+         }
+        },
+       apRepLocation: {
+        lciLocData: {
+         locationDataLCI: {
+          latitudeResolution: 'BIT STRING',
+          latitude: 'BIT STRING',
+          longitudeResolution: 'BIT STRING',
+          longitude: 'BIT STRING',
+          altitudeType: 'BIT STRING',
+          altitudeResolution: 'BIT STRING',
+          altitude: 'BIT STRING',
+          datum: 'BIT STRING'
+          }
+         }
+        },
+       apSignalStrengthDelta: 'INTEGER',
+       apSignaltoNoiseDelta: 'INTEGER',
+       setSignalStrengthDelta: 'INTEGER',
+       setSignaltoNoiseDelta: 'INTEGER',
+       operatingClass: 'INTEGER',
+       apSSID: 'OCTET STRING',
+       apPHYType: 'ENUMERATED',
+       setMACAddress: 'BIT STRING'
+       },
+      wimaxBS: {
+       wimaxBsID: {
+        bsID-MSB: 'BIT STRING',
+        bsID-LSB: 'BIT STRING'
+        },
+       wimaxRTD: {
+        rtd: 'INTEGER',
+        rTDstd: 'INTEGER'
+        },
+       wimaxNMRList: [{
+        wimaxBsID: {
+         bsID-MSB: 'BIT STRING',
+         bsID-LSB: 'BIT STRING'
+         },
+        relDelay: 'INTEGER',
+        relDelaystd: 'INTEGER',
+        rssi: 'INTEGER',
+        rSSIstd: 'INTEGER',
+        bSTxPower: 'INTEGER',
+        cinr: 'INTEGER',
+        cINRstd: 'INTEGER',
+        bSLocation: {
+         locationEncodingDescriptor: 'ENUMERATED',
+         locationData: {
+          locationAccuracy: 'INTEGER',
+          locationValue: 'OCTET STRING'
+          }
+         }
+        }]
+       }
+      }
+     },
+    status: 'ENUMERATED'
+    },
+   relativetimestamp: 'INTEGER',
+   servingFlag: 'BOOLEAN'
+   }],
+  thirdParty: [{
+   logicalName: 'IA5String',
+   msisdn: 'OCTET STRING',
+   emailaddr: 'IA5String',
+   sip-uri: 'VisibleString',
+   ims-public-identity: 'VisibleString',
+   min: 'BIT STRING',
+   mdn: 'OCTET STRING',
+   uri: 'VisibleString'
+   }],
+  applicationID: {
+   appProvider: 'IA5String',
+   appName: 'IA5String',
+   appVersion: 'IA5String'
+   },
+  triggerType: 'ENUMERATED',
+  triggerParams: {
+   periodicParams: {
+    numberOfFixes: 'INTEGER',
+    intervalBetweenFixes: 'INTEGER',
+    startTime: 'INTEGER'
+    },
+   areaEventParams: {
+    areaEventType: 'ENUMERATED',
+    locationEstimate: 'BOOLEAN',
+    repeatedReportingParams: {
+     minimumIntervalTime: 'INTEGER',
+     maximumNumberOfReports: 'INTEGER'
+     },
+    startTime: 'INTEGER',
+    stopTime: 'INTEGER',
+    geographicTargetAreaList: [{
+     circularArea: {
+      coordinate: {
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       },
+      radius: 'INTEGER',
+      radius-min: 'INTEGER',
+      radius-max: 'INTEGER'
+      },
+     ellipticalArea: {
+      coordinate: {
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       },
+      semiMajor: 'INTEGER',
+      semiMajor-min: 'INTEGER',
+      semiMajor-max: 'INTEGER',
+      semiMinor: 'INTEGER',
+      semiMinor-min: 'INTEGER',
+      semiMinor-max: 'INTEGER',
+      angle: 'INTEGER'
+      },
+     polygonArea: {
+      polygonDescription: [{
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       }],
+      polygonHysteresis: 'INTEGER'
+      }
+     }],
+    areaIdLists: [{
+     areaIdSet: [{
+      gSMAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refCI: 'INTEGER'
+       },
+      wCDMAAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refUC: 'INTEGER'
+       },
+      cDMAAreaId: {
+       refSID: 'INTEGER',
+       refNID: 'INTEGER',
+       refBASEID: 'INTEGER'
+       },
+      hRPDAreaId: {
+       refSECTORID: 'BIT STRING'
+       },
+      uMBAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refSECTORID: 'BIT STRING'
+       },
+      lTEAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refCI: 'BIT STRING'
+       },
+      wLANAreaId: {
+       apMACAddress: 'BIT STRING'
+       },
+      wiMAXAreaId: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       }
+      }],
+     areaIdSetType: 'ENUMERATED',
+     geoAreaMappingList: ['INTEGER']
+     }]
+    }
+   },
+  position: {
+   timestamp: 'UTCTime',
+   positionEstimate: {
+    latitudeSign: 'ENUMERATED',
+    latitude: 'INTEGER',
+    longitude: 'INTEGER',
+    uncertainty: {
+     uncertaintySemiMajor: 'INTEGER',
+     uncertaintySemiMinor: 'INTEGER',
+     orientationMajorAxis: 'INTEGER'
+     },
+    confidence: 'INTEGER',
+    altitudeInfo: {
+     altitudeDirection: 'ENUMERATED',
+     altitude: 'INTEGER',
+     altUncertainty: 'INTEGER'
+     }
+    },
+   velocity: {
+    horvel: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING'
+     },
+    horandvervel: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING'
+     },
+    horveluncert: {
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     uncertspeed: 'BIT STRING'
+     },
+    horandveruncert: {
+     verdirect: 'BIT STRING',
+     bearing: 'BIT STRING',
+     horspeed: 'BIT STRING',
+     verspeed: 'BIT STRING',
+     horuncertspeed: 'BIT STRING',
+     veruncertspeed: 'BIT STRING'
+     }
+    }
+   },
+  reportingCap: {
+   minInt: 'INTEGER',
+   maxInt: 'INTEGER',
+   repMode: {
+    realtime: 'BOOLEAN',
+    quasirealtime: 'BOOLEAN',
+    batch: 'BOOLEAN'
+    },
+   batchRepCap: {
+    report-position: 'BOOLEAN',
+    report-measurements: 'BOOLEAN',
+    max-num-positions: 'INTEGER',
+    max-num-measurements: 'INTEGER'
+    }
+   },
+  causeCode: 'ENUMERATED'
+  },
+ msSUPLTRIGGEREDRESPONSE: {
+  posMethod: 'ENUMERATED',
+  triggerParams: {
+   periodicParams: {
+    numberOfFixes: 'INTEGER',
+    intervalBetweenFixes: 'INTEGER',
+    startTime: 'INTEGER'
+    },
+   areaEventParams: {
+    areaEventType: 'ENUMERATED',
+    locationEstimate: 'BOOLEAN',
+    repeatedReportingParams: {
+     minimumIntervalTime: 'INTEGER',
+     maximumNumberOfReports: 'INTEGER'
+     },
+    startTime: 'INTEGER',
+    stopTime: 'INTEGER',
+    geographicTargetAreaList: [{
+     circularArea: {
+      coordinate: {
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       },
+      radius: 'INTEGER',
+      radius-min: 'INTEGER',
+      radius-max: 'INTEGER'
+      },
+     ellipticalArea: {
+      coordinate: {
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       },
+      semiMajor: 'INTEGER',
+      semiMajor-min: 'INTEGER',
+      semiMajor-max: 'INTEGER',
+      semiMinor: 'INTEGER',
+      semiMinor-min: 'INTEGER',
+      semiMinor-max: 'INTEGER',
+      angle: 'INTEGER'
+      },
+     polygonArea: {
+      polygonDescription: [{
+       latitudeSign: 'ENUMERATED',
+       latitude: 'INTEGER',
+       longitude: 'INTEGER'
+       }],
+      polygonHysteresis: 'INTEGER'
+      }
+     }],
+    areaIdLists: [{
+     areaIdSet: [{
+      gSMAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refCI: 'INTEGER'
+       },
+      wCDMAAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refUC: 'INTEGER'
+       },
+      cDMAAreaId: {
+       refSID: 'INTEGER',
+       refNID: 'INTEGER',
+       refBASEID: 'INTEGER'
+       },
+      hRPDAreaId: {
+       refSECTORID: 'BIT STRING'
+       },
+      uMBAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refSECTORID: 'BIT STRING'
+       },
+      lTEAreaId: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refCI: 'BIT STRING'
+       },
+      wLANAreaId: {
+       apMACAddress: 'BIT STRING'
+       },
+      wiMAXAreaId: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       }
+      }],
+     areaIdSetType: 'ENUMERATED',
+     geoAreaMappingList: ['INTEGER']
+     }]
+    }
+   },
+  sLPAddress: {
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    },
+   fqdn: 'VisibleString'
+   },
+  supportedNetworkInformation: {
+   wlan: 'BOOLEAN',
+   supportedWLANInfo: {
+    apTP: 'BOOLEAN',
+    apAG: 'BOOLEAN',
+    apSN: 'BOOLEAN',
+    apDevType: 'BOOLEAN',
+    apRSSI: 'BOOLEAN',
+    apChanFreq: 'BOOLEAN',
+    apRTD: 'BOOLEAN',
+    setTP: 'BOOLEAN',
+    setAG: 'BOOLEAN',
+    setSN: 'BOOLEAN',
+    setRSSI: 'BOOLEAN',
+    apRepLoc: 'BOOLEAN'
+    },
+   supportedWLANApsList: {
+    supportedWLANApDataList: [{
+     apMACAddress: 'BIT STRING',
+     apDevType: 'ENUMERATED'
+     }],
+    supportedWLANapsChannel11a: {
+     ch34: 'BOOLEAN',
+     ch36: 'BOOLEAN',
+     ch38: 'BOOLEAN',
+     ch40: 'BOOLEAN',
+     ch42: 'BOOLEAN',
+     ch44: 'BOOLEAN',
+     ch46: 'BOOLEAN',
+     ch48: 'BOOLEAN',
+     ch52: 'BOOLEAN',
+     ch56: 'BOOLEAN',
+     ch60: 'BOOLEAN',
+     ch64: 'BOOLEAN',
+     ch149: 'BOOLEAN',
+     ch153: 'BOOLEAN',
+     ch157: 'BOOLEAN',
+     ch161: 'BOOLEAN'
+     },
+    supportedWLANapsChannel11bg: {
+     ch1: 'BOOLEAN',
+     ch2: 'BOOLEAN',
+     ch3: 'BOOLEAN',
+     ch4: 'BOOLEAN',
+     ch5: 'BOOLEAN',
+     ch6: 'BOOLEAN',
+     ch7: 'BOOLEAN',
+     ch8: 'BOOLEAN',
+     ch9: 'BOOLEAN',
+     ch10: 'BOOLEAN',
+     ch11: 'BOOLEAN',
+     ch12: 'BOOLEAN',
+     ch13: 'BOOLEAN',
+     ch14: 'BOOLEAN'
+     }
+    },
+   gsm: 'BOOLEAN',
+   wcdma: 'BOOLEAN',
+   supportedWCDMAInfo: {
+    mrl: 'BOOLEAN'
+    },
+   cdma: 'BOOLEAN',
+   hrdp: 'BOOLEAN',
+   umb: 'BOOLEAN',
+   lte: 'BOOLEAN',
+   wimax: 'BOOLEAN',
+   historic: 'BOOLEAN',
+   nonServing: 'BOOLEAN',
+   uTRANGPSReferenceTime: 'BOOLEAN',
+   uTRANGANSSReferenceTime: 'BOOLEAN'
+   },
+  reportingMode: {
+   repMode: 'ENUMERATED',
+   batchRepConditions: {
+    num-interval: 'INTEGER',
+    num-minutes: 'INTEGER',
+    endofsession: 'NULL'
+    },
+   batchRepType: {
+    reportPosition: 'BOOLEAN',
+    reportMeasurements: 'BOOLEAN',
+    intermediateReports: 'BOOLEAN',
+    discardOldest: 'BOOLEAN'
+    }
+   },
+  sPCSETKey: 'BIT STRING',
+  spctid: {
+   rand: 'BIT STRING',
+   slpFQDN: 'VisibleString'
+   },
+  sPCSETKeylifetime: 'INTEGER',
+  gnssPosTechnology: {
+   gps: 'BOOLEAN',
+   galileo: 'BOOLEAN',
+   sbas: 'BOOLEAN',
+   modernized-gps: 'BOOLEAN',
+   qzss: 'BOOLEAN',
+   glonass: 'BOOLEAN',
+   bds: 'BOOLEAN'
+   }
+  },
+ msSUPLTRIGGEREDSTOP: {
+  statusCode: 'ENUMERATED'
+  },
+ msSUPLNOTIFY: {
+  notification: {
+   notificationType: 'ENUMERATED',
+   encodingType: 'ENUMERATED',
+   requestorId: 'OCTET STRING',
+   requestorIdType: 'ENUMERATED',
+   clientName: 'OCTET STRING',
+   clientNameType: 'ENUMERATED',
+   ver2-Notification-extension: {
+    emergencyCallLocation: 'NULL'
+    }
+   }
+  },
+ msSUPLNOTIFYRESPONSE: {
+  notificationResponse: 'ENUMERATED'
+  },
+ msSUPLSETINIT: {
+  targetSETID: {
+   msisdn: 'OCTET STRING',
+   mdn: 'OCTET STRING',
+   min: 'BIT STRING',
+   imsi: 'OCTET STRING',
+   nai: 'IA5String',
+   iPAddress: {
+    ipv4Address: 'OCTET STRING',
+    ipv6Address: 'OCTET STRING'
+    }
+   },
+  qoP: {
+   horacc: 'INTEGER',
+   veracc: 'INTEGER',
+   maxLocAge: 'INTEGER',
+   delay: 'INTEGER'
+   },
+  applicationID: {
+   appProvider: 'IA5String',
+   appName: 'IA5String',
+   appVersion: 'IA5String'
+   }
+  },
+ msSUPLREPORT: {
+  sessionList: [{
+   sessionID: {
+    setSessionID: {
+     sessionId: 'INTEGER',
+     setId: {
+      msisdn: 'OCTET STRING',
+      mdn: 'OCTET STRING',
+      min: 'BIT STRING',
+      imsi: 'OCTET STRING',
+      nai: 'IA5String',
+      iPAddress: {
+       ipv4Address: 'OCTET STRING',
+       ipv6Address: 'OCTET STRING'
+       }
+      }
+     },
+    slpSessionID: {
+     sessionID: 'OCTET STRING',
+     slpId: {
+      iPAddress: {
+       ipv4Address: 'OCTET STRING',
+       ipv6Address: 'OCTET STRING'
+       },
+      fqdn: 'VisibleString'
+      }
+     }
+    }
+   }],
+  sETCapabilities: {
+   posTechnology: {
+    agpsSETassisted: 'BOOLEAN',
+    agpsSETBased: 'BOOLEAN',
+    autonomousGPS: 'BOOLEAN',
+    aflt: 'BOOLEAN',
+    ecid: 'BOOLEAN',
+    eotd: 'BOOLEAN',
+    otdoa: 'BOOLEAN',
+    ver2-PosTechnology-extension: {
+     gANSSPositionMethods: [{
+      ganssId: 'INTEGER',
+      ganssSBASid: 'BIT STRING',
+      gANSSPositioningMethodTypes: {
+       setAssisted: 'BOOLEAN',
+       setBased: 'BOOLEAN',
+       autonomous: 'BOOLEAN'
+       },
+      gANSSSignals: 'BIT STRING'
+      }]
+     }
+    },
+   prefMethod: 'ENUMERATED',
+   posProtocol: {
+    tia801: 'BOOLEAN',
+    rrlp: 'BOOLEAN',
+    rrc: 'BOOLEAN',
+    ver2-PosProtocol-extension: {
+     lpp: 'BOOLEAN',
+     posProtocolVersionRRLP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionRRC: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     posProtocolVersionTIA801: [{
+      revisionNumber: 'BIT STRING',
+      pointReleaseNumber: 'INTEGER',
+      internalEditLevel: 'INTEGER'
+      }],
+     posProtocolVersionLPP: {
+      majorVersionField: 'INTEGER',
+      technicalVersionField: 'INTEGER',
+      editorialVersionField: 'INTEGER'
+      },
+     lppe: 'BOOLEAN',
+     posProtocolVersionLPPe: {
+      majorVersionField: 'INTEGER',
+      minorVersionField: 'INTEGER'
+      }
+     }
+    },
+   ver2-SETCapabilities-extension: {
+    serviceCapabilities: {
+     servicesSupported: {
+      periodicTrigger: 'BOOLEAN',
+      areaEventTrigger: 'BOOLEAN'
+      },
+     reportingCapabilities: {
+      minInt: 'INTEGER',
+      maxInt: 'INTEGER',
+      repMode: {
+       realtime: 'BOOLEAN',
+       quasirealtime: 'BOOLEAN',
+       batch: 'BOOLEAN'
+       },
+      batchRepCap: {
+       report-position: 'BOOLEAN',
+       report-measurements: 'BOOLEAN',
+       max-num-positions: 'INTEGER',
+       max-num-measurements: 'INTEGER'
+       }
+      },
+     eventTriggerCapabilities: {
+      geoAreaShapesSupported: {
+       ellipticalArea: 'BOOLEAN',
+       polygonArea: 'BOOLEAN'
+       },
+      maxNumGeoAreaSupported: 'INTEGER',
+      maxAreaIdListSupported: 'INTEGER',
+      maxAreaIdSupportedPerList: 'INTEGER'
+      },
+     sessionCapabilities: {
+      maxNumberTotalSessions: 'INTEGER',
+      maxNumberPeriodicSessions: 'INTEGER',
+      maxNumberTriggeredSessions: 'INTEGER'
+      }
+     },
+    supportedBearers: {
+     gsm: 'BOOLEAN',
+     wcdma: 'BOOLEAN',
+     lte: 'BOOLEAN',
+     cdma: 'BOOLEAN',
+     hprd: 'BOOLEAN',
+     umb: 'BOOLEAN',
+     wlan: 'BOOLEAN',
+     wiMAX: 'BOOLEAN'
+     }
+    }
+   },
+  reportDataList: [{
+   positionData: {
+    position: {
+     timestamp: 'UTCTime',
+     positionEstimate: {
+      latitudeSign: 'ENUMERATED',
+      latitude: 'INTEGER',
+      longitude: 'INTEGER',
+      uncertainty: {
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER'
+       },
+      confidence: 'INTEGER',
+      altitudeInfo: {
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER',
+       altUncertainty: 'INTEGER'
+       }
+      },
+     velocity: {
+      horvel: {
+       bearing: 'BIT STRING',
+       horspeed: 'BIT STRING'
+       },
+      horandvervel: {
+       verdirect: 'BIT STRING',
+       bearing: 'BIT STRING',
+       horspeed: 'BIT STRING',
+       verspeed: 'BIT STRING'
+       },
+      horveluncert: {
+       bearing: 'BIT STRING',
+       horspeed: 'BIT STRING',
+       uncertspeed: 'BIT STRING'
+       },
+      horandveruncert: {
+       verdirect: 'BIT STRING',
+       bearing: 'BIT STRING',
+       horspeed: 'BIT STRING',
+       verspeed: 'BIT STRING',
+       horuncertspeed: 'BIT STRING',
+       veruncertspeed: 'BIT STRING'
+       }
+      }
+     },
+    posMethod: 'ENUMERATED',
+    gnssPosTechnology: {
+     gps: 'BOOLEAN',
+     galileo: 'BOOLEAN',
+     sbas: 'BOOLEAN',
+     modernized-gps: 'BOOLEAN',
+     qzss: 'BOOLEAN',
+     glonass: 'BOOLEAN',
+     bds: 'BOOLEAN'
+     },
+    ganssSignalsInfo: [{
+     ganssId: 'INTEGER',
+     gANSSSignals: 'BIT STRING'
+     }]
+    },
+   multipleLocationIds: [{
+    locationId: {
+     cellInfo: {
+      gsmCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refLAC: 'INTEGER',
+       refCI: 'INTEGER',
+       nmr: [{
+        arfcn: 'INTEGER',
+        bsic: 'INTEGER',
+        rxLev: 'INTEGER'
+        }],
+       ta: 'INTEGER'
+       },
+      wcdmaCell: {
+       refMCC: 'INTEGER',
+       refMNC: 'INTEGER',
+       refUC: 'INTEGER',
+       frequencyInfo: {
+        modeSpecificInfo: {
+         fdd: {
+          uarfcn-UL: 'INTEGER',
+          uarfcn-DL: 'INTEGER'
+          },
+         tdd: {
+          uarfcn-Nt: 'INTEGER'
+          }
+         }
+        },
+       primaryScramblingCode: 'INTEGER',
+       measuredResultsList: [{
+        frequencyInfo: {
+         modeSpecificInfo: {
+          fdd: {
+           uarfcn-UL: 'INTEGER',
+           uarfcn-DL: 'INTEGER'
+           },
+          tdd: {
+           uarfcn-Nt: 'INTEGER'
+           }
+          }
+         },
+        utra-CarrierRSSI: 'INTEGER',
+        cellMeasuredResultsList: [{
+         cellIdentity: 'INTEGER',
+         modeSpecificInfo: {
+          fdd: {
+           primaryCPICH-Info: {
+            primaryScramblingCode: 'INTEGER'
+            },
+           cpich-Ec-N0: 'INTEGER',
+           cpich-RSCP: 'INTEGER',
+           pathloss: 'INTEGER'
+           },
+          tdd: {
+           cellParametersID: 'INTEGER',
+           proposedTGSN: 'INTEGER',
+           primaryCCPCH-RSCP: 'INTEGER',
+           pathloss: 'INTEGER',
+           timeslotISCP-List: ['INTEGER']
+           }
+          }
+         }]
+        }],
+       cellParametersId: 'INTEGER',
+       timingAdvance: {
+        ta: 'INTEGER',
+        tAResolution: 'ENUMERATED',
+        chipRate: 'ENUMERATED'
+        }
+       },
+      cdmaCell: {
+       refNID: 'INTEGER',
+       refSID: 'INTEGER',
+       refBASEID: 'INTEGER',
+       refBASELAT: 'INTEGER',
+       reBASELONG: 'INTEGER',
+       refREFPN: 'INTEGER',
+       refWeekNumber: 'INTEGER',
+       refSeconds: 'INTEGER'
+       },
+      ver2-CellInfo-extension: {
+       hrpdCell: {
+        refSECTORID: 'BIT STRING',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       umbCell: {
+        refSECTORID: 'BIT STRING',
+        refMCC: 'INTEGER',
+        refMNC: 'INTEGER',
+        refBASELAT: 'INTEGER',
+        reBASELONG: 'INTEGER',
+        refWeekNumber: 'INTEGER',
+        refSeconds: 'INTEGER'
+        },
+       lteCell: {
+        cellGlobalIdEUTRA: {
+         plmn-Identity: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER']
+          },
+         cellIdentity: 'BIT STRING'
+         },
+        physCellId: 'INTEGER',
+        trackingAreaCode: 'BIT STRING',
+        rsrpResult: 'INTEGER',
+        rsrqResult: 'INTEGER',
+        ta: 'INTEGER',
+        measResultListEUTRA: [{
+         physCellId: 'INTEGER',
+         cgi-Info: {
+          cellGlobalId: {
+           plmn-Identity: {
+            mcc: ['INTEGER'],
+            mnc: ['INTEGER']
+            },
+           cellIdentity: 'BIT STRING'
+           },
+          trackingAreaCode: 'BIT STRING'
+          },
+         measResult: {
+          rsrpResult: 'INTEGER',
+          rsrqResult: 'INTEGER',
+          earfcn: 'INTEGER',
+          earfcn-ext: 'INTEGER'
+          }
+         }],
+        earfcn: 'INTEGER',
+        earfcn-ext: 'INTEGER'
+        },
+       wlanAP: {
+        apMACAddress: 'BIT STRING',
+        apTransmitPower: 'INTEGER',
+        apAntennaGain: 'INTEGER',
+        apSignaltoNoise: 'INTEGER',
+        apDeviceType: 'ENUMERATED',
+        apSignalStrength: 'INTEGER',
+        apChannelFrequency: 'INTEGER',
+        apRoundTripDelay: {
+         rTDValue: 'INTEGER',
+         rTDUnits: 'ENUMERATED',
+         rTDAccuracy: 'INTEGER'
+         },
+        setTransmitPower: 'INTEGER',
+        setAntennaGain: 'INTEGER',
+        setSignaltoNoise: 'INTEGER',
+        setSignalStrength: 'INTEGER',
+        apReportedLocation: {
+         locationEncodingDescriptor: 'ENUMERATED',
+         locationData: {
+          locationAccuracy: 'INTEGER',
+          locationValue: 'OCTET STRING'
+          }
+         },
+        apRepLocation: {
+         lciLocData: {
+          locationDataLCI: {
+           latitudeResolution: 'BIT STRING',
+           latitude: 'BIT STRING',
+           longitudeResolution: 'BIT STRING',
+           longitude: 'BIT STRING',
+           altitudeType: 'BIT STRING',
+           altitudeResolution: 'BIT STRING',
+           altitude: 'BIT STRING',
+           datum: 'BIT STRING'
+           }
+          }
+         },
+        apSignalStrengthDelta: 'INTEGER',
+        apSignaltoNoiseDelta: 'INTEGER',
+        setSignalStrengthDelta: 'INTEGER',
+        setSignaltoNoiseDelta: 'INTEGER',
+        operatingClass: 'INTEGER',
+        apSSID: 'OCTET STRING',
+        apPHYType: 'ENUMERATED',
+        setMACAddress: 'BIT STRING'
+        },
+       wimaxBS: {
+        wimaxBsID: {
+         bsID-MSB: 'BIT STRING',
+         bsID-LSB: 'BIT STRING'
+         },
+        wimaxRTD: {
+         rtd: 'INTEGER',
+         rTDstd: 'INTEGER'
+         },
+        wimaxNMRList: [{
+         wimaxBsID: {
+          bsID-MSB: 'BIT STRING',
+          bsID-LSB: 'BIT STRING'
+          },
+         relDelay: 'INTEGER',
+         relDelaystd: 'INTEGER',
+         rssi: 'INTEGER',
+         rSSIstd: 'INTEGER',
+         bSTxPower: 'INTEGER',
+         cinr: 'INTEGER',
+         cINRstd: 'INTEGER',
+         bSLocation: {
+          locationEncodingDescriptor: 'ENUMERATED',
+          locationData: {
+           locationAccuracy: 'INTEGER',
+           locationValue: 'OCTET STRING'
+           }
+          }
+         }]
+        }
+       }
+      },
+     status: 'ENUMERATED'
+     },
+    relativetimestamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   resultCode: 'ENUMERATED',
+   timestamp: {
+    absoluteTime: 'UTCTime',
+    relativeTime: 'INTEGER'
+    }
+   }],
+  ver: 'BIT STRING',
+  moreComponents: 'NULL'
+  }
+ }
+}                     

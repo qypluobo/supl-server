@@ -1,0 +1,151 @@
+2018-04-30 16:28:59,938 [DEBUG] Create socket
+2018-04-30 16:28:59,938 [DEBUG] Listenning...
+2018-04-30 16:29:03,099 [DEBUG] Client is connected, address: 192.168.1.30:55930
+2018-04-30 16:29:03,103 [DEBUG] [RX][27]: 001b01000080004ffffe465121160e604102400f40156788c6c080
+2018-04-30 16:29:03,104 [DEBUG] {
+  length 27,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    }
+  },
+  message msSUPLSTART : {
+    sETCapabilities {
+      posTechnology {
+        agpsSETassisted FALSE,
+        agpsSETBased TRUE,
+        autonomousGPS FALSE,
+        aflt FALSE,
+        ecid FALSE,
+        eotd FALSE,
+        otdoa FALSE
+      },
+      prefMethod agpsSETBasedPreferred,
+      posProtocol {
+        tia801 FALSE,
+        rrlp TRUE,
+        rrc FALSE
+      }
+    },
+    locationId {
+      cellInfo gsmCell : {
+        refMCC 244,
+        refMNC 5,
+        refLAC 23010,
+        refCI 12720
+      },
+      status current
+    }
+  }
+}
+2018-04-30 16:29:03,104 [DEBUG] {
+  length 0,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '00000001'H,
+      slpId fqdn : "192.168.1.30"
+    }
+  },
+  message msSUPLRESPONSE : {
+    posMethod agpsSETbased
+  }
+}
+2018-04-30 16:29:03,105 [DEBUG] Sending 32 bytes data to client: 192.168.1.30:55930
+2018-04-30 16:29:03,105 [DEBUG] Sent 32 bytes data to client: 192.168.1.30:55930
+2018-04-30 16:29:03,107 [DEBUG] [RX][43]: 002b010000c0004ffffe465121160e60000000050b0cb1010c82810c11423408123be00f40156788c6c080
+2018-04-30 16:29:03,108 [DEBUG] {
+  length 43,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '00000001'H,
+      slpId fqdn : "192.168.1.30"
+    }
+  },
+  message msSUPLPOSINIT : {
+    sETCapabilities {
+      posTechnology {
+        agpsSETassisted FALSE,
+        agpsSETBased TRUE,
+        autonomousGPS FALSE,
+        aflt FALSE,
+        ecid FALSE,
+        eotd FALSE,
+        otdoa FALSE
+      },
+      prefMethod agpsSETBasedPreferred,
+      posProtocol {
+        tia801 FALSE,
+        rrlp TRUE,
+        rrc FALSE
+      }
+    },
+    requestedAssistData {
+      almanacRequested TRUE,
+      utcModelRequested TRUE,
+      ionosphericModelRequested TRUE,
+      dgpsCorrectionsRequested FALSE,
+      referenceLocationRequested TRUE,
+      referenceTimeRequested TRUE,
+      acquisitionAssistanceRequested TRUE,
+      realTimeIntegrityRequested TRUE,
+      navigationModelRequested TRUE
+    },
+    locationId {
+      cellInfo gsmCell : {
+        refMCC 244,
+        refMNC 5,
+        refLAC 23010,
+        refCI 12720
+      },
+      status current
+    }
+  }
+}
+2018-04-30 16:29:03,110 [DEBUG] {
+  length 0,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '00000001'H,
+      slpId fqdn : "192.168.1.30"
+    }
+  },
+  message msSUPLPOS : {
+    posPayLoad rrlpPayload : '24137AAA9B2DF34980F360B0F36010F361B20B8C0F82513DE00C8EEEE00C2BE0C0400154D134228DC0ED924087FBCA34D9FA01FF2CD49C977EBB3199D1CC5F7793603D13E0984E8A10D3D6C367E7DFF37650CABDE00DE9ECD9BCAAA66896062F1FE89D5B1C8B827F7FAB827D7D7FFFFD7FFFFFFE63CD92898792CD0003E7F63925B7D5F00A10D002E94DD9901B49901B47A8FFC43440'H
+  }
+}
+2018-04-30 16:29:03,111 [DEBUG] Sending 183 bytes data to client: 192.168.1.30:55930
+2018-04-30 16:29:03,111 [DEBUG] Sent 183 bytes data to client: 192.168.1.30:55930
+2018-04-30 16:29:03,116 [DEBUG] Client is disconnected, address: 192.168.1.30:55930
