@@ -26,7 +26,7 @@ class SuplSession:
         logger.debug("[RX][%d]: %s" % (len(string)/2, string))
 
         pdu = ULP.ULP.ULP_PDU
-        pdu.from_uper(unhexlify(string))
+        pdu.from_uper(rx_data)
         logger.debug(pdu.to_asn1())
 
         (msgtype, message) = get_val_at(pdu, ["message"])

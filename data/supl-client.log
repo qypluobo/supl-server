@@ -1,0 +1,604 @@
+Connecting to supl.vodafone.com:7275...
+Connected!
+{
+  length 27,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    }
+  },
+  message msSUPLSTART : {
+    sETCapabilities {
+      posTechnology {
+        agpsSETassisted FALSE,
+        agpsSETBased TRUE,
+        autonomousGPS FALSE,
+        aflt FALSE,
+        ecid FALSE,
+        eotd FALSE,
+        otdoa FALSE
+      },
+      prefMethod agpsSETBasedPreferred,
+      posProtocol {
+        tia801 FALSE,
+        rrlp TRUE,
+        rrc FALSE
+      }
+    },
+    locationId {
+      cellInfo gsmCell : {
+        refMCC 244,
+        refMNC 5,
+        refLAC 23010,
+        refCI 12720
+      },
+      status current
+    }
+  }
+}
+[TX][27]: 001b01000080004ffffe465121160e604102400f40156788c6c080
+Sent 27 bytes!
+[RX][36]: 0024010000c0004ffffe465121160e60cdc90df510e3ad7107bd299abd33a81a34c88020
+{
+  length 36,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '3372437D'H -- 3rC} --,
+      slpId fqdn : "supl.vodafone.com"
+    }
+  },
+  message msSUPLRESPONSE : {
+    posMethod agpsSETbased
+  }
+}
+{
+  length 46,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '3372437D'H -- 3rC} --,
+      slpId fqdn : "supl.vodafone.com"
+    }
+  },
+  message msSUPLPOSINIT : {
+    sETCapabilities {
+      posTechnology {
+        agpsSETassisted FALSE,
+        agpsSETBased TRUE,
+        autonomousGPS FALSE,
+        aflt FALSE,
+        ecid FALSE,
+        eotd FALSE,
+        otdoa FALSE
+      },
+      prefMethod agpsSETBasedPreferred,
+      posProtocol {
+        tia801 FALSE,
+        rrlp TRUE,
+        rrc FALSE
+      }
+    },
+    requestedAssistData {
+      almanacRequested TRUE,
+      utcModelRequested FALSE,
+      ionosphericModelRequested FALSE,
+      dgpsCorrectionsRequested FALSE,
+      referenceLocationRequested FALSE,
+      referenceTimeRequested FALSE,
+      acquisitionAssistanceRequested FALSE,
+      realTimeIntegrityRequested FALSE,
+      navigationModelRequested FALSE
+    },
+    locationId {
+      cellInfo gsmCell : {
+        refMCC 244,
+        refMNC 5,
+        refLAC 23010,
+        refCI 12720
+      },
+      status current
+    }
+  }
+}
+[TX][46]: 002e010000c0004ffffe465121160e60cdc90df510e3ad7107bd299abd33a81a34c8d0204880003d00559e231b02
+Sent 46 bytes!
+[RX][777]: 0309010000c0004ffffe465121160e60cdc90df510e3ad7107bd299abd33a81a34c9042e3251809a0f007e5a9d253afa88014219de3e990d329b9e7e1cf0f42000324fa9d09f8fa6801421ace39a5d268656c99bc471f9fe8415d49d17a2faa601421b6c93983122d05e3751e711a010857449d0688fa8e01421a5291d5ed31ac61725270fe2000a139a9d24e0fa86014219163deb4aa67c568bd19f6a2000cbcce9d1568fa78014219c53fa4ea31707045e1d5331ff8e39209d2318faa401421847e7df8cdb88bb46fed2e5e001010069d0dccfaa00142193ce7d9399799533bd02d86a0012399a9d17c2faa4014219dc934fdc203113d1a50f3020015131a9ccf92fa20014219041be9738f437c4505ec3f2001676109d3970faca014218e198acbb4f4732152e2357e001838329d226cfab2014219c6f28da781a384bd9010e76001a9f9e9d18aefaa801421b5aef26b46086a91129aee6e001ca7969ceddefa7201421ad6e21fa537234ce843cca36001ea4a09d3a00faca014219679a37252998f37af3e906a0020ca249d34acfaba01421837ecf2026f1c8b248990e620022ed009d0910fa62014219a03aca036a2b5e67329101e00a4a1b89d316efab801421ab9f0c68b5f92f21899c48da002645a29ced02fa6801422c7e8ab7bf9e3b9298f8638520029904e9d018cfa6401421a743a37d280d0cdeb19d098200aa791e9ce8c8fa6401421c248ecb1681ba88f9c9f09b1feaccc2e9d01d6fa9001421bfae7bab83ee17ac502a6c76002e71629cff62fa5a014219653acd0f2c6c0e927822f3600307ab69d2954fab0014219ad93d21f45900bef4468679ffb22dd09d1144fa8c014219a9920e9309c38dc38e68d7a01b4610e9d2dc6fab201421a3be88ced217309307c8f60e00373f849d3888fac201421a339a9004840b6d773abdbb200380c469d3654fac001421a83edce85570d5986557b769ffba36dc9d029efa5e01421ae74266da03542e4f822713dffbc8f669d1b76fa800142199540a818f55a44366365202003e22109d1388faa8014219cce83ee42d85696a86167a20080a080000000000
+{
+  length 777,
+  version {
+    maj 1,
+    min 0,
+    servind 0
+  },
+  sessionID {
+    setSessionID {
+      sessionId 1,
+      setId imsi : 'FFFF919448458398'H
+    },
+    slpSessionID {
+      sessionID '3372437D'H -- 3rC} --,
+      slpId fqdn : "supl.vodafone.com"
+    }
+  },
+  message msSUPLPOS : {
+    posPayLoad rrlpPayload : '251809A0F007E5A9D253AFA88014219DE3E990D329B9E7E1CF0F42000324FA9D09F8FA6801421ACE39A5D268656C99BC471F9FE8415D49D17A2FAA601421B6C93983122D05E3751E711A010857449D0688FA8E01421A5291D5ED31AC61725270FE2000A139A9D24E0FA86014219163DEB4AA67C568BD19F6A2000CBCCE9D1568FA78014219C53FA4EA31707045E1D5331FF8E39209D2318FAA401421847E7DF8CDB88BB46FED2E5E001010069D0DCCFAA00142193CE7D9399799533BD02D86A0012399A9D17C2FAA4014219DC934FDC203113D1A50F3020015131A9CCF92FA20014219041BE9738F437C4505EC3F2001676109D3970FACA014218E198ACBB4F4732152E2357E001838329D226CFAB2014219C6F28DA781A384BD9010E76001A9F9E9D18AEFAA801421B5AEF26B46086A91129AEE6E001CA7969CEDDEFA7201421AD6E21FA537234CE843CCA36001EA4A09D3A00FACA014219679A37252998F37AF3E906A0020CA249D34ACFABA01421837ECF2026F1C8B248990E620022ED009D0910FA62014219A03ACA036A2B5E67329101E00A4A1B89D316EFAB801421AB9F0C68B5F92F21899C48DA002645A29CED02FA6801422C7E8AB7BF9E3B9298F8638520029904E9D018CFA6401421A743A37D280D0CDEB19D098200AA791E9CE8C8FA6401421C248ECB1681BA88F9C9F09B1FEACCC2E9D01D6FA9001421BFAE7BAB83EE17AC502A6C76002E71629CFF62FA5A014219653ACD0F2C6C0E927822F3600307AB69D2954FAB0014219AD93D21F45900BEF4468679FFB22DD09D1144FA8C014219A9920E9309C38DC38E68D7A01B4610E9D2DC6FAB201421A3BE88CED217309307C8F60E00373F849D3888FAC201421A339A9004840B6D773ABDBB200380C469D3654FAC001421A83EDCE85570D5986557B769FFBA36DC9D029EFA5E01421AE74266DA03542E4F822713DFFBC8F669D1B76FA800142199540A818F55A44366365202003E22109D1388FAA8014219CCE83EE42D85696A86167A20080A08000000000'H
+  }
+}
+{
+  referenceNumber 1,
+  component assistanceData : {
+    gps-AssistData {
+      controlHeader {
+        almanac {
+          alamanacWNa 208,
+          almanacList {
+            {
+              satelliteID 0,
+              almanacE 16173,
+              alamanacToa 78,
+              almanacKsii 4765,
+              almanacOmegaDot -700,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554607,
+              almanacOmega0 -6337402,
+              almanacW 1658319,
+              almanacM0 -4256136,
+              almanacAF0 -48,
+              almanacAF1 0
+            },
+            {
+              satelliteID 1,
+              almanacE 37501,
+              alamanacToa 78,
+              almanacKsii 1276,
+              almanacOmegaDot -716,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554727,
+              almanacOmega0 -6499607,
+              almanacW -4967754,
+              almanacM0 -3351005,
+              almanacAF0 126,
+              almanacAF1 -3
+            },
+            {
+              satelliteID 2,
+              almanacE 2794,
+              alamanacToa 78,
+              almanacKsii 3025,
+              almanacOmegaDot -685,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554806,
+              almanacOmega0 -3552232,
+              almanacW 1140783,
+              almanacM0 -6575885,
+              almanacAF0 70,
+              almanacAF1 2
+            },
+            {
+              satelliteID 4,
+              almanacE 11170,
+              alamanacToa 78,
+              almanacKsii 836,
+              almanacOmegaDot -697,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554665,
+              almanacOmega0 -3609866,
+              almanacW 1627696,
+              almanacM0 3746104,
+              almanacAF0 -8,
+              almanacAF1 0
+            },
+            {
+              satelliteID 5,
+              almanacE 2509,
+              alamanacToa 78,
+              almanacKsii 4720,
+              almanacOmegaDot -701,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554507,
+              almanacOmega0 -6359643,
+              almanacW -2933205,
+              almanacM0 -3807025,
+              almanacAF0 424,
+              almanacAF1 0
+            },
+            {
+              satelliteID 6,
+              almanacE 24167,
+              alamanacToa 78,
+              almanacKsii 2740,
+              almanacOmegaDot -708,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554594,
+              almanacOmega0 2085493,
+              almanacW -6768584,
+              almanacM0 -6098710,
+              almanacAF0 204,
+              almanacAF1 -1
+            },
+            {
+              satelliteID 7,
+              almanacE 7312,
+              alamanacToa 78,
+              almanacKsii 4492,
+              almanacOmegaDot -686,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554403,
+              almanacOmega0 7598022,
+              almanacW -1194915,
+              almanacM0 2326377,
+              almanacAF0 -105,
+              almanacAF1 0
+            },
+            {
+              satelliteID 8,
+              almanacE 2051,
+              alamanacToa 78,
+              almanacKsii 1766,
+              almanacOmegaDot -688,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554526,
+              almanacOmega0 -791396,
+              almanacW 4967593,
+              almanacM0 1959958,
+              almanacAF0 538,
+              almanacAF1 0
+            },
+            {
+              satelliteID 9,
+              almanacE 7373,
+              alamanacToa 78,
+              almanacKsii 3041,
+              almanacOmegaDot -686,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554606,
+              almanacOmega0 -3561490,
+              almanacW -7333751,
+              almanacM0 6869639,
+              almanacAF0 192,
+              almanacAF1 0
+            },
+            {
+              satelliteID 10,
+              almanacE 35213,
+              alamanacToa 78,
+              almanacKsii -6199,
+              almanacOmegaDot -752,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554498,
+              almanacOmega0 -7473991,
+              almanacW 4694462,
+              almanacM0 -6126858,
+              almanacAF0 -772,
+              almanacAF1 0
+            },
+            {
+              satelliteID 11,
+              almanacE 15112,
+              alamanacToa 78,
+              almanacKsii 7352,
+              almanacOmegaDot -667,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554480,
+              almanacOmega0 5002845,
+              almanacW 2597785,
+              almanacM0 -7694575,
+              almanacAF0 351,
+              almanacAF1 0
+            },
+            {
+              satelliteID 12,
+              almanacE 7193,
+              alamanacToa 78,
+              almanacKsii 4406,
+              almanacOmegaDot -679,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554595,
+              almanacOmega0 -440621,
+              almanacW 4248002,
+              almanacM0 -2177016,
+              almanacAF0 -99,
+              almanacAF1 0
+            },
+            {
+              satelliteID 13,
+              almanacE 20431,
+              alamanacToa 78,
+              almanacKsii 3159,
+              almanacOmegaDot -684,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554797,
+              almanacOmega0 -552102,
+              almanacW -5225644,
+              almanacM0 562391,
+              almanacAF0 -101,
+              almanacAF1 0
+            },
+            {
+              satelliteID 14,
+              almanacE 21451,
+              alamanacToa 78,
+              almanacKsii -2321,
+              almanacOmegaDot -711,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554731,
+              almanacOmega0 -978990,
+              almanacW 1806758,
+              almanacM0 -777754,
+              almanacAF0 -371,
+              almanacAF1 0
+            },
+            {
+              satelliteID 15,
+              almanacE 21072,
+              alamanacToa 78,
+              almanacKsii 7424,
+              almanacOmegaDot -667,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554547,
+              almanacOmega0 5053330,
+              almanacW 1363065,
+              almanacM0 4028916,
+              almanacAF0 26,
+              almanacAF1 0
+            },
+            {
+              satelliteID 16,
+              almanacE 25874,
+              alamanacToa 78,
+              almanacKsii 6742,
+              almanacOmegaDot -675,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554395,
+              almanacOmega0 7764225,
+              almanacW -4747707,
+              almanacM0 1197256,
+              almanacAF0 -104,
+              almanacAF1 0
+            },
+            {
+              satelliteID 17,
+              almanacE 30336,
+              alamanacToa 78,
+              almanacKsii 1160,
+              almanacOmegaDot -719,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554576,
+              almanacOmega0 -6462207,
+              almanacW 3478959,
+              almanacM0 -5007032,
+              almanacAF0 7,
+              almanacAF1 1
+            },
+            {
+              satelliteID 18,
+              almanacE 20700,
+              alamanacToa 78,
+              almanacKsii 6327,
+              almanacOmegaDot -676,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554716,
+              almanacOmega0 7889733,
+              almanacW 3131769,
+              almanacM0 -7582494,
+              almanacAF0 -458,
+              almanacAF1 0
+            },
+            {
+              satelliteID 19,
+              almanacE 8913,
+              alamanacToa 78,
+              almanacKsii -2431,
+              almanacOmegaDot -716,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10556991,
+              almanacOmega0 -3843105,
+              almanacW 5184969,
+              almanacM0 -3376079,
+              almanacAF0 532,
+              almanacAF1 0
+            },
+            {
+              satelliteID 20,
+              almanacE 51239,
+              alamanacToa 78,
+              almanacKsii 198,
+              almanacOmegaDot -718,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554682,
+              almanacOmega0 -6480919,
+              almanacW -4167578,
+              almanacM0 7703784,
+              almanacAF0 -416,
+              almanacAF1 1
+            },
+            {
+              satelliteID 21,
+              almanacE 15503,
+              alamanacToa 78,
+              almanacKsii -2972,
+              almanacOmegaDot -718,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554898,
+              almanacOmega0 -3709557,
+              almanacW -4137660,
+              almanacM0 -203528,
+              almanacAF0 -404,
+              almanacAF1 -3
+            },
+            {
+              satelliteID 22,
+              almanacE 26135,
+              alamanacToa 78,
+              almanacKsii 235,
+              almanacOmegaDot -696,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554877,
+              almanacOmega0 -795300,
+              almanacW -6328131,
+              almanacM0 -1932973,
+              almanacAF0 -227,
+              almanacAF1 0
+            },
+            {
+              satelliteID 23,
+              almanacE 14513,
+              alamanacToa 78,
+              almanacKsii -79,
+              almanacOmegaDot -723,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554546,
+              almanacOmega0 1926791,
+              almanacW 1455623,
+              almanacM0 -3589103,
+              almanacAF0 -51,
+              almanacAF1 0
+            },
+            {
+              satelliteID 24,
+              almanacE 15707,
+              alamanacToa 78,
+              almanacKsii 5290,
+              almanacOmegaDot -680,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554582,
+              almanacOmega0 4843791,
+              almanacW 2279429,
+              almanacM0 7840308,
+              almanacAF0 -610,
+              almanacAF1 -1
+            },
+            {
+              satelliteID 25,
+              almanacE 5864,
+              alamanacToa 78,
+              almanacKsii 2210,
+              almanacOmegaDot -698,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554580,
+              almanacOmega0 4785993,
+              almanacW 319942,
+              almanacM0 6407988,
+              almanacAF0 -162,
+              almanacAF1 3
+            },
+            {
+              satelliteID 26,
+              almanacE 12423,
+              alamanacToa 78,
+              almanacKsii 5859,
+              almanacOmegaDot -679,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554653,
+              almanacOmega0 7620214,
+              almanacW 1096068,
+              almanacM0 1588807,
+              almanacAF0 387,
+              almanacAF1 0
+            },
+            {
+              satelliteID 27,
+              almanacE 40898,
+              alamanacToa 78,
+              almanacKsii 7236,
+              almanacOmegaDot -671,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554649,
+              almanacOmega0 5064706,
+              almanacW -4061770,
+              almanacM0 3906910,
+              almanacAF0 748,
+              almanacAF1 0
+            },
+            {
+              satelliteID 28,
+              almanacE 1571,
+              alamanacToa 78,
+              almanacKsii 6954,
+              almanacOmegaDot -672,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554689,
+              almanacOmega0 7792450,
+              almanacW 2852524,
+              almanacM0 4401853,
+              almanacAF0 474,
+              almanacAF1 -1
+            },
+            {
+              satelliteID 29,
+              almanacE 7022,
+              alamanacToa 78,
+              almanacKsii 335,
+              almanacOmegaDot -721,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554739,
+              almanacOmega0 2175853,
+              almanacW -8279529,
+              almanacM0 -5783277,
+              almanacAF0 79,
+              almanacAF1 -1
+            },
+            {
+              satelliteID 30,
+              almanacE 18355,
+              alamanacToa 78,
+              almanacKsii 3515,
+              almanacOmegaDot -704,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554570,
+              almanacOmega0 2118668,
+              almanacW -348894,
+              almanacM0 -6606414,
+              almanacAF0 128,
+              almanacAF1 0
+            },
+            {
+              satelliteID 31,
+              almanacE 4360,
+              alamanacToa 78,
+              almanacKsii 2500,
+              almanacOmegaDot -684,
+              almanacSVhealth 0,
+              almanacAPowerHalf 10554598,
+              almanacOmega0 -778382,
+              almanacW -6896972,
+              almanacM0 3490571,
+              almanacAF0 -536,
+              almanacAF1 1
+            }
+          }
+        }
+      }
+    },
+    moreAssDataToBeSent noMoreMessages,
+    rel5-AssistanceData-Extension {
+      extended-reference {
+        smlc-code 0,
+        transaction-ID 0
+      }
+    }
+  }
+}
