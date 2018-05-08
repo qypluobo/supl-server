@@ -1,0 +1,1588 @@
+{
+transactionID: {
+ initiator: 'ENUMERATED',
+ transactionNumber: 'INTEGER'
+ },
+endTransaction: 'BOOLEAN',
+sequenceNumber: 'INTEGER',
+acknowledgement: {
+ ackRequested: 'BOOLEAN',
+ ackIndicator: 'INTEGER'
+ },
+lpp-MessageBody: {
+ c1: {
+  requestCapabilities: {
+   criticalExtensions: {
+    c1: {
+     requestCapabilities-r9: {
+      commonIEsRequestCapabilities: {},
+      a-gnss-RequestCapabilities: {
+       gnss-SupportListReq: 'BOOLEAN',
+       assistanceDataSupportListReq: 'BOOLEAN',
+       locationVelocityTypesReq: 'BOOLEAN'
+       },
+      otdoa-RequestCapabilities: {},
+      ecid-RequestCapabilities: {},
+      epdu-RequestCapabilities: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }],
+      sensor-RequestCapabilities-r13: {},
+      tbs-RequestCapabilities-r13: {},
+      wlan-RequestCapabilities-r13: {},
+      bt-RequestCapabilities-r13: {}
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  provideCapabilities: {
+   criticalExtensions: {
+    c1: {
+     provideCapabilities-r9: {
+      commonIEsProvideCapabilities: {},
+      a-gnss-ProvideCapabilities: {
+       gnss-SupportList: [{
+        gnss-ID: {
+         gnss-id: 'ENUMERATED'
+         },
+        sbas-IDs: {
+         sbas-IDs: 'BIT STRING'
+         },
+        agnss-Modes: {
+         posModes: 'BIT STRING'
+         },
+        gnss-Signals: {
+         gnss-SignalIDs: 'BIT STRING'
+         },
+        fta-MeasSupport: {
+         cellTime: {
+          accessTypes: 'BIT STRING'
+          },
+         mode: {
+          posModes: 'BIT STRING'
+          }
+         },
+        adr-Support: 'BOOLEAN',
+        velocityMeasurementSupport: 'BOOLEAN'
+        }],
+       assistanceDataSupportList: {
+        gnss-CommonAssistanceDataSupport: {
+         gnss-ReferenceTimeSupport: {
+          gnss-SystemTime: {
+           gnss-ids: 'BIT STRING'
+           },
+          fta-Support: {
+           accessTypes: 'BIT STRING'
+           }
+          },
+         gnss-ReferenceLocationSupport: {},
+         gnss-IonosphericModelSupport: {
+          ionoModel: 'BIT STRING'
+          },
+         gnss-EarthOrientationParametersSupport: {}
+         },
+        gnss-GenericAssistanceDataSupport: [{
+         gnss-ID: {
+          gnss-id: 'ENUMERATED'
+          },
+         sbas-ID: {
+          sbas-id: 'ENUMERATED'
+          },
+         gnss-TimeModelsSupport: {},
+         gnss-DifferentialCorrectionsSupport: {
+          gnssSignalIDs: {
+           gnss-SignalIDs: 'BIT STRING'
+           },
+          dgnss-ValidityTimeSup: 'BOOLEAN'
+          },
+         gnss-NavigationModelSupport: {
+          clockModel: 'BIT STRING',
+          orbitModel: 'BIT STRING'
+          },
+         gnss-RealTimeIntegritySupport: {},
+         gnss-DataBitAssistanceSupport: {},
+         gnss-AcquisitionAssistanceSupport: {
+          confidenceSupport-r10: 'ENUMERATED',
+          dopplerUncertaintyExtSupport-r10: 'ENUMERATED'
+          },
+         gnss-AlmanacSupport: {
+          almanacModel: 'BIT STRING'
+          },
+         gnss-UTC-ModelSupport: {
+          utc-Model: 'BIT STRING'
+          },
+         gnss-AuxiliaryInformationSupport: {},
+         bds-DifferentialCorrectionsSupport-r12: {
+          gnssSignalIDs: {
+           gnss-SignalIDs: 'BIT STRING'
+           }
+          },
+         bds-GridModelSupport-r12: {}
+         }]
+        },
+       locationCoordinateTypes: {
+        ellipsoidPoint: 'BOOLEAN',
+        ellipsoidPointWithUncertaintyCircle: 'BOOLEAN',
+        ellipsoidPointWithUncertaintyEllipse: 'BOOLEAN',
+        polygon: 'BOOLEAN',
+        ellipsoidPointWithAltitude: 'BOOLEAN',
+        ellipsoidPointWithAltitudeAndUncertaintyEllipsoid: 'BOOLEAN',
+        ellipsoidArc: 'BOOLEAN'
+        },
+       velocityTypes: {
+        horizontalVelocity: 'BOOLEAN',
+        horizontalWithVerticalVelocity: 'BOOLEAN',
+        horizontalVelocityWithUncertainty: 'BOOLEAN',
+        horizontalWithVerticalVelocityAndUncertainty: 'BOOLEAN'
+        }
+       },
+      otdoa-ProvideCapabilities: {
+       otdoa-Mode: 'BIT STRING',
+       supportedBandListEUTRA: [{
+        bandEUTRA: 'INTEGER'
+        }],
+       supportedBandListEUTRA-v9a0: [{
+        bandEUTRA-v9a0: 'INTEGER'
+        }],
+       interFreqRSTDmeasurement-r10: 'ENUMERATED',
+       additionalNeighbourCellInfoList-r10: 'ENUMERATED'
+       },
+      ecid-ProvideCapabilities: {
+       ecid-MeasSupported: 'BIT STRING'
+       },
+      epdu-ProvideCapabilities: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }],
+      sensor-ProvideCapabilities-r13: {
+       sensor-Modes-r13: 'BIT STRING'
+       },
+      tbs-ProvideCapabilities-r13: {
+       tbs-Modes-r13: 'BIT STRING'
+       },
+      wlan-ProvideCapabilities-r13: {
+       wlan-Modes-r13: 'BIT STRING',
+       wlan-MeasSupported-r13: 'BIT STRING'
+       },
+      bt-ProvideCapabilities-r13: {
+       bt-Modes-r13: 'BIT STRING',
+       bt-MeasSupported-r13: 'BIT STRING'
+       }
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  requestAssistanceData: {
+   criticalExtensions: {
+    c1: {
+     requestAssistanceData-r9: {
+      commonIEsRequestAssistanceData: {
+       primaryCellID: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER'],
+        cellidentity: 'BIT STRING'
+        }
+       },
+      a-gnss-RequestAssistanceData: {
+       gnss-CommonAssistDataReq: {
+        gnss-ReferenceTimeReq: {
+         gnss-TimeReqPrefList: [{
+          gnss-id: 'ENUMERATED'
+          }],
+         gps-TOW-assistReq: 'BOOLEAN',
+         notOfLeapSecReq: 'BOOLEAN'
+         },
+        gnss-ReferenceLocationReq: {},
+        gnss-IonosphericModelReq: {
+         klobucharModelReq: 'BIT STRING',
+         neQuickModelReq: 'NULL'
+         },
+        gnss-EarthOrientationParametersReq: {}
+        },
+       gnss-GenericAssistDataReq: [{
+        gnss-ID: {
+         gnss-id: 'ENUMERATED'
+         },
+        sbas-ID: {
+         sbas-id: 'ENUMERATED'
+         },
+        gnss-TimeModelsReq: [{
+         gnss-TO-IDsReq: 'INTEGER',
+         deltaTreq: 'BOOLEAN'
+         }],
+        gnss-DifferentialCorrectionsReq: {
+         dgnss-SignalsReq: {
+          gnss-SignalIDs: 'BIT STRING'
+          },
+         dgnss-ValidityTimeReq: 'BOOLEAN'
+         },
+        gnss-NavigationModelReq: {
+         storedNavList: {
+          gnss-WeekOrDay: 'INTEGER',
+          gnss-Toe: 'INTEGER',
+          t-toeLimit: 'INTEGER',
+          satListRelatedDataList: [{
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           iod: 'BIT STRING',
+           clockModelID: 'INTEGER',
+           orbitModelID: 'INTEGER'
+           }]
+          },
+         reqNavList: {
+          svReqList: 'BIT STRING',
+          clockModelID-PrefList: ['INTEGER'],
+          orbitModelID-PrefList: ['INTEGER'],
+          addNavparamReq: 'BOOLEAN'
+          }
+         },
+        gnss-RealTimeIntegrityReq: {},
+        gnss-DataBitAssistanceReq: {
+         gnss-TOD-Req: 'INTEGER',
+         gnss-TOD-FracReq: 'INTEGER',
+         dataBitInterval: 'INTEGER',
+         gnss-SignalType: {
+          gnss-SignalIDs: 'BIT STRING'
+          },
+         gnss-DataBitsReq: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           }
+          }]
+         },
+        gnss-AcquisitionAssistanceReq: {
+         gnss-SignalID-Req: {
+          gnss-SignalID: 'INTEGER'
+          }
+         },
+        gnss-AlmanacReq: {
+         modelID: 'INTEGER'
+         },
+        gnss-UTCModelReq: {
+         modelID: 'INTEGER'
+         },
+        gnss-AuxiliaryInformationReq: {},
+        bds-DifferentialCorrectionsReq-r12: {
+         dgnss-SignalsReq: {
+          gnss-SignalIDs: 'BIT STRING'
+          }
+         },
+        bds-GridModelReq-r12: {}
+        }]
+       },
+      otdoa-RequestAssistanceData: {
+       physCellId: 'INTEGER'
+       },
+      epdu-RequestAssistanceData: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }]
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  provideAssistanceData: {
+   criticalExtensions: {
+    c1: {
+     provideAssistanceData-r9: {
+      commonIEsProvideAssistanceData: {},
+      a-gnss-ProvideAssistanceData: {
+       gnss-CommonAssistData: {
+        gnss-ReferenceTime: {
+         gnss-SystemTime: {
+          gnss-TimeID: {
+           gnss-id: 'ENUMERATED'
+           },
+          gnss-DayNumber: 'INTEGER',
+          gnss-TimeOfDay: 'INTEGER',
+          gnss-TimeOfDayFrac-msec: 'INTEGER',
+          notificationOfLeapSecond: 'BIT STRING',
+          gps-TOW-Assist: [{
+           satelliteID: 'INTEGER',
+           tlmWord: 'INTEGER',
+           antiSpoof: 'INTEGER',
+           alert: 'INTEGER',
+           tlmRsvdBits: 'INTEGER'
+           }]
+          },
+         referenceTimeUnc: 'INTEGER',
+         gnss-ReferenceTimeForCells: [{
+          networkTime: {
+           secondsFromFrameStructureStart: 'INTEGER',
+           fractionalSecondsFromFrameStructureStart: 'INTEGER',
+           frameDrift: 'INTEGER',
+           cellID: {
+            eUTRA: {
+             physCellId: 'INTEGER',
+             cellGlobalIdEUTRA: {
+              plmn-Identity: {
+               mcc: ['INTEGER'],
+               mnc: ['INTEGER']
+               },
+              cellIdentity: {
+               eutra: 'BIT STRING',
+               utra: 'BIT STRING'
+               }
+              },
+             earfcn: 'INTEGER',
+             earfcn-v9a0: 'INTEGER'
+             },
+            uTRA: {
+             mode: {
+              fdd: {
+               primary-CPICH-Info: 'INTEGER'
+               },
+              tdd: {
+               cellParameters: 'INTEGER'
+               }
+              },
+             cellGlobalIdUTRA: {
+              plmn-Identity: {
+               mcc: ['INTEGER'],
+               mnc: ['INTEGER']
+               },
+              cellIdentity: {
+               eutra: 'BIT STRING',
+               utra: 'BIT STRING'
+               }
+              },
+             uarfcn: 'INTEGER'
+             },
+            gSM: {
+             bcchCarrier: 'INTEGER',
+             bsic: 'INTEGER',
+             cellGlobalIdGERAN: {
+              plmn-Identity: {
+               mcc: ['INTEGER'],
+               mnc: ['INTEGER']
+               },
+              locationAreaCode: 'BIT STRING',
+              cellIdentity: 'BIT STRING'
+              }
+             }
+            }
+           },
+          referenceTimeUnc: 'INTEGER',
+          bsAlign: 'ENUMERATED'
+          }]
+         },
+        gnss-ReferenceLocation: {
+         threeDlocation: {
+          latitudeSign: 'ENUMERATED',
+          degreesLatitude: 'INTEGER',
+          degreesLongitude: 'INTEGER',
+          altitudeDirection: 'ENUMERATED',
+          altitude: 'INTEGER',
+          uncertaintySemiMajor: 'INTEGER',
+          uncertaintySemiMinor: 'INTEGER',
+          orientationMajorAxis: 'INTEGER',
+          uncertaintyAltitude: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        gnss-IonosphericModel: {
+         klobucharModel: {
+          dataID: 'BIT STRING',
+          alfa0: 'INTEGER',
+          alfa1: 'INTEGER',
+          alfa2: 'INTEGER',
+          alfa3: 'INTEGER',
+          beta0: 'INTEGER',
+          beta1: 'INTEGER',
+          beta2: 'INTEGER',
+          beta3: 'INTEGER'
+          },
+         neQuickModel: {
+          ai0: 'INTEGER',
+          ai1: 'INTEGER',
+          ai2: 'INTEGER',
+          ionoStormFlag1: 'INTEGER',
+          ionoStormFlag2: 'INTEGER',
+          ionoStormFlag3: 'INTEGER',
+          ionoStormFlag4: 'INTEGER',
+          ionoStormFlag5: 'INTEGER'
+          }
+         },
+        gnss-EarthOrientationParameters: {
+         teop: 'INTEGER',
+         pmX: 'INTEGER',
+         pmXdot: 'INTEGER',
+         pmY: 'INTEGER',
+         pmYdot: 'INTEGER',
+         deltaUT1: 'INTEGER',
+         deltaUT1dot: 'INTEGER'
+         }
+        },
+       gnss-GenericAssistData: [{
+        gnss-ID: {
+         gnss-id: 'ENUMERATED'
+         },
+        sbas-ID: {
+         sbas-id: 'ENUMERATED'
+         },
+        gnss-TimeModels: [{
+         gnss-TimeModelRefTime: 'INTEGER',
+         tA0: 'INTEGER',
+         tA1: 'INTEGER',
+         tA2: 'INTEGER',
+         gnss-TO-ID: 'INTEGER',
+         weekNumber: 'INTEGER',
+         deltaT: 'INTEGER'
+         }],
+        gnss-DifferentialCorrections: {
+         dgnss-RefTime: 'INTEGER',
+         dgnss-SgnTypeList: [{
+          gnss-SignalID: {
+           gnss-SignalID: 'INTEGER'
+           },
+          gnss-StatusHealth: 'INTEGER',
+          dgnss-SatList: [{
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           iod: 'BIT STRING',
+           udre: 'INTEGER',
+           pseudoRangeCor: 'INTEGER',
+           rangeRateCor: 'INTEGER',
+           udreGrowthRate: 'INTEGER',
+           udreValidityTime: 'INTEGER'
+           }]
+          }]
+         },
+        gnss-NavigationModel: {
+         nonBroadcastIndFlag: 'INTEGER',
+         gnss-SatelliteList: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           },
+          svHealth: 'BIT STRING',
+          iod: 'BIT STRING',
+          gnss-ClockModel: {
+           standardClockModelList: [{
+            stanClockToc: 'INTEGER',
+            stanClockAF2: 'INTEGER',
+            stanClockAF1: 'INTEGER',
+            stanClockAF0: 'INTEGER',
+            stanClockTgd: 'INTEGER',
+            sisa: 'INTEGER',
+            stanModelID: 'INTEGER'
+            }],
+           nav-ClockModel: {
+            navToc: 'INTEGER',
+            navaf2: 'INTEGER',
+            navaf1: 'INTEGER',
+            navaf0: 'INTEGER',
+            navTgd: 'INTEGER'
+            },
+           cnav-ClockModel: {
+            cnavToc: 'INTEGER',
+            cnavTop: 'INTEGER',
+            cnavURA0: 'INTEGER',
+            cnavURA1: 'INTEGER',
+            cnavURA2: 'INTEGER',
+            cnavAf2: 'INTEGER',
+            cnavAf1: 'INTEGER',
+            cnavAf0: 'INTEGER',
+            cnavTgd: 'INTEGER',
+            cnavISCl1cp: 'INTEGER',
+            cnavISCl1cd: 'INTEGER',
+            cnavISCl1ca: 'INTEGER',
+            cnavISCl2c: 'INTEGER',
+            cnavISCl5i5: 'INTEGER',
+            cnavISCl5q5: 'INTEGER'
+            },
+           glonass-ClockModel: {
+            gloTau: 'INTEGER',
+            gloGamma: 'INTEGER',
+            gloDeltaTau: 'INTEGER'
+            },
+           sbas-ClockModel: {
+            sbasTo: 'INTEGER',
+            sbasAgfo: 'INTEGER',
+            sbasAgf1: 'INTEGER'
+            },
+           bds-ClockModel-r12: {
+            bdsAODC-r12: 'INTEGER',
+            bdsToc-r12: 'INTEGER',
+            bdsA0-r12: 'INTEGER',
+            bdsA1-r12: 'INTEGER',
+            bdsA2-r12: 'INTEGER',
+            bdsTgd1-r12: 'INTEGER'
+            }
+           },
+          gnss-OrbitModel: {
+           keplerianSet: {
+            keplerToe: 'INTEGER',
+            keplerW: 'INTEGER',
+            keplerDeltaN: 'INTEGER',
+            keplerM0: 'INTEGER',
+            keplerOmegaDot: 'INTEGER',
+            keplerE: 'INTEGER',
+            keplerIDot: 'INTEGER',
+            keplerAPowerHalf: 'INTEGER',
+            keplerI0: 'INTEGER',
+            keplerOmega0: 'INTEGER',
+            keplerCrs: 'INTEGER',
+            keplerCis: 'INTEGER',
+            keplerCus: 'INTEGER',
+            keplerCrc: 'INTEGER',
+            keplerCic: 'INTEGER',
+            keplerCuc: 'INTEGER'
+            },
+           nav-KeplerianSet: {
+            navURA: 'INTEGER',
+            navFitFlag: 'INTEGER',
+            navToe: 'INTEGER',
+            navOmega: 'INTEGER',
+            navDeltaN: 'INTEGER',
+            navM0: 'INTEGER',
+            navOmegaADot: 'INTEGER',
+            navE: 'INTEGER',
+            navIDot: 'INTEGER',
+            navAPowerHalf: 'INTEGER',
+            navI0: 'INTEGER',
+            navOmegaA0: 'INTEGER',
+            navCrs: 'INTEGER',
+            navCis: 'INTEGER',
+            navCus: 'INTEGER',
+            navCrc: 'INTEGER',
+            navCic: 'INTEGER',
+            navCuc: 'INTEGER',
+            addNAVparam: {
+             ephemCodeOnL2: 'INTEGER',
+             ephemL2Pflag: 'INTEGER',
+             ephemSF1Rsvd: {
+              reserved1: 'INTEGER',
+              reserved2: 'INTEGER',
+              reserved3: 'INTEGER',
+              reserved4: 'INTEGER'
+              },
+             ephemAODA: 'INTEGER'
+             }
+            },
+           cnav-KeplerianSet: {
+            cnavTop: 'INTEGER',
+            cnavURAindex: 'INTEGER',
+            cnavDeltaA: 'INTEGER',
+            cnavAdot: 'INTEGER',
+            cnavDeltaNo: 'INTEGER',
+            cnavDeltaNoDot: 'INTEGER',
+            cnavMo: 'INTEGER',
+            cnavE: 'INTEGER',
+            cnavOmega: 'INTEGER',
+            cnavOMEGA0: 'INTEGER',
+            cnavDeltaOmegaDot: 'INTEGER',
+            cnavIo: 'INTEGER',
+            cnavIoDot: 'INTEGER',
+            cnavCis: 'INTEGER',
+            cnavCic: 'INTEGER',
+            cnavCrs: 'INTEGER',
+            cnavCrc: 'INTEGER',
+            cnavCus: 'INTEGER',
+            cnavCuc: 'INTEGER'
+            },
+           glonass-ECEF: {
+            gloEn: 'INTEGER',
+            gloP1: 'BIT STRING',
+            gloP2: 'BOOLEAN',
+            gloM: 'INTEGER',
+            gloX: 'INTEGER',
+            gloXdot: 'INTEGER',
+            gloXdotdot: 'INTEGER',
+            gloY: 'INTEGER',
+            gloYdot: 'INTEGER',
+            gloYdotdot: 'INTEGER',
+            gloZ: 'INTEGER',
+            gloZdot: 'INTEGER',
+            gloZdotdot: 'INTEGER'
+            },
+           sbas-ECEF: {
+            sbasTo: 'INTEGER',
+            sbasAccuracy: 'BIT STRING',
+            sbasXg: 'INTEGER',
+            sbasYg: 'INTEGER',
+            sbasZg: 'INTEGER',
+            sbasXgDot: 'INTEGER',
+            sbasYgDot: 'INTEGER',
+            sbasZgDot: 'INTEGER',
+            sbasXgDotDot: 'INTEGER',
+            sbagYgDotDot: 'INTEGER',
+            sbasZgDotDot: 'INTEGER'
+            },
+           bds-KeplerianSet-r12: {
+            bdsAODE-r12: 'INTEGER',
+            bdsURAI-r12: 'INTEGER',
+            bdsToe-r12: 'INTEGER',
+            bdsAPowerHalf-r12: 'INTEGER',
+            bdsE-r12: 'INTEGER',
+            bdsW-r12: 'INTEGER',
+            bdsDeltaN-r12: 'INTEGER',
+            bdsM0-r12: 'INTEGER',
+            bdsOmega0-r12: 'INTEGER',
+            bdsOmegaDot-r12: 'INTEGER',
+            bdsI0-r12: 'INTEGER',
+            bdsIDot-r12: 'INTEGER',
+            bdsCuc-r12: 'INTEGER',
+            bdsCus-r12: 'INTEGER',
+            bdsCrc-r12: 'INTEGER',
+            bdsCrs-r12: 'INTEGER',
+            bdsCic-r12: 'INTEGER',
+            bdsCis-r12: 'INTEGER'
+            }
+           },
+          svHealthExt-v1240: 'BIT STRING'
+          }]
+         },
+        gnss-RealTimeIntegrity: {
+         gnss-BadSignalList: [{
+          badSVID: {
+           satellite-id: 'INTEGER'
+           },
+          badSignalID: {
+           gnss-SignalIDs: 'BIT STRING'
+           }
+          }]
+         },
+        gnss-DataBitAssistance: {
+         gnss-TOD: 'INTEGER',
+         gnss-TODfrac: 'INTEGER',
+         gnss-DataBitsSatList: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           },
+          gnss-DataBitsSgnList: [{
+           gnss-SignalType: {
+            gnss-SignalID: 'INTEGER'
+            },
+           gnss-DataBits: 'BIT STRING'
+           }]
+          }]
+         },
+        gnss-AcquisitionAssistance: {
+         gnss-SignalID: {
+          gnss-SignalID: 'INTEGER'
+          },
+         gnss-AcquisitionAssistList: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           },
+          doppler0: 'INTEGER',
+          doppler1: 'INTEGER',
+          dopplerUncertainty: 'INTEGER',
+          codePhase: 'INTEGER',
+          intCodePhase: 'INTEGER',
+          codePhaseSearchWindow: 'INTEGER',
+          azimuth: 'INTEGER',
+          elevation: 'INTEGER',
+          codePhase1023: 'BOOLEAN',
+          dopplerUncertaintyExt-r10: 'ENUMERATED'
+          }],
+         confidence-r10: 'INTEGER'
+         },
+        gnss-Almanac: {
+         weekNumber: 'INTEGER',
+         toa: 'INTEGER',
+         ioda: 'INTEGER',
+         completeAlmanacProvided: 'BOOLEAN',
+         gnss-AlmanacList: [{
+          keplerianAlmanacSet: {
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           kepAlmanacE: 'INTEGER',
+           kepAlmanacDeltaI: 'INTEGER',
+           kepAlmanacOmegaDot: 'INTEGER',
+           kepSV-StatusINAV: 'BIT STRING',
+           kepSV-StatusFNAV: 'BIT STRING',
+           kepAlmanacAPowerHalf: 'INTEGER',
+           kepAlmanacOmega0: 'INTEGER',
+           kepAlmanacW: 'INTEGER',
+           kepAlmanacM0: 'INTEGER',
+           kepAlmanacAF0: 'INTEGER',
+           kepAlmanacAF1: 'INTEGER'
+           },
+          keplerianNAV-Almanac: {
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           navAlmE: 'INTEGER',
+           navAlmDeltaI: 'INTEGER',
+           navAlmOMEGADOT: 'INTEGER',
+           navAlmSVHealth: 'INTEGER',
+           navAlmSqrtA: 'INTEGER',
+           navAlmOMEGAo: 'INTEGER',
+           navAlmOmega: 'INTEGER',
+           navAlmMo: 'INTEGER',
+           navAlmaf0: 'INTEGER',
+           navAlmaf1: 'INTEGER'
+           },
+          keplerianReducedAlmanac: {
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           redAlmDeltaA: 'INTEGER',
+           redAlmOmega0: 'INTEGER',
+           redAlmPhi0: 'INTEGER',
+           redAlmL1Health: 'BOOLEAN',
+           redAlmL2Health: 'BOOLEAN',
+           redAlmL5Health: 'BOOLEAN'
+           },
+          keplerianMidiAlmanac: {
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           midiAlmE: 'INTEGER',
+           midiAlmDeltaI: 'INTEGER',
+           midiAlmOmegaDot: 'INTEGER',
+           midiAlmSqrtA: 'INTEGER',
+           midiAlmOmega0: 'INTEGER',
+           midiAlmOmega: 'INTEGER',
+           midiAlmMo: 'INTEGER',
+           midiAlmaf0: 'INTEGER',
+           midiAlmaf1: 'INTEGER',
+           midiAlmL1Health: 'BOOLEAN',
+           midiAlmL2Health: 'BOOLEAN',
+           midiAlmL5Health: 'BOOLEAN'
+           },
+          keplerianGLONASS: {
+           gloAlm-NA: 'INTEGER',
+           gloAlmnA: 'INTEGER',
+           gloAlmHA: 'INTEGER',
+           gloAlmLambdaA: 'INTEGER',
+           gloAlmtlambdaA: 'INTEGER',
+           gloAlmDeltaIa: 'INTEGER',
+           gloAlmDeltaTA: 'INTEGER',
+           gloAlmDeltaTdotA: 'INTEGER',
+           gloAlmEpsilonA: 'INTEGER',
+           gloAlmOmegaA: 'INTEGER',
+           gloAlmTauA: 'INTEGER',
+           gloAlmCA: 'INTEGER',
+           gloAlmMA: 'BIT STRING'
+           },
+          ecef-SBAS-Almanac: {
+           sbasAlmDataID: 'INTEGER',
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           sbasAlmHealth: 'BIT STRING',
+           sbasAlmXg: 'INTEGER',
+           sbasAlmYg: 'INTEGER',
+           sbasAlmZg: 'INTEGER',
+           sbasAlmXgdot: 'INTEGER',
+           sbasAlmYgDot: 'INTEGER',
+           sbasAlmZgDot: 'INTEGER',
+           sbasAlmTo: 'INTEGER'
+           },
+          keplerianBDS-Almanac-r12: {
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           bdsAlmToa-r12: 'INTEGER',
+           bdsAlmSqrtA-r12: 'INTEGER',
+           bdsAlmE-r12: 'INTEGER',
+           bdsAlmW-r12: 'INTEGER',
+           bdsAlmM0-r12: 'INTEGER',
+           bdsAlmOmega0-r12: 'INTEGER',
+           bdsAlmOmegaDot-r12: 'INTEGER',
+           bdsAlmDeltaI-r12: 'INTEGER',
+           bdsAlmA0-r12: 'INTEGER',
+           bdsAlmA1-r12: 'INTEGER',
+           bdsSvHealth-r12: 'BIT STRING'
+           }
+          }],
+         toa-ext-v1240: 'INTEGER',
+         ioda-ext-v1240: 'INTEGER'
+         },
+        gnss-UTC-Model: {
+         utcModel1: {
+          gnss-Utc-A1: 'INTEGER',
+          gnss-Utc-A0: 'INTEGER',
+          gnss-Utc-Tot: 'INTEGER',
+          gnss-Utc-WNt: 'INTEGER',
+          gnss-Utc-DeltaTls: 'INTEGER',
+          gnss-Utc-WNlsf: 'INTEGER',
+          gnss-Utc-DN: 'INTEGER',
+          gnss-Utc-DeltaTlsf: 'INTEGER'
+          },
+         utcModel2: {
+          utcA0: 'INTEGER',
+          utcA1: 'INTEGER',
+          utcA2: 'INTEGER',
+          utcDeltaTls: 'INTEGER',
+          utcTot: 'INTEGER',
+          utcWNot: 'INTEGER',
+          utcWNlsf: 'INTEGER',
+          utcDN: 'BIT STRING',
+          utcDeltaTlsf: 'INTEGER'
+          },
+         utcModel3: {
+          nA: 'INTEGER',
+          tauC: 'INTEGER',
+          b1: 'INTEGER',
+          b2: 'INTEGER',
+          kp: 'BIT STRING'
+          },
+         utcModel4: {
+          utcA1wnt: 'INTEGER',
+          utcA0wnt: 'INTEGER',
+          utcTot: 'INTEGER',
+          utcWNt: 'INTEGER',
+          utcDeltaTls: 'INTEGER',
+          utcWNlsf: 'INTEGER',
+          utcDN: 'INTEGER',
+          utcDeltaTlsf: 'INTEGER',
+          utcStandardID: 'INTEGER'
+          },
+         utcModel5-r12: {
+          utcA0-r12: 'INTEGER',
+          utcA1-r12: 'INTEGER',
+          utcDeltaTls-r12: 'INTEGER',
+          utcWNlsf-r12: 'INTEGER',
+          utcDN-r12: 'INTEGER',
+          utcDeltaTlsf-r12: 'INTEGER'
+          }
+         },
+        gnss-AuxiliaryInformation: {
+         gnss-ID-GPS: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           },
+          signalsAvailable: {
+           gnss-SignalIDs: 'BIT STRING'
+           }
+          }],
+         gnss-ID-GLONASS: [{
+          svID: {
+           satellite-id: 'INTEGER'
+           },
+          signalsAvailable: {
+           gnss-SignalIDs: 'BIT STRING'
+           },
+          channelNumber: 'INTEGER'
+          }]
+         },
+        bds-DifferentialCorrections-r12: {
+         dbds-RefTime-r12: 'INTEGER',
+         bds-SgnTypeList-r12: [{
+          gnss-SignalID: {
+           gnss-SignalID: 'INTEGER'
+           },
+          dbds-CorrectionList-r12: [{
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           bds-UDREI-r12: 'INTEGER',
+           bds-RURAI-r12: 'INTEGER',
+           bds-ECC-DeltaT-r12: 'INTEGER'
+           }]
+          }]
+         },
+        bds-GridModel-r12: {
+         bds-RefTime-r12: 'INTEGER',
+         gridIonList-r12: [{
+          igp-ID-r12: 'INTEGER',
+          dt-r12: 'INTEGER',
+          givei-r12: 'INTEGER'
+          }]
+         }
+        }],
+       gnss-Error: {
+        locationServerErrorCauses: {
+         cause: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses: {
+         cause: 'ENUMERATED',
+         fineTimeAssistanceMeasurementsNotPossible: 'NULL',
+         adrMeasurementsNotPossible: 'NULL',
+         multiFrequencyMeasurementsNotPossible: 'NULL'
+         }
+        }
+       },
+      otdoa-ProvideAssistanceData: {
+       otdoa-ReferenceCellInfo: {
+        physCellId: 'INTEGER',
+        cellGlobalId: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER'],
+         cellidentity: 'BIT STRING'
+         },
+        earfcnRef: 'INTEGER',
+        antennaPortConfig: 'ENUMERATED',
+        cpLength: 'ENUMERATED',
+        prsInfo: {
+         prs-Bandwidth: 'ENUMERATED',
+         prs-ConfigurationIndex: 'INTEGER',
+         numDL-Frames: 'ENUMERATED',
+         prs-MutingInfo-r9: {
+          po2-r9: 'BIT STRING',
+          po4-r9: 'BIT STRING',
+          po8-r9: 'BIT STRING',
+          po16-r9: 'BIT STRING'
+          }
+         },
+        earfcnRef-v9a0: 'INTEGER'
+        },
+       otdoa-NeighbourCellInfo: [[{
+        physCellId: 'INTEGER',
+        cellGlobalId: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER'],
+         cellidentity: 'BIT STRING'
+         },
+        earfcn: 'INTEGER',
+        cpLength: 'ENUMERATED',
+        prsInfo: {
+         prs-Bandwidth: 'ENUMERATED',
+         prs-ConfigurationIndex: 'INTEGER',
+         numDL-Frames: 'ENUMERATED',
+         prs-MutingInfo-r9: {
+          po2-r9: 'BIT STRING',
+          po4-r9: 'BIT STRING',
+          po8-r9: 'BIT STRING',
+          po16-r9: 'BIT STRING'
+          }
+         },
+        antennaPortConfig: 'ENUMERATED',
+        slotNumberOffset: 'INTEGER',
+        prs-SubframeOffset: 'INTEGER',
+        expectedRSTD: 'INTEGER',
+        expectedRSTD-Uncertainty: 'INTEGER',
+        earfcn-v9a0: 'INTEGER'
+        }]],
+       otdoa-Error: {
+        locationServerErrorCauses: {
+         cause: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses: {
+         cause: 'ENUMERATED'
+         }
+        }
+       },
+      epdu-Provide-Assistance-Data: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }]
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  requestLocationInformation: {
+   criticalExtensions: {
+    c1: {
+     requestLocationInformation-r9: {
+      commonIEsRequestLocationInformation: {
+       locationInformationType: 'ENUMERATED',
+       triggeredReporting: {
+        cellChange: 'BOOLEAN',
+        reportingDuration: 'INTEGER'
+        },
+       periodicalReporting: {
+        reportingAmount: 'ENUMERATED',
+        reportingInterval: 'ENUMERATED'
+        },
+       additionalInformation: 'ENUMERATED',
+       qos: {
+        horizontalAccuracy: {
+         accuracy: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        verticalCoordinateRequest: 'BOOLEAN',
+        verticalAccuracy: {
+         accuracy: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        responseTime: {
+         time: 'INTEGER',
+         responseTimeEarlyFix-r12: 'INTEGER'
+         },
+        velocityRequest: 'BOOLEAN'
+        },
+       environment: 'ENUMERATED',
+       locationCoordinateTypes: {
+        ellipsoidPoint: 'BOOLEAN',
+        ellipsoidPointWithUncertaintyCircle: 'BOOLEAN',
+        ellipsoidPointWithUncertaintyEllipse: 'BOOLEAN',
+        polygon: 'BOOLEAN',
+        ellipsoidPointWithAltitude: 'BOOLEAN',
+        ellipsoidPointWithAltitudeAndUncertaintyEllipsoid: 'BOOLEAN',
+        ellipsoidArc: 'BOOLEAN'
+        },
+       velocityTypes: {
+        horizontalVelocity: 'BOOLEAN',
+        horizontalWithVerticalVelocity: 'BOOLEAN',
+        horizontalVelocityWithUncertainty: 'BOOLEAN',
+        horizontalWithVerticalVelocityAndUncertainty: 'BOOLEAN'
+        }
+       },
+      a-gnss-RequestLocationInformation: {
+       gnss-PositioningInstructions: {
+        gnss-Methods: {
+         gnss-ids: 'BIT STRING'
+         },
+        fineTimeAssistanceMeasReq: 'BOOLEAN',
+        adrMeasReq: 'BOOLEAN',
+        multiFreqMeasReq: 'BOOLEAN',
+        assistanceAvailability: 'BOOLEAN'
+        }
+       },
+      otdoa-RequestLocationInformation: {
+       assistanceAvailability: 'BOOLEAN'
+       },
+      ecid-RequestLocationInformation: {
+       requestedMeasurements: 'BIT STRING'
+       },
+      epdu-RequestLocationInformation: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }],
+      sensor-RequestLocationInformation-r13: {
+       uncompensatedBarometricPressureReq-r13: 'BOOLEAN'
+       },
+      tbs-RequestLocationInformation-r13: {
+       mbsSgnMeasListReq-r13: 'BOOLEAN'
+       },
+      wlan-RequestLocationInformation-r13: {
+       requestedMeasurements-r13: 'BIT STRING'
+       },
+      bt-RequestLocationInformation-r13: {
+       requestedMeasurements-r13: 'BIT STRING'
+       }
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  provideLocationInformation: {
+   criticalExtensions: {
+    c1: {
+     provideLocationInformation-r9: {
+      commonIEsProvideLocationInformation: {
+       locationEstimate: {
+        ellipsoidPoint: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER'
+         },
+        ellipsoidPointWithUncertaintyCircle: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         uncertainty: 'INTEGER'
+         },
+        ellipsoidPointWithUncertaintyEllipse: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         uncertaintySemiMajor: 'INTEGER',
+         uncertaintySemiMinor: 'INTEGER',
+         orientationMajorAxis: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        polygon: [{
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER'
+         }],
+        ellipsoidPointWithAltitude: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER'
+         },
+        ellipsoidPointWithAltitudeAndUncertaintyEllipsoid: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER',
+         uncertaintySemiMajor: 'INTEGER',
+         uncertaintySemiMinor: 'INTEGER',
+         orientationMajorAxis: 'INTEGER',
+         uncertaintyAltitude: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        ellipsoidArc: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         innerRadius: 'INTEGER',
+         uncertaintyRadius: 'INTEGER',
+         offsetAngle: 'INTEGER',
+         includedAngle: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       velocityEstimate: {
+        horizontalVelocity: {
+         bearing: 'INTEGER',
+         horizontalSpeed: 'INTEGER'
+         },
+        horizontalWithVerticalVelocity: {
+         bearing: 'INTEGER',
+         horizontalSpeed: 'INTEGER',
+         verticalDirection: 'ENUMERATED',
+         verticalSpeed: 'INTEGER'
+         },
+        horizontalVelocityWithUncertainty: {
+         bearing: 'INTEGER',
+         horizontalSpeed: 'INTEGER',
+         uncertaintySpeed: 'INTEGER'
+         },
+        horizontalWithVerticalVelocityAndUncertainty: {
+         bearing: 'INTEGER',
+         horizontalSpeed: 'INTEGER',
+         verticalDirection: 'ENUMERATED',
+         verticalSpeed: 'INTEGER',
+         horizontalUncertaintySpeed: 'INTEGER',
+         verticalUncertaintySpeed: 'INTEGER'
+         }
+        },
+       locationError: {
+        locationfailurecause: 'ENUMERATED'
+        },
+       earlyFixReport-r12: 'ENUMERATED',
+       locationSource-r13: 'BIT STRING',
+       locationTimestamp-r13: 'UTCTime'
+       },
+      a-gnss-ProvideLocationInformation: {
+       gnss-SignalMeasurementInformation: {
+        measurementReferenceTime: {
+         gnss-TOD-msec: 'INTEGER',
+         gnss-TOD-frac: 'INTEGER',
+         gnss-TOD-unc: 'INTEGER',
+         gnss-TimeID: {
+          gnss-id: 'ENUMERATED'
+          },
+         networkTime: {
+          eUTRA: {
+           physCellId: 'INTEGER',
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            cellIdentity: {
+             eutra: 'BIT STRING',
+             utra: 'BIT STRING'
+             }
+            },
+           systemFrameNumber: 'BIT STRING'
+           },
+          uTRA: {
+           mode: {
+            fdd: {
+             primary-CPICH-Info: 'INTEGER'
+             },
+            tdd: {
+             cellParameters: 'INTEGER'
+             }
+            },
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            cellIdentity: {
+             eutra: 'BIT STRING',
+             utra: 'BIT STRING'
+             }
+            },
+           referenceSystemFrameNumber: 'INTEGER'
+           },
+          gSM: {
+           bcchCarrier: 'INTEGER',
+           bsic: 'INTEGER',
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            locationAreaCode: 'BIT STRING',
+            cellIdentity: 'BIT STRING'
+            },
+           referenceFrame: {
+            referenceFN: 'INTEGER',
+            referenceFNMSB: 'INTEGER'
+            },
+           deltaGNSS-TOD: 'INTEGER'
+           }
+          }
+         },
+        gnss-MeasurementList: [{
+         gnss-ID: {
+          gnss-id: 'ENUMERATED'
+          },
+         gnss-SgnMeasList: [{
+          gnss-SignalID: {
+           gnss-SignalID: 'INTEGER'
+           },
+          gnss-CodePhaseAmbiguity: 'INTEGER',
+          gnss-SatMeasList: [{
+           svID: {
+            satellite-id: 'INTEGER'
+            },
+           cNo: 'INTEGER',
+           mpathDet: 'ENUMERATED',
+           carrierQualityInd: 'INTEGER',
+           codePhase: 'INTEGER',
+           integerCodePhase: 'INTEGER',
+           codePhaseRMSError: 'INTEGER',
+           doppler: 'INTEGER',
+           adr: 'INTEGER'
+           }]
+          }]
+         }]
+        },
+       gnss-LocationInformation: {
+        measurementReferenceTime: {
+         gnss-TOD-msec: 'INTEGER',
+         gnss-TOD-frac: 'INTEGER',
+         gnss-TOD-unc: 'INTEGER',
+         gnss-TimeID: {
+          gnss-id: 'ENUMERATED'
+          },
+         networkTime: {
+          eUTRA: {
+           physCellId: 'INTEGER',
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            cellIdentity: {
+             eutra: 'BIT STRING',
+             utra: 'BIT STRING'
+             }
+            },
+           systemFrameNumber: 'BIT STRING'
+           },
+          uTRA: {
+           mode: {
+            fdd: {
+             primary-CPICH-Info: 'INTEGER'
+             },
+            tdd: {
+             cellParameters: 'INTEGER'
+             }
+            },
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            cellIdentity: {
+             eutra: 'BIT STRING',
+             utra: 'BIT STRING'
+             }
+            },
+           referenceSystemFrameNumber: 'INTEGER'
+           },
+          gSM: {
+           bcchCarrier: 'INTEGER',
+           bsic: 'INTEGER',
+           cellGlobalId: {
+            plmn-Identity: {
+             mcc: ['INTEGER'],
+             mnc: ['INTEGER']
+             },
+            locationAreaCode: 'BIT STRING',
+            cellIdentity: 'BIT STRING'
+            },
+           referenceFrame: {
+            referenceFN: 'INTEGER',
+            referenceFNMSB: 'INTEGER'
+            },
+           deltaGNSS-TOD: 'INTEGER'
+           }
+          }
+         },
+        agnss-List: {
+         gnss-ids: 'BIT STRING'
+         }
+        },
+       gnss-Error: {
+        locationServerErrorCauses: {
+         cause: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses: {
+         cause: 'ENUMERATED',
+         fineTimeAssistanceMeasurementsNotPossible: 'NULL',
+         adrMeasurementsNotPossible: 'NULL',
+         multiFrequencyMeasurementsNotPossible: 'NULL'
+         }
+        }
+       },
+      otdoa-ProvideLocationInformation: {
+       otdoaSignalMeasurementInformation: {
+        systemFrameNumber: 'BIT STRING',
+        physCellIdRef: 'INTEGER',
+        cellGlobalIdRef: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER'],
+         cellidentity: 'BIT STRING'
+         },
+        earfcnRef: 'INTEGER',
+        referenceQuality: {
+         error-Resolution: 'BIT STRING',
+         error-Value: 'BIT STRING',
+         error-NumSamples: 'BIT STRING'
+         },
+        neighbourMeasurementList: [{
+         physCellIdNeighbour: 'INTEGER',
+         cellGlobalIdNeighbour: {
+          mcc: ['INTEGER'],
+          mnc: ['INTEGER'],
+          cellidentity: 'BIT STRING'
+          },
+         earfcnNeighbour: 'INTEGER',
+         rstd: 'INTEGER',
+         rstd-Quality: {
+          error-Resolution: 'BIT STRING',
+          error-Value: 'BIT STRING',
+          error-NumSamples: 'BIT STRING'
+          },
+         earfcnNeighbour-v9a0: 'INTEGER'
+         }],
+        earfcnRef-v9a0: 'INTEGER'
+        },
+       otdoa-Error: {
+        locationServerErrorCauses: {
+         cause: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses: {
+         cause: 'ENUMERATED'
+         }
+        }
+       },
+      ecid-ProvideLocationInformation: {
+       ecid-SignalMeasurementInformation: {
+        primaryCellMeasuredResults: {
+         physCellId: 'INTEGER',
+         cellGlobalId: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          cellIdentity: {
+           eutra: 'BIT STRING',
+           utra: 'BIT STRING'
+           }
+          },
+         arfcnEUTRA: 'INTEGER',
+         systemFrameNumber: 'BIT STRING',
+         rsrp-Result: 'INTEGER',
+         rsrq-Result: 'INTEGER',
+         ue-RxTxTimeDiff: 'INTEGER',
+         arfcnEUTRA-v9a0: 'INTEGER'
+         },
+        measuredResultsList: [{
+         physCellId: 'INTEGER',
+         cellGlobalId: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          cellIdentity: {
+           eutra: 'BIT STRING',
+           utra: 'BIT STRING'
+           }
+          },
+         arfcnEUTRA: 'INTEGER',
+         systemFrameNumber: 'BIT STRING',
+         rsrp-Result: 'INTEGER',
+         rsrq-Result: 'INTEGER',
+         ue-RxTxTimeDiff: 'INTEGER',
+         arfcnEUTRA-v9a0: 'INTEGER'
+         }]
+        },
+       ecid-Error: {
+        locationServerErrorCauses: {
+         cause: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses: {
+         cause: 'ENUMERATED',
+         rsrpMeasurementNotPossible: 'NULL',
+         rsrqMeasurementNotPossible: 'NULL',
+         ueRxTxMeasurementNotPossible: 'NULL'
+         }
+        }
+       },
+      epdu-ProvideLocationInformation: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }],
+      sensor-ProvideLocationInformation-r13: {
+       sensor-MeasurementInformation-r13: {
+        measurementReferenceTime-r13: 'UTCTime',
+        uncompensatedBarometricPressure-r13: 'INTEGER'
+        },
+       sensor-Error-r13: {
+        locationServerErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         }
+        }
+       },
+      tbs-ProvideLocationInformation-r13: {
+       tbs-MeasurementInformation-r13: {
+        measurementReferenceTime-r13: 'UTCTime',
+        mbs-SgnMeasList-r13: [{
+         transmitterID-r13: 'INTEGER',
+         codePhase-r13: 'INTEGER',
+         codePhaseRMSError-r13: 'INTEGER'
+         }]
+        },
+       tbs-Error-r13: {
+        locationServerErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         }
+        }
+       },
+      wlan-ProvideLocationInformation-r13: {
+       wlan-MeasurementInformation-r13: {
+        measurementReferenceTime-r13: 'UTCTime',
+        wlan-MeasurementList-r13: [{
+         wlan-AP-Identifier-r13: {
+          bssid-r13: 'OCTET STRING',
+          ssid-r13: 'OCTET STRING'
+          },
+         rssi-r13: 'INTEGER',
+         rtt-r13: {
+          rttValue-r13: 'INTEGER',
+          rttUnits-r13: 'ENUMERATED',
+          rttAccuracy-r13: 'INTEGER'
+          },
+         apChannelFrequency-r13: 'INTEGER',
+         servingFlag-r13: 'BOOLEAN'
+         }]
+        },
+       wlan-Error-r13: {
+        locationServerErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses-r13: {
+         cause-r13: 'ENUMERATED',
+         wlan-AP-RSSI-MeasurementNotPossible-r13: 'NULL',
+         wlan-AP-RTT-MeasurementNotPossible-r13: 'NULL'
+         }
+        }
+       },
+      bt-ProvideLocationInformation-r13: {
+       bt-MeasurementInformation-r13: {
+        measurementReferenceTime-r13: 'UTCTime',
+        bt-MeasurementList-r13: [{
+         btAddr-r13: 'BIT STRING',
+         rssi-r13: 'INTEGER'
+         }]
+        },
+       bt-Error-r13: {
+        locationServerErrorCauses-r13: {
+         cause-r13: 'ENUMERATED'
+         },
+        targetDeviceErrorCauses-r13: {
+         cause-r13: 'ENUMERATED',
+         bt-Beacon-rssiMeasurementNotPossible-r13: 'NULL'
+         }
+        }
+       }
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  abort: {
+   criticalExtensions: {
+    c1: {
+     abort-r9: {
+      commonIEsAbort: {
+       abortCause: 'ENUMERATED'
+       },
+      epdu-Abort: [{
+       ePDU-Identifier: {
+        ePDU-ID: 'INTEGER',
+        ePDU-Name: 'VisibleString'
+        },
+       ePDU-Body: 'OCTET STRING'
+       }]
+      },
+     spare3: 'NULL',
+     spare2: 'NULL',
+     spare1: 'NULL'
+     },
+    criticalExtensionsFuture: {}
+    }
+   },
+  error: {
+   error-r9: {
+    commonIEsError: {
+     errorCause: 'ENUMERATED'
+     },
+    epdu-Error: [{
+     ePDU-Identifier: {
+      ePDU-ID: 'INTEGER',
+      ePDU-Name: 'VisibleString'
+      },
+     ePDU-Body: 'OCTET STRING'
+     }]
+    },
+   criticalExtensionsFuture: {}
+   },
+  spare7: 'NULL',
+  spare6: 'NULL',
+  spare5: 'NULL',
+  spare4: 'NULL',
+  spare3: 'NULL',
+  spare2: 'NULL',
+  spare1: 'NULL',
+  spare0: 'NULL'
+  },
+ messageClassExtension: {}
+ }
+}

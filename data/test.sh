@@ -1,1 +1,0 @@
-supl-client -a -d 7 --cell=gsm:244,5:0x59e2,0x31b0 192.168.1.30

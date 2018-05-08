@@ -28,9 +28,18 @@ class SuplClient:
 
     def send(self, supl_message):
         pdu = ULP.ULP.ULP_PDU
+
+        # 1. Encode data to get the length in SUPL header
         pdu.set_val(supl_message)
-        print(pdu.to_asn1())
         tx_data = pdu.to_uper()
+        length = len(tx_data)
+
+        # 2. Correct the length in SUPL header
+        supl_message["length"] = length
+        pdu.set_val(supl_message)
+        tx_data = pdu.to_uper()
+
+        print(pdu.to_asn1())
 
         string = tx_data.hex()
         print("[TX][%d]: %s" % (len(string)/2, string))
@@ -75,7 +84,7 @@ class SuplClient:
 
     def send_supl_start(self):
         supl_start = {
-            "length": 27,
+            "length": 0,
             "version": {
                 "maj": 1,
                 "min": 0,
@@ -127,7 +136,7 @@ class SuplClient:
 
     def send_supl_pos_init(self):
         supl_pos_init = {
-            "length": 46,
+            "length": 0,
             "version": {
                 "maj": 1,
                 "min": 0,

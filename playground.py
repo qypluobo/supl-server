@@ -1,6 +1,8 @@
 from binascii import hexlify, unhexlify
 from pycrate_asn1dir import ULP
 from pycrate_asn1dir import RRLP
+from pycrate_asn1dir import LPP
+from pycrate_asn1dir import LPPe
 from pycrate_asn1rt.utils import *
 
 
@@ -244,4 +246,17 @@ def test_from_asn1():
     pdu.from_asn1(text)
     print(pdu)
 
-test_from_asn1()
+def test_lpp():
+    pdu = LPP.LPP_PDU_Definitions.LPP_Message
+
+    with open("lpp.dict", "w") as f:
+        print(pdu.get_proto(), file=f)
+
+def test_lppe():
+    pdu = LPPe.OMA_LPPE.OMA_LPPe_MessageExtension
+
+    with open("lppe.dict", "w") as f:
+        print(pdu.get_proto(), file=f)
+
+
+test_lppe()

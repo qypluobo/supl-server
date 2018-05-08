@@ -1,0 +1,6035 @@
+{
+lppeCompatibilityLevel: 'INTEGER',
+lppeVersion: {
+ majorVersion: 'INTEGER',
+ minorVersion: 'INTEGER'
+ },
+lppeMode: 'ENUMERATED',
+messageExtensionBody: {
+ requestCapabilities: {
+  commonIEsRequestCapabilities: {
+   iP-Address-RequestCapabilities: {},
+   assistanceContainerSupportReq: {
+    vendorOrOperatorIDList: [{
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     }]
+    },
+   locationInformationContainerSupportReq: {
+    vendorOrOperatorIDList: [{
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     }]
+    },
+   relativeLocationChange-RequestCapabilities: {},
+   highAccuracyFormatCapabilitiesReq: {},
+   segmentedAssistanceData-ReqCapabilities: {},
+   referencePointCapabilitiesReq: {
+    referencePointProviderSupportListReq: [{
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     }]
+    },
+   scheduledLocation-RequestCapabilities: {},
+   accessCapabilitiesReq: {},
+   segmentedLocationInformation-ReqCapabilities: {},
+   ver1-1-localCellInformation-ReqCapabilities: {},
+   ver1-1-broadcast-ReqCapabilities: {
+    broadcastSystems: [{
+     standardSystemID: 'INTEGER',
+     proprietarySystemID: {
+      vendorOrOperator: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      proprietarySystemID: 'INTEGER'
+      }
+     }]
+    }
+   },
+  agnss-RequestCapabilities: {
+   assistanceDataSupportListReq: 'NULL',
+   environmentObservationSupportListReq: 'NULL',
+   haGNSSsupportReq: 'NULL'
+   },
+  otdoa-RequestCapabilities: {},
+  eotd-RequestCapabilities: {},
+  otdoa-utra-RequestCapabilities: {},
+  ecid-lte-RequestCapabilities: {},
+  ecid-gsm-RequestCapabilities: {},
+  ecid-utra-RequestCapabilities: {},
+  wlan-ap-RequestCapabilities: {},
+  ecid-wimax-RequestCapabilities: {},
+  sensor-RequestCapabilities: {},
+  srn-RequestCapabilities: {
+   capabilitiesRequestedFor: [{
+    srnTechnologyType: {
+     srnTechnologies: 'ENUMERATED'
+     },
+    srnVendorInformation: {
+     vendor: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     vendorInfo: 'OCTET STRING'
+     }
+    }]
+   }
+  },
+ provideCapabilities: {
+  commonIEsProvideCapabilities: {
+   iP-Address-Capabilities: {
+    iP-Address-support: 'BIT STRING'
+    },
+   assistanceContainerSupport: [{
+    vendorOrOperatorID: {
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     },
+    assistanceContainerList: [{
+     containerID: 'INTEGER'
+     }]
+    }],
+   locationInformationContainerSupport: [{
+    vendorOrOperatorID: {
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     },
+    locationInformationContainerList: [{
+     containerID: 'INTEGER'
+     }]
+    }],
+   relativeLocationChange-Capabilities: {
+    numberOfChanges: 'INTEGER'
+    },
+   highAccuracyFormatCapabilities: 'BIT STRING',
+   segmentedAssistanceData-ProvideCapabs: {
+    maxSegments: 'INTEGER',
+    maxSize: 'INTEGER',
+    minSize: 'INTEGER',
+    resume: 'NULL'
+    },
+   referencePointCapabilities: {
+    relativeLocationReportingSupport: 'BIT STRING',
+    referencePointProviderSupportList: [{
+     referencePointProvider: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     mapDataSupport: {
+      mapDataFormat: 'OCTET STRING'
+      }
+     }]
+    },
+   scheduledLocation-Capabilities: {
+    minimumWindow: 'INTEGER',
+    gnssTimeReference: {
+     gnss-ids: 'BIT STRING'
+     },
+    networkTimeReference: 'ENUMERATED'
+    },
+   accessCapabilities: {
+    accessTypeUnknown: 'NULL',
+    fixedAccessTypes: 'BIT STRING',
+    wirelessAccessTypes: 'BIT STRING'
+    },
+   segmentedLocationInformation-ProvideCapabs: {
+    maxSegments: 'INTEGER',
+    maxSize: 'INTEGER',
+    minSize: 'INTEGER',
+    resume: 'NULL'
+    },
+   ver1-1-localCellInformation-ProvideCapabilities: {
+    localCellInformation-Support: 'BIT STRING'
+    },
+   ver1-1-broadcast-ProvideCapabilities: [{
+    broadcastSystemID: {
+     standardSystemID: 'INTEGER',
+     proprietarySystemID: {
+      vendorOrOperator: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      proprietarySystemID: 'INTEGER'
+      }
+     },
+    broadcastADTypes: {
+     lppLabels: [{
+      level1-element: {
+       level1-element-value: 'INTEGER',
+       level2-element: {
+        level2-element-value: 'INTEGER',
+        level3-element: {
+         level3-element-value: 'INTEGER'
+         }
+        }
+       },
+      lastElements: 'BIT STRING',
+      additionalElements: 'ENUMERATED'
+      }],
+     lppeLabels: [{
+      level1-element: {
+       level1-element-value: 'INTEGER',
+       level2-element: {
+        level2-element-value: 'INTEGER',
+        level3-element: {
+         level3-element-value: 'INTEGER'
+         }
+        }
+       },
+      lastElements: 'BIT STRING',
+      additionalElements: 'ENUMERATED'
+      }]
+     },
+    point2pointAD: {},
+    ciphering: {},
+    authentication: {}
+    }]
+   },
+  agnss-ProvideCapabilities: {
+   assistanceDataSupportList: {
+    commonAssistanceDataSupport: {
+     ionosphericModelSupport: {
+      ionoModel: 'BIT STRING'
+      },
+     troposphereModelSupport: {
+      tropoModel: 'BIT STRING',
+      supportForMultipleGridPoints: 'BOOLEAN'
+      },
+     altitudeAssistanceSupport: {},
+     solarRadiationSupport: {},
+     ccpSupport: {
+      supportAreaAssistanceSupported: 'BOOLEAN',
+      multiReferenceStationSupported: 'BOOLEAN'
+      }
+     },
+    genericAssistanceDataSupport: [{
+     gnss-ID: {
+      gnss-id: 'ENUMERATED'
+      },
+     mechnanicsSupport: {},
+     dcbSupport: {},
+     navModelAccuracyModelDegradationSupport: {},
+     ccpAssistanceSuppport: {
+      gnss-SignalIDs: 'BIT STRING'
+      },
+     navModelSupport: {
+      navModelSupport: ['INTEGER']
+      }
+     }]
+    },
+   environmentObservationSupportList: {
+    ionosphereMeasurementSupport: 'BIT STRING',
+    pressureMeasurementSupported: 'BOOLEAN',
+    temperatureMeasurementSupported: 'BOOLEAN'
+    },
+   haGNSSsupport: {
+    modeSupport: 'BIT STRING',
+    haGNSSpressureInformationSupport: 'BOOLEAN',
+    haGNSSantennaInformationSupport: 'BIT STRING',
+    haGNSSperGNSSsupport: [{
+     gnss-ID: {
+      gnss-id: 'ENUMERATED'
+      },
+     haGNSSsignalSupport: {
+      gnss-SignalIDs: 'BIT STRING'
+      }
+     }]
+    }
+   },
+  otdoa-ProvideCapabilities: {
+   eNodeB-AD-sup: {},
+   home-eNodeB-AD-sup: {}
+   },
+  eotd-ProvideCapabilities: {
+   eotdSupport: 'BIT STRING'
+   },
+  otdoa-utra-ProvideCapabilities: {
+   ueBasedSupported: 'BOOLEAN',
+   ueAssistedSupported: 'BOOLEAN',
+   ipdlSupported: 'BOOLEAN'
+   },
+  ecid-lte-ProvideCapabilities: {
+   ecid-lte-MeasSupported: 'BIT STRING',
+   ecid-lte-eNodeB-ADSupported: 'BIT STRING',
+   ecid-utra-HeNB-ADSupported: 'BIT STRING'
+   },
+  ecid-gsm-ProvideCapabilities: {
+   ecid-gsm-MeasSupported: 'BIT STRING',
+   ecid-gsm-ADSupported: 'BIT STRING'
+   },
+  ecid-utra-ProvideCapabilities: {
+   ecid-utra-MeasSupported: 'BIT STRING',
+   ecid-utra-nodeB-ADSupported: 'BIT STRING',
+   ecid-utra-HNB-ADSupported: 'BIT STRING'
+   },
+  wlan-ap-ProvideCapabilities: {
+   wlan-ecid-MeasSupported: 'BIT STRING',
+   wlan-types-Supported: 'BIT STRING',
+   ap-Capability: {
+    apMACAddress: {
+     apMacAddress: 'BIT STRING'
+     },
+    apTypes: 'BIT STRING'
+    },
+   wlan-ap-ADSupported: 'BIT STRING',
+   additional-wlan-ecid-MeasSupported: 'BIT STRING'
+   },
+  ecid-wimax-ProvideCapabilities: {
+   ecid-wimax-MeasSupported: 'BIT STRING'
+   },
+  sensor-ProvideCapabilities: {
+   motionStateSupport: 'NULL',
+   secondarySupport: 'NULL',
+   barometricPressureSupport: 'NULL'
+   },
+  srn-ProvideCapabilities: {
+   capabilitiesPerSRNCategory: [{
+    srnCategory: {
+     srnTechnologyType: {
+      srnTechnologies: 'ENUMERATED'
+      },
+     srnVendorInformation: {
+      vendor: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      vendorInfo: 'OCTET STRING'
+      }
+     },
+    supportedMeasurements: {
+     srnMeasurements: 'BIT STRING'
+     },
+    supportedAssistanceData: 'BIT STRING',
+    historicMeasurementsSupported: 'NULL'
+    }]
+   }
+  },
+ requestAssistanceData: {
+  commonIEsRequestAssistanceData: {
+   approximate-location: {
+    latitudeSign: 'ENUMERATED',
+    degreesLatitude: 'INTEGER',
+    degreesLongitude: 'INTEGER',
+    altitudeDirection: 'ENUMERATED',
+    altitude: 'INTEGER',
+    uncertaintySemiMajor: 'INTEGER',
+    uncertaintySemiMinor: 'INTEGER',
+    orientationMajorAxis: 'INTEGER',
+    uncertaintyAltitude: 'INTEGER',
+    confidence: 'INTEGER'
+    },
+   assistanceContainerRequestList: [{
+    dataIdentifier: {
+     vendorOrOperatorID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     assistanceDataID: {
+      containerID: 'INTEGER'
+      }
+     },
+    simulatedReq: 'BOOLEAN',
+    checkOrUpdateReq: {
+     dataSerialNumber: {
+      dataSerialNumber: 'INTEGER'
+      },
+     checkLatest: 'ENUMERATED'
+     },
+    validityTimeRequest: {
+     beginTime: {
+      gnss-TimeID: {
+       gnss-id: 'ENUMERATED'
+       },
+      gnss-DayNumber: 'INTEGER',
+      gnss-TimeOfDay: 'INTEGER',
+      gnss-TimeOfDayFrac-msec: 'INTEGER',
+      notificationOfLeapSecond: 'BIT STRING',
+      gps-TOW-Assist: [{
+       satelliteID: 'INTEGER',
+       tlmWord: 'INTEGER',
+       antiSpoof: 'INTEGER',
+       alert: 'INTEGER',
+       tlmRsvdBits: 'INTEGER'
+       }]
+      },
+     beginTimeAlt: 'INTEGER',
+     duration: 'INTEGER'
+     },
+    proprietaryRequestParameters: 'OCTET STRING'
+    }],
+   requestPeriodicADwithUpdate: {
+    periodicAD-session-ID: 'OCTET STRING',
+    typeOfADRequest: 'ENUMERATED'
+    },
+   segmentedADpreference: 'ENUMERATED',
+   segmentedADResume: {
+    segmentedAD-session-ID: {
+     provider-ID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     server-ID: 'OCTET STRING',
+     session-ID: 'OCTET STRING'
+     },
+    next-segment-number: 'INTEGER'
+    },
+   referencePointAssistanceReq: {
+    referencePointReq: [{
+     referencePointProvider: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     mapDataReq: 'OCTET STRING'
+     }]
+    },
+   ver1-1-localCellInformationReq: {
+    localCellInformationReq: 'BIT STRING',
+    localCellID: {
+     eUTRA: {
+      plmn-Identity: {
+       mcc: ['INTEGER'],
+       mnc: ['INTEGER']
+       },
+      cellIdentity: {
+       eutra: 'BIT STRING',
+       utra: 'BIT STRING'
+       }
+      },
+     uTRA: {
+      plmn-Identity: {
+       mcc: ['INTEGER'],
+       mnc: ['INTEGER']
+       },
+      cellIdentity: {
+       eutra: 'BIT STRING',
+       utra: 'BIT STRING'
+       }
+      },
+     gSM: {
+      plmn-Identity: {
+       mcc: ['INTEGER'],
+       mnc: ['INTEGER']
+       },
+      locationAreaCode: 'BIT STRING',
+      cellIdentity: 'BIT STRING'
+      }
+     },
+    numberOfCells: 'INTEGER'
+    },
+   ver1-1-BroadcastAssistanceDataReq: {
+    broadcastSystem: {
+     broadcastSystemID: {
+      standardSystemID: 'INTEGER',
+      proprietarySystemID: {
+       vendorOrOperator: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       proprietarySystemID: 'INTEGER'
+       }
+      },
+     cipherSets: ['INTEGER'],
+     authenticationSets: ['INTEGER']
+     }
+    },
+   ver1-1-AccessNetwork: {
+    gSMAccess: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    wCDMAAccess: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    lTEAccess: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    wiMaxAccess: {
+     bsID-MSB: 'BIT STRING',
+     bsID-LSB: 'BIT STRING'
+     },
+    wLANAccess: {
+     apMacAddress: 'BIT STRING'
+     }
+    },
+   ver1-1-groundMorphologyModelReq: {
+    modelsReq: 'BIT STRING',
+    refAreaParam: {
+     northWestCorner: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER'
+      },
+     spanX: 'INTEGER',
+     spanY: 'INTEGER'
+     }
+    }
+   },
+  agnss-RequestAssistanceData: {
+   commonAssistDataReq: {
+    ionosphericModelReq: {
+     staticModels: {
+      ionoreq: 'BIT STRING',
+      requestBeginTime: {
+       gnss-TimeID: {
+        gnss-id: 'ENUMERATED'
+        },
+       gnss-DayNumber: 'INTEGER',
+       gnss-TimeOfDay: 'INTEGER',
+       gnss-TimeOfDayFrac-msec: 'INTEGER',
+       notificationOfLeapSecond: 'BIT STRING',
+       gps-TOW-Assist: [{
+        satelliteID: 'INTEGER',
+        tlmWord: 'INTEGER',
+        antiSpoof: 'INTEGER',
+        alert: 'INTEGER',
+        tlmRsvdBits: 'INTEGER'
+        }]
+       },
+      duration: {
+       duration: 'INTEGER',
+       durationLSB: 'INTEGER'
+       }
+      },
+     periodicModels: {
+      waIonoSurface: {
+       duration: {
+        duration: 'INTEGER',
+        durationLSB: 'INTEGER'
+        },
+       rate: 'INTEGER'
+       }
+      }
+     },
+    troposphereModelReq: {
+     troposphereModelReq: 'BIT STRING',
+     supportForMultipleGridPoints: 'BOOLEAN',
+     requestBeginTime: {
+      gnss-TimeID: {
+       gnss-id: 'ENUMERATED'
+       },
+      gnss-DayNumber: 'INTEGER',
+      gnss-TimeOfDay: 'INTEGER',
+      gnss-TimeOfDayFrac-msec: 'INTEGER',
+      notificationOfLeapSecond: 'BIT STRING',
+      gps-TOW-Assist: [{
+       satelliteID: 'INTEGER',
+       tlmWord: 'INTEGER',
+       antiSpoof: 'INTEGER',
+       alert: 'INTEGER',
+       tlmRsvdBits: 'INTEGER'
+       }]
+      },
+     duration: {
+      duration: 'INTEGER',
+      durationLSB: 'INTEGER'
+      }
+     },
+    altitudeAssistanceReq: {
+     requestBeginTime: {
+      gnss-TimeID: {
+       gnss-id: 'ENUMERATED'
+       },
+      gnss-DayNumber: 'INTEGER',
+      gnss-TimeOfDay: 'INTEGER',
+      gnss-TimeOfDayFrac-msec: 'INTEGER',
+      notificationOfLeapSecond: 'BIT STRING',
+      gps-TOW-Assist: [{
+       satelliteID: 'INTEGER',
+       tlmWord: 'INTEGER',
+       antiSpoof: 'INTEGER',
+       alert: 'INTEGER',
+       tlmRsvdBits: 'INTEGER'
+       }]
+      },
+     duration: {
+      duration: 'INTEGER',
+      durationLSB: 'INTEGER'
+      }
+     },
+    solarRadiationRequest: {},
+    ccpRequestControlParameters: {
+     ccpSupportAreaRequest: 'NULL',
+     ccpNeighborListRequest: 'NULL',
+     ccpCommonRequest: {
+      duration: {
+       duration: 'INTEGER',
+       durationLSB: 'INTEGER'
+       },
+      rate: 'INTEGER',
+      refStation: {
+       posBasedReferenceStationRequest: {
+        requestedReferenceStationLocation: {
+         latitude: 'INTEGER',
+         longitude: 'INTEGER',
+         cep: 'INTEGER',
+         uncertainty-semimajor: 'INTEGER',
+         uncertainty-semiminor: 'INTEGER',
+         offset-angle: 'INTEGER',
+         confidenceHorizontal: 'INTEGER',
+         altitude: 'INTEGER',
+         uncertainty-altitude: 'INTEGER',
+         confidenceVertical: 'INTEGER'
+         },
+        qor: 'ENUMERATED'
+        },
+       idBasedReferenceStationRequest: [{
+        stationID: 'INTEGER'
+        }],
+       referenceStationKillList: [{
+        stationID: 'INTEGER'
+        }]
+       }
+      }
+     }
+    },
+   genericAssistDataReq: [{
+    gnss-ID: {
+     gnss-id: 'ENUMERATED'
+     },
+    waIonoSurfaceReq: {},
+    mechanicsReq: {
+     massRequest: 'BOOLEAN',
+     effectiveReflectivityAreaRequest: 'BOOLEAN',
+     pcoRequest: 'BOOLEAN',
+     svInfoRequest: 'BOOLEAN'
+     },
+    dcbReq: {
+     reference: {
+      signal: {
+       gnss-SignalID: 'INTEGER'
+       },
+      pd: 'ENUMERATED'
+      }
+     },
+    navModelDegradationModelReq: {},
+    ccpAssistGenericReq: {
+     ccpAssist-SignalsReq: {
+      gnss-SignalIDs: 'BIT STRING'
+      }
+     },
+    navigationModelReq: {
+     navModelID-PrefList: ['INTEGER']
+     }
+    }]
+   },
+  otdoa-RequestAssistanceData: {
+   lteCell: {
+    physCellId: 'INTEGER',
+    eARFCN: 'INTEGER',
+    ecgi: {
+     plmn-Identity: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     cellIdentity: {
+      eutra: 'BIT STRING',
+      utra: 'BIT STRING'
+      }
+     }
+    },
+   requestedCells: 'BIT STRING'
+   },
+  eotd-RequestAssistanceData: {
+   eotdAssistanceReq: 'BIT STRING'
+   },
+  otdoa-utra-RequestAssistanceData: {
+   otdoaUtraAssistanceReq: 'BIT STRING'
+   },
+  ecid-lte-RequestAssistanceData: {
+   eNBrequestedAD: 'BIT STRING',
+   heNBrequestedAD: 'BIT STRING'
+   },
+  ecid-gsm-RequestAssistanceData: {
+   requestedAD: 'BIT STRING'
+   },
+  ecid-utra-RequestAssistanceData: {
+   nBrequestedAD: 'BIT STRING',
+   hNBrequestedAD: 'BIT STRING'
+   },
+  wlan-ap-RequestAssistanceData: {
+   requestedAD: 'BIT STRING',
+   requestedAPTypes: 'BIT STRING'
+   },
+  sensor-RequestAssistanceData: {
+   pressureSensorAD: {}
+   },
+  srn-RequestAssistanceData: {
+   srnGroup: {
+    srnGroupRequest: {
+     doNotProvideList: {
+      groupList: [{
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       srnDataVersion: 'INTEGER'
+       }],
+      categoryList: [{
+       srnTechnologyType: {
+        srnTechnologies: 'ENUMERATED'
+        },
+       srnVendorInformation: {
+        vendor: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        vendorInfo: 'OCTET STRING'
+        }
+       }]
+      },
+     doProvideList: {
+      groupList: [{
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       srnDataVersion: 'INTEGER'
+       }],
+      categoryList: [{
+       srnTechnologyType: {
+        srnTechnologies: 'ENUMERATED'
+        },
+       srnVendorInformation: {
+        vendor: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        vendorInfo: 'OCTET STRING'
+        }
+       }]
+      }
+     },
+    srnGroupUpdateRequest: [{
+     srnGroupID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      srnDataVersion: 'INTEGER'
+      },
+     provideIndicationOnly: 'NULL',
+     inTheGroup: [{
+      srn-id: {
+       mac: 'BIT STRING',
+       nfc: {
+        manufacturer: 'BIT STRING',
+        uniqueNumber: 'BIT STRING'
+        },
+       mobileCode: {
+        registryID: 'BIT STRING',
+        remainingPart: 'OCTET STRING',
+        resolutionIdentifier: 'OCTET STRING'
+        },
+       other: 'OCTET STRING'
+       }
+      }]
+     }]
+    },
+   antennaPatternRequest: [{
+    antennaPatternID: {
+     vendorOrOperator: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     antennaPatternID: 'INTEGER'
+     }
+    }]
+   }
+  },
+ provideAssistanceData: {
+  commonIEsProvideAssistanceData: {
+   assistanceContainerList: [{
+    dataIdentifier: {
+     vendorOrOperatorID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     assistanceDataID: {
+      containerID: 'INTEGER'
+      }
+     },
+    checkOrUpdateOrError: 'ENUMERATED',
+    dataResult: {
+     simulationResult: 'INTEGER',
+     data: {
+      dataSerialNumber: {
+       dataSerialNumber: 'INTEGER'
+       },
+      data: 'OCTET STRING',
+      validityPeriod: {
+       beginTime: {
+        gnss-TimeID: {
+         gnss-id: 'ENUMERATED'
+         },
+        gnss-DayNumber: 'INTEGER',
+        gnss-TimeOfDay: 'INTEGER',
+        gnss-TimeOfDayFrac-msec: 'INTEGER',
+        notificationOfLeapSecond: 'BIT STRING',
+        gps-TOW-Assist: [{
+         satelliteID: 'INTEGER',
+         tlmWord: 'INTEGER',
+         antiSpoof: 'INTEGER',
+         alert: 'INTEGER',
+         tlmRsvdBits: 'INTEGER'
+         }]
+        },
+       beginTimeAlt: 'INTEGER',
+       duration: 'INTEGER'
+       },
+      validityArea: {
+       regionSizeInv: 'INTEGER',
+       areaWidth: 'INTEGER',
+       codedLatOfNWCorner: 'INTEGER',
+       codedLonOfNWCorner: 'INTEGER',
+       rleList: ['INTEGER']
+       }
+      }
+     },
+    errorCode: {
+     serverError: 'ENUMERATED'
+     }
+    }],
+   providePeriodicADwithUpdate: {
+    periodicAD-session-ID: 'OCTET STRING',
+    typeOfADProvide: 'ENUMERATED'
+    },
+   segmentedADTransfer: {
+    segmentedAD-session-ID: {
+     provider-ID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     server-ID: 'OCTET STRING',
+     session-ID: 'OCTET STRING'
+     },
+    segment-number: 'INTEGER'
+    },
+   default-reference-point: {
+    referencePointUniqueID: {
+     providerID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     providerAssignedID: 'OCTET STRING',
+     version: 'INTEGER'
+     },
+    referencePointGeographicLocation: {
+     location3D: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER'
+      },
+     location3DwithUncertainty: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      uncertaintyAltitude: 'INTEGER',
+      confidence: 'INTEGER'
+      },
+     locationwithhighaccuracy: {
+      latitude: 'INTEGER',
+      longitude: 'INTEGER',
+      cep: 'INTEGER',
+      uncertainty-semimajor: 'INTEGER',
+      uncertainty-semiminor: 'INTEGER',
+      offset-angle: 'INTEGER',
+      confidenceHorizontal: 'INTEGER',
+      altitude: 'INTEGER',
+      uncertainty-altitude: 'INTEGER',
+      confidenceVertical: 'INTEGER'
+      }
+     },
+    referencePointCivicLocation: {
+     countryCode: 'OCTET STRING',
+     civicAddressElementList: [{
+      caType: 'INTEGER',
+      caValue: 'OCTET STRING'
+      }]
+     },
+    referencePointFloorLevel: 'INTEGER',
+    relatedReferencePoints: [{
+     referencePointUniqueID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      version: 'INTEGER'
+      },
+     relativeLocation: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      }
+     }],
+    mapDataInformation: [{
+     mapDataUrl: {
+      mapDataUrl: 'VisibleString',
+      mapDataRef: {
+       dataID: {
+        containerID: 'INTEGER'
+        },
+       mapReference: 'OCTET STRING',
+       mapSize: 'INTEGER'
+       }
+      },
+     mapProvider: {
+      sameAsRefPointProvider: 'NULL',
+      notSameAsRefPointProvider: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       }
+      },
+     mapAssociation: {
+      referencePointUniqueID: 'NULL',
+      otherID: 'VisibleString',
+      mapOffset: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       },
+      origin: 'NULL'
+      },
+     mapHorizontalOrientation: 'INTEGER'
+     }]
+    },
+   ver1-1-localCellInformation: {
+    ver1-1-timingInformation: [{
+     gnss-SystemTime: {
+      gnss-TimeID: {
+       gnss-id: 'ENUMERATED'
+       },
+      gnss-DayNumber: 'INTEGER',
+      gnss-TimeOfDay: 'INTEGER',
+      gnss-TimeOfDayFrac-msec: 'INTEGER',
+      notificationOfLeapSecond: 'BIT STRING',
+      gps-TOW-Assist: [{
+       satelliteID: 'INTEGER',
+       tlmWord: 'INTEGER',
+       antiSpoof: 'INTEGER',
+       alert: 'INTEGER',
+       tlmRsvdBits: 'INTEGER'
+       }]
+      },
+     referenceTimeUnc: 'INTEGER',
+     gnss-ReferenceTimeForCells: [{
+      networkTime: {
+       secondsFromFrameStructureStart: 'INTEGER',
+       fractionalSecondsFromFrameStructureStart: 'INTEGER',
+       frameDrift: 'INTEGER',
+       cellID: {
+        eUTRA: {
+         physCellId: 'INTEGER',
+         cellGlobalIdEUTRA: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          cellIdentity: {
+           eutra: 'BIT STRING',
+           utra: 'BIT STRING'
+           }
+          },
+         earfcn: 'INTEGER',
+         earfcn-v9a0: 'INTEGER'
+         },
+        uTRA: {
+         mode: {
+          fdd: {
+           primary-CPICH-Info: 'INTEGER'
+           },
+          tdd: {
+           cellParameters: 'INTEGER'
+           }
+          },
+         cellGlobalIdUTRA: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          cellIdentity: {
+           eutra: 'BIT STRING',
+           utra: 'BIT STRING'
+           }
+          },
+         uarfcn: 'INTEGER'
+         },
+        gSM: {
+         bcchCarrier: 'INTEGER',
+         bsic: 'INTEGER',
+         cellGlobalIdGERAN: {
+          plmn-Identity: {
+           mcc: ['INTEGER'],
+           mnc: ['INTEGER']
+           },
+          locationAreaCode: 'BIT STRING',
+          cellIdentity: 'BIT STRING'
+          }
+         }
+        }
+       },
+      referenceTimeUnc: 'INTEGER',
+      bsAlign: 'ENUMERATED'
+      }]
+     }],
+    ver1-1-other-CellInformation: [{
+     cellID: {
+      eUTRA: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       cellIdentity: {
+        eutra: 'BIT STRING',
+        utra: 'BIT STRING'
+        }
+       },
+      uTRA: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       cellIdentity: {
+        eutra: 'BIT STRING',
+        utra: 'BIT STRING'
+        }
+       },
+      gSM: {
+       plmn-Identity: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER']
+        },
+       locationAreaCode: 'BIT STRING',
+       cellIdentity: 'BIT STRING'
+       }
+      },
+     coverage: {
+      circle: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       uncertainty: 'INTEGER'
+       },
+      ellipse: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      arc: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       innerRadius: 'INTEGER',
+       uncertaintyRadius: 'INTEGER',
+       offsetAngle: 'INTEGER',
+       includedAngle: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      polygon: [{
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER'
+       }]
+      },
+     coordinates: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      uncertaintyAltitude: 'INTEGER',
+      confidence: 'INTEGER'
+      },
+     frequencyAccuracy: 'INTEGER'
+     }]
+    },
+   ver1-1-BroadcastAssistanceData: {
+    broadcastSystem: {
+     standardSystemID: 'INTEGER',
+     proprietarySystemID: {
+      vendorOrOperator: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      proprietarySystemID: 'INTEGER'
+      }
+     },
+    accessNetworks: [{
+     gSMAccess: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     wCDMAAccess: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     lTEAccess: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     wiMaxAccess: {
+      bsID-MSB: 'BIT STRING',
+      bsID-LSB: 'BIT STRING'
+      },
+     wLANAccess: {
+      apMacAddress: 'BIT STRING'
+      }
+     }],
+    coverageArea: {
+     circle: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      uncertainty: 'INTEGER'
+      },
+     ellipse: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      confidence: 'INTEGER'
+      },
+     polygon: [{
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER'
+      }]
+     },
+    broadcastADTypes: {
+     lppLabels: [{
+      level1-element: {
+       level1-element-value: 'INTEGER',
+       level2-element: {
+        level2-element-value: 'INTEGER',
+        level3-element: {
+         level3-element-value: 'INTEGER'
+         }
+        }
+       },
+      lastElements: 'BIT STRING',
+      additionalElements: 'ENUMERATED'
+      }],
+     lppeLabels: [{
+      level1-element: {
+       level1-element-value: 'INTEGER',
+       level2-element: {
+        level2-element-value: 'INTEGER',
+        level3-element: {
+         level3-element-value: 'INTEGER'
+         }
+        }
+       },
+      lastElements: 'BIT STRING',
+      additionalElements: 'ENUMERATED'
+      }]
+     },
+    broadcastMode: {
+     unencapsulated: 'NULL',
+     encapsulated: {
+      serverID: {
+       provider-ID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       server-ID: 'OCTET STRING'
+       },
+      cipherSets: [{
+       cipherSetID: 'INTEGER',
+       cipherKey: 'BIT STRING',
+       c0: 'BIT STRING'
+       }],
+      authentication: [{
+       authenticationSetID: 'INTEGER',
+       rsaPublicKey: {
+        modulus: 'BIT STRING',
+        exponent: 'BIT STRING'
+        },
+       saltLength: 'INTEGER'
+       }]
+      }
+     }
+    },
+   ver1-1-groundMorphologyModel: {
+    altitudeModel: {
+     northWestCorner: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER'
+      },
+     northwestCornerAltitude: 'INTEGER',
+     nrows: 'INTEGER',
+     ncols: 'INTEGER',
+     spanX: 'INTEGER',
+     spanY: 'INTEGER',
+     deltaAltUnits: 'INTEGER',
+     altitudeGrid: [{
+      deltaAlt: 'INTEGER',
+      numGridPoints: 'INTEGER'
+      }]
+     },
+    buildingsProfileModel: {
+     northWestCorner: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER'
+      },
+     northwestCornerHeigth: 'INTEGER',
+     nrows: 'INTEGER',
+     ncols: 'INTEGER',
+     spanX: 'INTEGER',
+     spanY: 'INTEGER',
+     deltaHeigthUnits: 'INTEGER',
+     buildingsHeigthGrid: [{
+      deltaHeight: 'INTEGER',
+      numGridPoints: 'INTEGER'
+      }]
+     }
+    }
+   },
+  agnss-ProvideAssistanceData: {
+   commonAssistData: {
+    ionosphericModel: {
+     staticModels: {
+      localKlobucharModelList: [{
+       validityArea: {
+        regionSizeInv: 'INTEGER',
+        areaWidth: 'INTEGER',
+        codedLatOfNWCorner: 'INTEGER',
+        codedLonOfNWCorner: 'INTEGER',
+        rleList: ['INTEGER']
+        },
+       klobucharModel: [{
+        validityPeriod: {
+         beginTime: {
+          gnss-TimeID: {
+           gnss-id: 'ENUMERATED'
+           },
+          gnss-DayNumber: 'INTEGER',
+          gnss-TimeOfDay: 'INTEGER',
+          gnss-TimeOfDayFrac-msec: 'INTEGER',
+          notificationOfLeapSecond: 'BIT STRING',
+          gps-TOW-Assist: [{
+           satelliteID: 'INTEGER',
+           tlmWord: 'INTEGER',
+           antiSpoof: 'INTEGER',
+           alert: 'INTEGER',
+           tlmRsvdBits: 'INTEGER'
+           }]
+          },
+         beginTimeAlt: 'INTEGER',
+         duration: 'INTEGER'
+         },
+        alfa0: 'INTEGER',
+        alfa1: 'INTEGER',
+        alfa2: 'INTEGER',
+        alfa3: 'INTEGER',
+        beta0: 'INTEGER',
+        beta1: 'INTEGER',
+        beta2: 'INTEGER',
+        beta3: 'INTEGER'
+        }]
+       }],
+      ionoStormIndication: {
+       area: {
+        regionSizeInv: 'INTEGER',
+        areaWidth: 'INTEGER',
+        codedLatOfNWCorner: 'INTEGER',
+        codedLonOfNWCorner: 'INTEGER',
+        rleList: ['INTEGER']
+        },
+       stormList: [{
+        validityPeriod: {
+         beginTime: {
+          gnss-TimeID: {
+           gnss-id: 'ENUMERATED'
+           },
+          gnss-DayNumber: 'INTEGER',
+          gnss-TimeOfDay: 'INTEGER',
+          gnss-TimeOfDayFrac-msec: 'INTEGER',
+          notificationOfLeapSecond: 'BIT STRING',
+          gps-TOW-Assist: [{
+           satelliteID: 'INTEGER',
+           tlmWord: 'INTEGER',
+           antiSpoof: 'INTEGER',
+           alert: 'INTEGER',
+           tlmRsvdBits: 'INTEGER'
+           }]
+          },
+         beginTimeAlt: 'INTEGER',
+         duration: 'INTEGER'
+         },
+        rleListIono: [{
+         regionCount: 'INTEGER',
+         ionoIndex: {
+          noaaScales: 'ENUMERATED'
+          }
+         }]
+        }]
+       }
+      },
+     waIono: {
+      controlParameters: {
+       duration: {
+        duration: 'INTEGER',
+        durationLSB: 'INTEGER'
+        },
+       rate: 'INTEGER',
+       referencePosition: {
+        latitudeSign: 'ENUMERATED',
+        degreesLatitude: 'INTEGER',
+        degreesLongitude: 'INTEGER'
+        },
+       validityArea: {
+        regionSizeInv: 'INTEGER',
+        areaWidth: 'INTEGER',
+        codedLatOfNWCorner: 'INTEGER',
+        codedLonOfNWCorner: 'INTEGER',
+        rleList: ['INTEGER']
+        }
+       },
+      commonProvide: {
+       validityPeriod: {
+        beginTime: {
+         gnss-TimeID: {
+          gnss-id: 'ENUMERATED'
+          },
+         gnss-DayNumber: 'INTEGER',
+         gnss-TimeOfDay: 'INTEGER',
+         gnss-TimeOfDayFrac-msec: 'INTEGER',
+         notificationOfLeapSecond: 'BIT STRING',
+         gps-TOW-Assist: [{
+          satelliteID: 'INTEGER',
+          tlmWord: 'INTEGER',
+          antiSpoof: 'INTEGER',
+          alert: 'INTEGER',
+          tlmRsvdBits: 'INTEGER'
+          }]
+         },
+        beginTimeAlt: 'INTEGER',
+        duration: 'INTEGER'
+        }
+       }
+      }
+     },
+    troposphereModel: {
+     troposphereDelayList: [{
+      validityArea: {
+       regionSizeInv: 'INTEGER',
+       areaWidth: 'INTEGER',
+       codedLatOfNWCorner: 'INTEGER',
+       codedLonOfNWCorner: 'INTEGER',
+       rleList: ['INTEGER']
+       },
+      refAltitude: 'INTEGER',
+      gradientReferencePosition: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER'
+       },
+      delayList: [{
+       validityPeriod: {
+        beginTime: {
+         gnss-TimeID: {
+          gnss-id: 'ENUMERATED'
+          },
+         gnss-DayNumber: 'INTEGER',
+         gnss-TimeOfDay: 'INTEGER',
+         gnss-TimeOfDayFrac-msec: 'INTEGER',
+         notificationOfLeapSecond: 'BIT STRING',
+         gps-TOW-Assist: [{
+          satelliteID: 'INTEGER',
+          tlmWord: 'INTEGER',
+          antiSpoof: 'INTEGER',
+          alert: 'INTEGER',
+          tlmRsvdBits: 'INTEGER'
+          }]
+         },
+        beginTimeAlt: 'INTEGER',
+        duration: 'INTEGER'
+        },
+       zh0: 'INTEGER',
+       eh: 'INTEGER',
+       zw0: 'INTEGER',
+       ew: 'INTEGER',
+       gN: 'INTEGER',
+       gE: 'INTEGER',
+       mappingFunctionParameters: {
+        ah: 'INTEGER',
+        bh: 'INTEGER',
+        ch: 'INTEGER',
+        aw: 'INTEGER',
+        bw: 'INTEGER',
+        cw: 'INTEGER'
+        }
+       }]
+      }],
+     surfaceParametersList: [{
+      validityArea: {
+       regionSizeInv: 'INTEGER',
+       areaWidth: 'INTEGER',
+       codedLatOfNWCorner: 'INTEGER',
+       codedLonOfNWCorner: 'INTEGER',
+       rleList: ['INTEGER']
+       },
+      refAltitude: 'INTEGER',
+      gradientReferencePosition: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER'
+       },
+      parameterList: [{
+       validityPeriod: {
+        beginTime: {
+         gnss-TimeID: {
+          gnss-id: 'ENUMERATED'
+          },
+         gnss-DayNumber: 'INTEGER',
+         gnss-TimeOfDay: 'INTEGER',
+         gnss-TimeOfDayFrac-msec: 'INTEGER',
+         notificationOfLeapSecond: 'BIT STRING',
+         gps-TOW-Assist: [{
+          satelliteID: 'INTEGER',
+          tlmWord: 'INTEGER',
+          antiSpoof: 'INTEGER',
+          alert: 'INTEGER',
+          tlmRsvdBits: 'INTEGER'
+          }]
+         },
+        beginTimeAlt: 'INTEGER',
+        duration: 'INTEGER'
+        },
+       pressure: 'INTEGER',
+       pressureRate: 'INTEGER',
+       gN-pressure: 'INTEGER',
+       gE-pressure: 'INTEGER',
+       temperature: 'INTEGER',
+       temperatureRate: 'INTEGER',
+       gN-temperature: 'INTEGER',
+       gE-temperature: 'INTEGER',
+       mappingFunctionParameters: {
+        ah: 'INTEGER',
+        bh: 'INTEGER',
+        ch: 'INTEGER',
+        aw: 'INTEGER',
+        bw: 'INTEGER',
+        cw: 'INTEGER'
+        }
+       }]
+      }]
+     },
+    altitudeAssistance: [{
+     validityArea: {
+      regionSizeInv: 'INTEGER',
+      areaWidth: 'INTEGER',
+      codedLatOfNWCorner: 'INTEGER',
+      codedLonOfNWCorner: 'INTEGER',
+      rleList: ['INTEGER']
+      },
+     gradientReferencePosition: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      uncertaintyAltitude: 'INTEGER',
+      confidence: 'INTEGER'
+      },
+     refAltitude: 'INTEGER',
+     pressureAssistanceList: [{
+      validityPeriod: {
+       beginTime: {
+        gnss-TimeID: {
+         gnss-id: 'ENUMERATED'
+         },
+        gnss-DayNumber: 'INTEGER',
+        gnss-TimeOfDay: 'INTEGER',
+        gnss-TimeOfDayFrac-msec: 'INTEGER',
+        notificationOfLeapSecond: 'BIT STRING',
+        gps-TOW-Assist: [{
+         satelliteID: 'INTEGER',
+         tlmWord: 'INTEGER',
+         antiSpoof: 'INTEGER',
+         alert: 'INTEGER',
+         tlmRsvdBits: 'INTEGER'
+         }]
+        },
+       beginTimeAlt: 'INTEGER',
+       duration: 'INTEGER'
+       },
+      pressure: 'INTEGER',
+      pressureRate: 'INTEGER',
+      gN: 'INTEGER',
+      gE: 'INTEGER'
+      }]
+     }],
+    solarRadiation: {
+     solarRadiation: 'INTEGER'
+     },
+    ccpAssistCommonProvide: {
+     ccpProvideCommonParameters: {
+      ccpReferenceTime: {
+       gnss-TimeID: {
+        gnss-id: 'ENUMERATED'
+        },
+       gnss-DayNumber: 'INTEGER',
+       gnss-TimeOfDay: 'INTEGER',
+       gnss-TimeOfDayFrac-msec: 'INTEGER',
+       notificationOfLeapSecond: 'BIT STRING',
+       gps-TOW-Assist: [{
+        satelliteID: 'INTEGER',
+        tlmWord: 'INTEGER',
+        antiSpoof: 'INTEGER',
+        alert: 'INTEGER',
+        tlmRsvdBits: 'INTEGER'
+        }]
+       }
+      },
+     ccpProvideControlParameters: {
+      ccpSupportArea: {
+       areaDescription: {
+        regionSizeInv: 'INTEGER',
+        areaWidth: 'INTEGER',
+        codedLatOfNWCorner: 'INTEGER',
+        codedLonOfNWCorner: 'INTEGER',
+        rleList: ['INTEGER']
+        },
+       signalSupport: [{
+        gnss: {
+         gnss-id: 'ENUMERATED'
+         },
+        signals: {
+         gnss-SignalIDs: 'BIT STRING'
+         }
+        }]
+       },
+      ccpNeighborList: [{
+       referenceStationID: {
+        stationID: 'INTEGER'
+        },
+       referenceStationLocation: {
+        latitude: 'INTEGER',
+        longitude: 'INTEGER',
+        cep: 'INTEGER',
+        uncertainty-semimajor: 'INTEGER',
+        uncertainty-semiminor: 'INTEGER',
+        offset-angle: 'INTEGER',
+        confidenceHorizontal: 'INTEGER',
+        altitude: 'INTEGER',
+        uncertainty-altitude: 'INTEGER',
+        confidenceVertical: 'INTEGER'
+        },
+       antennaDescription: {
+        antennaDescription: {
+         igsAntennaName: 'VisibleString',
+         proprietaryName: 'VisibleString'
+         },
+        antennaSetupID: 'INTEGER',
+        antennaSerialNumber: 'VisibleString'
+        }
+       }],
+      duration: {
+       duration: 'INTEGER',
+       durationLSB: 'INTEGER'
+       },
+      rate: 'INTEGER',
+      ccpReferenceStationList: [{
+       referenceStationID: {
+        stationID: 'INTEGER'
+        },
+       referenceStationLocation: {
+        latitude: 'INTEGER',
+        longitude: 'INTEGER',
+        cep: 'INTEGER',
+        uncertainty-semimajor: 'INTEGER',
+        uncertainty-semiminor: 'INTEGER',
+        offset-angle: 'INTEGER',
+        confidenceHorizontal: 'INTEGER',
+        altitude: 'INTEGER',
+        uncertainty-altitude: 'INTEGER',
+        confidenceVertical: 'INTEGER'
+        },
+       antennaDescription: {
+        antennaDescription: {
+         igsAntennaName: 'VisibleString',
+         proprietaryName: 'VisibleString'
+         },
+        antennaSetupID: 'INTEGER',
+        antennaSerialNumber: 'VisibleString'
+        }
+       }]
+      }
+     }
+    },
+   genericAssistData: [{
+    gnss-ID: {
+     gnss-id: 'ENUMERATED'
+     },
+    wideAreaIonoSurfacePerSVlist: [{
+     svID: {
+      satellite-id: 'INTEGER'
+      },
+     a0: 'INTEGER',
+     e1: 'INTEGER',
+     n1: 'INTEGER',
+     e2: 'INTEGER',
+     n2: 'INTEGER',
+     en: 'INTEGER'
+     }],
+    mechanicsForAllSVs: [{
+     svid: {
+      satellite-id: 'INTEGER'
+      },
+     mass: 'INTEGER',
+     effectiveReflectivityArea: 'INTEGER',
+     pco: {
+      xOffsetSBF: 'INTEGER',
+      yOffsetSBF: 'INTEGER',
+      zOffsetSBF: 'INTEGER'
+      },
+     svInfo: {
+      svType: 'ENUMERATED',
+      svNumber: 'INTEGER'
+      }
+     }],
+    dcbsForAllSVs: [{
+     svid: {
+      satellite-id: 'INTEGER'
+      },
+     reference: {
+      signal: {
+       gnss-SignalID: 'INTEGER'
+       },
+      pd: 'ENUMERATED'
+      },
+     dcbList: [{
+      signal: {
+       gnss-SignalID: 'INTEGER'
+       },
+      pd: 'ENUMERATED',
+      dcb: 'INTEGER'
+      }]
+     }],
+    navModelDegradationModel: [{
+     svid: {
+      satellite-id: 'INTEGER'
+      },
+     clockDegradationModel: {
+      clockRMS0: 'INTEGER',
+      clockRMS1: 'INTEGER'
+      },
+     orbitDegradationModel: {
+      orbitRMS0: 'INTEGER',
+      orbitRMS1: 'INTEGER'
+      }
+     }],
+    ccpAssistProvide: [{
+     referenceStationID: {
+      stationID: 'INTEGER'
+      },
+     ccpPerSignalList: [{
+      signal-ID: {
+       gnss-SignalID: 'INTEGER'
+       },
+      ccpPerSVlist: [{
+       svID: {
+        satellite-id: 'INTEGER'
+        },
+       integerCodePhase: 'INTEGER',
+       codePhase: 'INTEGER',
+       codePhaseError: {
+        codePhaseRMSError: 'INTEGER',
+        cnr: 'INTEGER'
+        },
+       phaseRangeDelta: 'INTEGER',
+       phaseRangeRMSerror: 'INTEGER',
+       lockIndicator: 'BOOLEAN'
+       }]
+      }]
+     }],
+    navModelList: {
+     coordinateBased: {
+      fixedInterval: {
+       beginTime: {
+        gnss-TimeID: {
+         gnss-id: 'ENUMERATED'
+         },
+        gnss-DayNumber: 'INTEGER',
+        gnss-TimeOfDay: 'INTEGER',
+        gnss-TimeOfDayFrac-msec: 'INTEGER',
+        notificationOfLeapSecond: 'BIT STRING',
+        gps-TOW-Assist: [{
+         satelliteID: 'INTEGER',
+         tlmWord: 'INTEGER',
+         antiSpoof: 'INTEGER',
+         alert: 'INTEGER',
+         tlmRsvdBits: 'INTEGER'
+         }]
+        },
+       interval: 'INTEGER'
+       },
+      bases: {
+       baseForPosVel: 'INTEGER',
+       baseForCcRate: {
+        msb: 'INTEGER',
+        lsb: 'INTEGER'
+        }
+       },
+      referencedTo: 'ENUMERATED',
+      pointList: [{
+       time-of-record: {
+        gnss-TimeID: {
+         gnss-id: 'ENUMERATED'
+         },
+        gnss-DayNumber: 'INTEGER',
+        gnss-TimeOfDay: 'INTEGER',
+        gnss-TimeOfDayFrac-msec: 'INTEGER',
+        notificationOfLeapSecond: 'BIT STRING',
+        gps-TOW-Assist: [{
+         satelliteID: 'INTEGER',
+         tlmWord: 'INTEGER',
+         antiSpoof: 'INTEGER',
+         alert: 'INTEGER',
+         tlmRsvdBits: 'INTEGER'
+         }]
+        },
+       svIdList: [{
+        svID: {
+         satellite-id: 'INTEGER'
+         },
+        svClockOffset: {
+         msb: 'INTEGER',
+         lsb: 'INTEGER'
+         },
+        ecefPositionX: {
+         msb: 'INTEGER',
+         lsb: 'INTEGER'
+         },
+        ecefPositionY: {
+         msb: 'INTEGER',
+         lsb: 'INTEGER'
+         },
+        ecefPositionZ: {
+         msb: 'INTEGER',
+         lsb: 'INTEGER'
+         },
+        clockPosSTD: {
+         e11: 'INTEGER',
+         e22: 'INTEGER',
+         e33: 'INTEGER',
+         e44: 'INTEGER',
+         e12: 'INTEGER',
+         e13: 'INTEGER',
+         e14: 'INTEGER',
+         e23: 'INTEGER',
+         e24: 'INTEGER',
+         e34: 'INTEGER'
+         },
+        rateRecord: {
+         svClockRate: {
+          msb: 'INTEGER',
+          lsb: 'INTEGER'
+          },
+         ecefVelocityX: {
+          msb: 'INTEGER',
+          lsb: 'INTEGER'
+          },
+         ecefVelocityY: {
+          msb: 'INTEGER',
+          lsb: 'INTEGER'
+          },
+         ecefVelocityZ: {
+          msb: 'INTEGER',
+          lsb: 'INTEGER'
+          },
+         clockRateVelSTD: {
+          e11: 'INTEGER',
+          e22: 'INTEGER',
+          e33: 'INTEGER',
+          e44: 'INTEGER',
+          e12: 'INTEGER',
+          e13: 'INTEGER',
+          e14: 'INTEGER',
+          e23: 'INTEGER',
+          e24: 'INTEGER',
+          e34: 'INTEGER'
+          }
+         }
+        }]
+       }]
+      }
+     }
+    }],
+   error: {
+    agnss-locationServerErrorCauses: {
+     waIonoErrorCauses: 'ENUMERATED',
+     ccpErrorCauses: 'ENUMERATED'
+     },
+    agnss-targetDeviceErrorCauses: {
+     highAccuracyErrorCauses: 'ENUMERATED',
+     ionosphereMeasurementErrorCauses: 'ENUMERATED',
+     environmentObservationErrorCauses: 'ENUMERATED',
+     haGNSSerrorCauses: 'ENUMERATED'
+     }
+    }
+   },
+  otdoa-ProvideAssistanceData: {
+   otdoa-ReferenceCellInfo: {
+    referenceCellInfo: {
+     physCellId: 'INTEGER',
+     cellGlobalId: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER'],
+      cellidentity: 'BIT STRING'
+      },
+     earfcnRef: 'INTEGER',
+     antennaPortConfig: 'ENUMERATED',
+     cpLength: 'ENUMERATED',
+     prsInfo: {
+      prs-Bandwidth: 'ENUMERATED',
+      prs-ConfigurationIndex: 'INTEGER',
+      numDL-Frames: 'ENUMERATED',
+      prs-MutingInfo-r9: {
+       po2-r9: 'BIT STRING',
+       po4-r9: 'BIT STRING',
+       po8-r9: 'BIT STRING',
+       po16-r9: 'BIT STRING'
+       }
+      },
+     earfcnRef-v9a0: 'INTEGER'
+     },
+    positionCalculationInfoRef: {
+     systemFrameNumber: 'BIT STRING',
+     rtdReferenceStd: {
+      resolution: 'ENUMERATED',
+      quality: 'INTEGER'
+      },
+     cellLocation: {
+      reference-point: {
+       referencePointUniqueID: {
+        providerID: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        providerAssignedID: 'OCTET STRING',
+        version: 'INTEGER'
+        },
+       referencePointGeographicLocation: {
+        location3D: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER'
+         },
+        location3DwithUncertainty: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER',
+         uncertaintySemiMajor: 'INTEGER',
+         uncertaintySemiMinor: 'INTEGER',
+         orientationMajorAxis: 'INTEGER',
+         uncertaintyAltitude: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        locationwithhighaccuracy: {
+         latitude: 'INTEGER',
+         longitude: 'INTEGER',
+         cep: 'INTEGER',
+         uncertainty-semimajor: 'INTEGER',
+         uncertainty-semiminor: 'INTEGER',
+         offset-angle: 'INTEGER',
+         confidenceHorizontal: 'INTEGER',
+         altitude: 'INTEGER',
+         uncertainty-altitude: 'INTEGER',
+         confidenceVertical: 'INTEGER'
+         }
+        },
+       referencePointCivicLocation: {
+        countryCode: 'OCTET STRING',
+        civicAddressElementList: [{
+         caType: 'INTEGER',
+         caValue: 'OCTET STRING'
+         }]
+        },
+       referencePointFloorLevel: 'INTEGER',
+       relatedReferencePoints: [{
+        referencePointUniqueID: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        relativeLocation: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        }],
+       mapDataInformation: [{
+        mapDataUrl: {
+         mapDataUrl: 'VisibleString',
+         mapDataRef: {
+          dataID: {
+           containerID: 'INTEGER'
+           },
+          mapReference: 'OCTET STRING',
+          mapSize: 'INTEGER'
+          }
+         },
+        mapProvider: {
+         sameAsRefPointProvider: 'NULL',
+         notSameAsRefPointProvider: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          }
+         },
+        mapAssociation: {
+         referencePointUniqueID: 'NULL',
+         otherID: 'VisibleString',
+         mapOffset: {
+          units: 'ENUMERATED',
+          arc-second-units: 'ENUMERATED',
+          relativeNorth: 'INTEGER',
+          relativeEast: 'INTEGER',
+          relativeAltitude: {
+           geodeticRelativeAltitude: {
+            geodetic-height-depth: 'INTEGER',
+            geodetic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            },
+           civicRelativeAltitude: {
+            civic-floors: 'INTEGER',
+            civic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            }
+           },
+          horizontalUncertainty: {
+           uncShape: {
+            circle: 'INTEGER',
+            ellipse: {
+             semimajor: 'INTEGER',
+             semiminor: 'INTEGER',
+             offsetAngle: 'INTEGER'
+             }
+            },
+           confidence: 'INTEGER'
+           }
+          },
+         origin: 'NULL'
+         },
+        mapHorizontalOrientation: 'INTEGER'
+        }]
+       },
+      relative-location: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       }
+      },
+     femtoCellInfo: {
+      location-reliability: 'INTEGER'
+      }
+     }
+    },
+   otdoa-NeighbourCellInfo: [{
+    neighbourCellInfoList-eNB: [{
+     relative-Location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     otdoa-eNB-CellDataList: [{
+      otdoa-NeighbourCellInfoElement: {
+       physCellId: 'INTEGER',
+       cellGlobalId: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER'],
+        cellidentity: 'BIT STRING'
+        },
+       earfcn: 'INTEGER',
+       cpLength: 'ENUMERATED',
+       prsInfo: {
+        prs-Bandwidth: 'ENUMERATED',
+        prs-ConfigurationIndex: 'INTEGER',
+        numDL-Frames: 'ENUMERATED',
+        prs-MutingInfo-r9: {
+         po2-r9: 'BIT STRING',
+         po4-r9: 'BIT STRING',
+         po8-r9: 'BIT STRING',
+         po16-r9: 'BIT STRING'
+         }
+        },
+       antennaPortConfig: 'ENUMERATED',
+       slotNumberOffset: 'INTEGER',
+       prs-SubframeOffset: 'INTEGER',
+       expectedRSTD: 'INTEGER',
+       expectedRSTD-Uncertainty: 'INTEGER',
+       earfcn-v9a0: 'INTEGER'
+       },
+      rtdInfo: {
+       subframeOffset: 'INTEGER',
+       fineRTD: 'INTEGER',
+       fineRTDstd: {
+        resolution: 'ENUMERATED',
+        quality: 'INTEGER'
+        },
+       fineRTDdriftRate: 'INTEGER'
+       }
+      }]
+     }],
+    neighbourCellInfoList-HeNB: [{
+     relative-Location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     location-reliability: 'INTEGER',
+     otdoa-HeNB-CellDataList: {
+      otdoa-NeighbourCellInfoElement: {
+       physCellId: 'INTEGER',
+       cellGlobalId: {
+        mcc: ['INTEGER'],
+        mnc: ['INTEGER'],
+        cellidentity: 'BIT STRING'
+        },
+       earfcn: 'INTEGER',
+       cpLength: 'ENUMERATED',
+       prsInfo: {
+        prs-Bandwidth: 'ENUMERATED',
+        prs-ConfigurationIndex: 'INTEGER',
+        numDL-Frames: 'ENUMERATED',
+        prs-MutingInfo-r9: {
+         po2-r9: 'BIT STRING',
+         po4-r9: 'BIT STRING',
+         po8-r9: 'BIT STRING',
+         po16-r9: 'BIT STRING'
+         }
+        },
+       antennaPortConfig: 'ENUMERATED',
+       slotNumberOffset: 'INTEGER',
+       prs-SubframeOffset: 'INTEGER',
+       expectedRSTD: 'INTEGER',
+       expectedRSTD-Uncertainty: 'INTEGER',
+       earfcn-v9a0: 'INTEGER'
+       },
+      rtdInfo: {
+       subframeOffset: 'INTEGER',
+       fineRTD: 'INTEGER',
+       fineRTDstd: {
+        resolution: 'ENUMERATED',
+        quality: 'INTEGER'
+        },
+       fineRTDdriftRate: 'INTEGER'
+       }
+      }
+     }]
+    }],
+   otdoa-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    }
+   },
+  eotd-ProvideAssistanceData: {
+   referenceBTS: {
+    bsicAndCarrier: {
+     bsic: 'INTEGER',
+     bcch: 'INTEGER'
+     },
+    timeSlotScheme: 'ENUMERATED',
+    btsPosition: {
+     ellipsoidPoint: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER'
+      },
+     ellipsoidPointWithAltitudeAndUncertaintyEllipsoid: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      uncertaintyAltitude: 'INTEGER',
+      confidence: 'INTEGER'
+      }
+     }
+    },
+   msrAssistDataList: [{
+    bsicAndCarrier: {
+     bsic: 'INTEGER',
+     bcch: 'INTEGER'
+     },
+    multiFrameOffset: 'INTEGER',
+    timeSlotScheme: 'ENUMERATED',
+    roughRTD: 'INTEGER',
+    expectedOTD: {
+     expectedOTD: 'INTEGER',
+     expOTDUncertainty: 'INTEGER'
+     },
+    calcAssistanceBTS: {
+     fineRTD: 'INTEGER',
+     relativePos: {
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAlt: 'INTEGER'
+      }
+     }
+    }],
+   systemInfoAssistDataList: [{
+    notPresent: 'NULL',
+    present: {
+     bsic: 'INTEGER',
+     multiFrameOffset: 'INTEGER',
+     timeSlotScheme: 'ENUMERATED',
+     roughRTD: 'INTEGER',
+     expectedOTD: {
+      expectedOTD: 'INTEGER',
+      expOTDUncertainty: 'INTEGER'
+      },
+     calcAssistanceBTS: {
+      fineRTD: 'INTEGER',
+      relativePos: {
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAlt: 'INTEGER'
+       }
+      }
+     }
+    }],
+   eotdError: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    }
+   },
+  otdoa-utra-ProvideAssistanceData: {
+   referenceCellInfo: {
+    sfn: 'INTEGER',
+    modeSpecificInfo: {
+     fdd: {
+      primaryCPICH-info: {
+       primaryScramblingCode: 'INTEGER'
+       }
+      },
+     tdd: {
+      cellAndChannelIdentity: {
+       burstType: 'ENUMERATED',
+       midambleShift: 'INTEGER',
+       timeslot: 'INTEGER',
+       cellParametersID: 'INTEGER'
+       }
+      }
+     },
+    frequencyInfo: {
+     modeSpecificInfo: {
+      fdd: {
+       uarfcn-UL: 'INTEGER',
+       uarfcn-DL: 'INTEGER'
+       },
+      tdd: {
+       uarfcn-Nt: 'INTEGER'
+       }
+      }
+     },
+    refPosAssist: {
+     cellPosition: {
+      ellipsoidPoint: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER'
+       },
+      ellipsoidPointWithAltitude: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER'
+       }
+      },
+     roundTripTime: 'INTEGER',
+     roundTripTimeExtension: 'INTEGER'
+     },
+    ipdl-parameters: {
+     modeSpecificInfo: {
+      fdd: {
+       ip-spacing: 'ENUMERATED',
+       ip-length: 'ENUMERATED',
+       ip-Offset: 'INTEGER',
+       seed: 'INTEGER',
+       burstModeParameters: {
+        burstStart: 'INTEGER',
+        burstLength: 'INTEGER',
+        burstFreq: 'INTEGER'
+        }
+       },
+      tdd: {
+       ip-spacing-tdd: 'ENUMERATED',
+       ip-slot: 'INTEGER',
+       ip-start: 'INTEGER',
+       ip-PCCPCH: 'BOOLEAN',
+       burstModeParameters: {
+        burstStart: 'INTEGER',
+        burstLength: 'INTEGER',
+        burstFreq: 'INTEGER'
+        }
+       }
+      }
+     }
+    },
+   neigborCellList: [{
+    modeSpecificInfo: {
+     fdd: {
+      primaryCPICH-info: {
+       primaryScramblingCode: 'INTEGER'
+       }
+      },
+     tdd: {
+      cellAndChannelIdentity: {
+       burstType: 'ENUMERATED',
+       midambleShift: 'INTEGER',
+       timeslot: 'INTEGER',
+       cellParametersID: 'INTEGER'
+       }
+      }
+     },
+    frequencyInfo: {
+     modeSpecificInfo: {
+      fdd: {
+       uarfcn-UL: 'INTEGER',
+       uarfcn-DL: 'INTEGER'
+       },
+      tdd: {
+       uarfcn-Nt: 'INTEGER'
+       }
+      }
+     },
+    ipdl-parameters: {
+     modeSpecificInfo: {
+      fdd: {
+       ip-spacing: 'ENUMERATED',
+       ip-length: 'ENUMERATED',
+       ip-Offset: 'INTEGER',
+       seed: 'INTEGER',
+       burstModeParameters: {
+        burstStart: 'INTEGER',
+        burstLength: 'INTEGER',
+        burstFreq: 'INTEGER'
+        }
+       },
+      tdd: {
+       ip-spacing-tdd: 'ENUMERATED',
+       ip-slot: 'INTEGER',
+       ip-start: 'INTEGER',
+       ip-PCCPCH: 'BOOLEAN',
+       burstModeParameters: {
+        burstStart: 'INTEGER',
+        burstLength: 'INTEGER',
+        burstFreq: 'INTEGER'
+        }
+       }
+      }
+     },
+    sfn-SFN-relTimeDifference: {
+     sfn-offset: 'INTEGER',
+     sfn-sfn-relTimeDifference: 'INTEGER'
+     },
+    sfn-offsetValidity: 'ENUMERATED',
+    sfn-SFN-drift: 'ENUMERATED',
+    searchWindowSize: 'ENUMERATED',
+    positioningAssistance: {
+     relativeNorth: 'INTEGER',
+     relativeEast: 'INTEGER',
+     relativeAltitude: 'INTEGER',
+     fineSFN-SFN: 'INTEGER',
+     roundTripTime: 'INTEGER',
+     roundTripTimeExtension: 'INTEGER'
+     }
+    }],
+   otdoaUtraError: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    }
+   },
+  ecid-lte-ProvideAssistanceData: {
+   ecid-LTE-NetworkData: [{
+    plmn-Identity: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    multiple-PLMNs: 'BOOLEAN',
+    reference-location: {
+     referencePointUniqueID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      version: 'INTEGER'
+      },
+     referencePointGeographicLocation: {
+      location3D: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER'
+       },
+      location3DwithUncertainty: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER',
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER',
+       uncertaintyAltitude: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      locationwithhighaccuracy: {
+       latitude: 'INTEGER',
+       longitude: 'INTEGER',
+       cep: 'INTEGER',
+       uncertainty-semimajor: 'INTEGER',
+       uncertainty-semiminor: 'INTEGER',
+       offset-angle: 'INTEGER',
+       confidenceHorizontal: 'INTEGER',
+       altitude: 'INTEGER',
+       uncertainty-altitude: 'INTEGER',
+       confidenceVertical: 'INTEGER'
+       }
+      },
+     referencePointCivicLocation: {
+      countryCode: 'OCTET STRING',
+      civicAddressElementList: [{
+       caType: 'INTEGER',
+       caValue: 'OCTET STRING'
+       }]
+      },
+     referencePointFloorLevel: 'INTEGER',
+     relatedReferencePoints: [{
+      referencePointUniqueID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       version: 'INTEGER'
+       },
+      relativeLocation: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       }
+      }],
+     mapDataInformation: [{
+      mapDataUrl: {
+       mapDataUrl: 'VisibleString',
+       mapDataRef: {
+        dataID: {
+         containerID: 'INTEGER'
+         },
+        mapReference: 'OCTET STRING',
+        mapSize: 'INTEGER'
+        }
+       },
+      mapProvider: {
+       sameAsRefPointProvider: 'NULL',
+       notSameAsRefPointProvider: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        }
+       },
+      mapAssociation: {
+       referencePointUniqueID: 'NULL',
+       otherID: 'VisibleString',
+       mapOffset: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       origin: 'NULL'
+       },
+      mapHorizontalOrientation: 'INTEGER'
+      }]
+     },
+    ecid-lte-eNodeB-list: [{
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     ecid-lte-eNodeB-CellData: [{
+      physCellId: 'INTEGER',
+      cellIdentity: 'BIT STRING',
+      dl-CarrierFreq: 'INTEGER',
+      rs-transmit-power: 'INTEGER',
+      antennaPortConfig: 'ENUMERATED',
+      antenna-gain: 'INTEGER',
+      beam-width: 'INTEGER',
+      transmit-direction: 'INTEGER',
+      frequency-accuracy: 'INTEGER'
+      }]
+     }],
+    ecid-lte-HeNB-list: [{
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     location-reliability: 'INTEGER',
+     coverageArea: {
+      truncation: 'INTEGER',
+      areaType: 'ENUMERATED',
+      confidence: 'INTEGER',
+      componentList: [{
+       refPointAndArea: {
+        referenceLocation: 'ENUMERATED',
+        referencePoint: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        locationAndArea: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       type: 'ENUMERATED',
+       weight: 'INTEGER'
+       }]
+      },
+     ecid-lte-HeNB-CellData: {
+      physCellId: 'INTEGER',
+      cellIdentity: 'BIT STRING',
+      dl-CarrierFreq: 'INTEGER',
+      rs-transmit-power: 'INTEGER',
+      antennaPortConfig: 'ENUMERATED',
+      antenna-gain: 'INTEGER',
+      beam-width: 'INTEGER',
+      transmit-direction: 'INTEGER',
+      frequency-accuracy: 'INTEGER'
+      }
+     }]
+    }],
+   ecid-LTE-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     eNodeBMandatoryDataUnavailable: 'NULL',
+     eNodeBLocationsUnavailable: 'NULL',
+     eNodeBcellTransmitPowerUnavailable: 'NULL',
+     eNodeBcellAntennaPortConfigUnavailable: 'NULL',
+     eNodeBcallAntennaGainUnavailable: 'NULL',
+     eNodeBcellBeamWidthUnavailable: 'NULL',
+     eNodeBcellTransmitDirectionUnavailable: 'NULL',
+     eNodeBcellFrequencyAccuracyUnavailable: 'NULL',
+     eNodeBnonservingADUnavailable: 'NULL',
+     heNBMandatoryDataUnavailable: 'NULL',
+     heNBLocationUnavailable: 'NULL',
+     heNBLocationReliabilityUnavailable: 'NULL',
+     heNBcellTransmitPowerUnavailable: 'NULL',
+     heNBcellAntennaPortConfigUnavailable: 'NULL',
+     heNBcellFrequencyAccuracyUnavailable: 'NULL',
+     heNBCoverageAreaUnavailable: 'NULL',
+     heNBnonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     rsrpMeasurementNotPossible: 'NULL',
+     rsrqMeasurementNotPossible: 'NULL',
+     ueRxTxMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  ecid-gsm-ProvideAssistanceData: {
+   ecid-gsm-NetworkData: [{
+    plmn-Identity: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    reference-location: {
+     referencePointUniqueID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      version: 'INTEGER'
+      },
+     referencePointGeographicLocation: {
+      location3D: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER'
+       },
+      location3DwithUncertainty: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER',
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER',
+       uncertaintyAltitude: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      locationwithhighaccuracy: {
+       latitude: 'INTEGER',
+       longitude: 'INTEGER',
+       cep: 'INTEGER',
+       uncertainty-semimajor: 'INTEGER',
+       uncertainty-semiminor: 'INTEGER',
+       offset-angle: 'INTEGER',
+       confidenceHorizontal: 'INTEGER',
+       altitude: 'INTEGER',
+       uncertainty-altitude: 'INTEGER',
+       confidenceVertical: 'INTEGER'
+       }
+      },
+     referencePointCivicLocation: {
+      countryCode: 'OCTET STRING',
+      civicAddressElementList: [{
+       caType: 'INTEGER',
+       caValue: 'OCTET STRING'
+       }]
+      },
+     referencePointFloorLevel: 'INTEGER',
+     relatedReferencePoints: [{
+      referencePointUniqueID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       version: 'INTEGER'
+       },
+      relativeLocation: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       }
+      }],
+     mapDataInformation: [{
+      mapDataUrl: {
+       mapDataUrl: 'VisibleString',
+       mapDataRef: {
+        dataID: {
+         containerID: 'INTEGER'
+         },
+        mapReference: 'OCTET STRING',
+        mapSize: 'INTEGER'
+        }
+       },
+      mapProvider: {
+       sameAsRefPointProvider: 'NULL',
+       notSameAsRefPointProvider: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        }
+       },
+      mapAssociation: {
+       referencePointUniqueID: 'NULL',
+       otherID: 'VisibleString',
+       mapOffset: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       origin: 'NULL'
+       },
+      mapHorizontalOrientation: 'INTEGER'
+      }]
+     },
+    base-station-list: [{
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     ecid-gsm-CellData: [{
+      cellNonUniqueIDGERAN: {
+       bsic: 'INTEGER',
+       bcch: 'INTEGER'
+       },
+      cellLocalIDGERAN: {
+       locationAreaCode: 'BIT STRING',
+       cellIdentity: 'BIT STRING'
+       },
+      transmit-power: 'INTEGER',
+      antenna-gain: 'INTEGER',
+      beam-width: 'INTEGER',
+      transmit-direction: 'INTEGER',
+      frequency-accuracy: 'INTEGER'
+      }]
+     }]
+    }],
+   ecid-gsm-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     mandatoryDataUnavailable: 'NULL',
+     bsLocationsUnavailable: 'NULL',
+     cellTransmitPowerUnavailable: 'NULL',
+     callAntennaGainUnavailable: 'NULL',
+     cellBeamWidthUnavailable: 'NULL',
+     cellTransmitDirectionUnavailable: 'NULL',
+     cellFrequencyAccuracyUnavailable: 'NULL',
+     nonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     rxLevelMeasurementNotPossible: 'NULL',
+     taMeasurementNotPossible: 'NULL',
+     nMRMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  ecid-utra-ProvideAssistanceData: {
+   ecid-UTRA-NetworkData: [{
+    plmn-Identity: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    multiple-PLMNs: 'BOOLEAN',
+    reference-location: {
+     referencePointUniqueID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      version: 'INTEGER'
+      },
+     referencePointGeographicLocation: {
+      location3D: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER'
+       },
+      location3DwithUncertainty: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER',
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER',
+       uncertaintyAltitude: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      locationwithhighaccuracy: {
+       latitude: 'INTEGER',
+       longitude: 'INTEGER',
+       cep: 'INTEGER',
+       uncertainty-semimajor: 'INTEGER',
+       uncertainty-semiminor: 'INTEGER',
+       offset-angle: 'INTEGER',
+       confidenceHorizontal: 'INTEGER',
+       altitude: 'INTEGER',
+       uncertainty-altitude: 'INTEGER',
+       confidenceVertical: 'INTEGER'
+       }
+      },
+     referencePointCivicLocation: {
+      countryCode: 'OCTET STRING',
+      civicAddressElementList: [{
+       caType: 'INTEGER',
+       caValue: 'OCTET STRING'
+       }]
+      },
+     referencePointFloorLevel: 'INTEGER',
+     relatedReferencePoints: [{
+      referencePointUniqueID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       version: 'INTEGER'
+       },
+      relativeLocation: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       }
+      }],
+     mapDataInformation: [{
+      mapDataUrl: {
+       mapDataUrl: 'VisibleString',
+       mapDataRef: {
+        dataID: {
+         containerID: 'INTEGER'
+         },
+        mapReference: 'OCTET STRING',
+        mapSize: 'INTEGER'
+        }
+       },
+      mapProvider: {
+       sameAsRefPointProvider: 'NULL',
+       notSameAsRefPointProvider: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        }
+       },
+      mapAssociation: {
+       referencePointUniqueID: 'NULL',
+       otherID: 'VisibleString',
+       mapOffset: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       origin: 'NULL'
+       },
+      mapHorizontalOrientation: 'INTEGER'
+      }]
+     },
+    ecid-utra-nodeB-list: [{
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     ecid-utra-nodeB-CellData: [{
+      cellIdentity: 'BIT STRING',
+      modeSpecificInfo: {
+       fdd: {
+        primaryCPICH-Scrambling-Code: 'INTEGER',
+        primaryCPICH-Tx-Power: 'INTEGER',
+        uarfcn-dl: 'INTEGER'
+        },
+       tdd: {
+        cellParametersID: 'INTEGER',
+        primaryCCPCH-Tx-Power: 'INTEGER',
+        uarfcn-nt: 'INTEGER'
+        }
+       },
+      antenna-gain: 'INTEGER',
+      beam-width: 'INTEGER',
+      transmit-direction: 'INTEGER',
+      frequency-accuracy: 'INTEGER'
+      }]
+     }],
+    ecid-utra-HNB-list: [{
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     location-reliability: 'INTEGER',
+     coverageArea: {
+      truncation: 'INTEGER',
+      areaType: 'ENUMERATED',
+      confidence: 'INTEGER',
+      componentList: [{
+       refPointAndArea: {
+        referenceLocation: 'ENUMERATED',
+        referencePoint: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        locationAndArea: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       type: 'ENUMERATED',
+       weight: 'INTEGER'
+       }]
+      },
+     ecid-utra-HNB-CellData: {
+      cellIdentity: 'BIT STRING',
+      modeSpecificInfo: {
+       fdd: {
+        primaryCPICH-Scrambling-Code: 'INTEGER',
+        primaryCPICH-Tx-Power: 'INTEGER',
+        uarfcn-dl: 'INTEGER'
+        },
+       tdd: {
+        cellParametersID: 'INTEGER',
+        primaryCCPCH-Tx-Power: 'INTEGER',
+        uarfcn-nt: 'INTEGER'
+        }
+       },
+      antenna-gain: 'INTEGER',
+      beam-width: 'INTEGER',
+      transmit-direction: 'INTEGER',
+      frequency-accuracy: 'INTEGER'
+      }
+     }]
+    }],
+   ecid-UTRA-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     nodeBMandatoryDataUnavailable: 'NULL',
+     nodeBLocationUnavailable: 'NULL',
+     nodeBcellTransmitPowerUnavailable: 'NULL',
+     nodeBcallAntennaGainUnavailable: 'NULL',
+     nodeBcellBeamWidthUnavailable: 'NULL',
+     nodeBcellTransmitDirectionUnavailable: 'NULL',
+     nodeBcellFrequencyAccuracyUnavailable: 'NULL',
+     nodeBnonservingADUnavailable: 'NULL',
+     hNBMandatoryDataUnavailable: 'NULL',
+     hNBLocationUnavailable: 'NULL',
+     hNBLocationReliabilityUnavailable: 'NULL',
+     hNBcellTransmitPowerUnavailable: 'NULL',
+     hNBcellFrequencyAccuracyUnavailable: 'NULL',
+     hNBCoverageAreaUnavailable: 'NULL',
+     hNBnonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     mRLMeasurementsNotPossible: 'NULL',
+     tdd-timingAdvanceMeasurementNotPossible: 'NULL',
+     mRL-utra-CarrierRSSIMeasurementNotPossible: 'NULL',
+     mRL-FDD-cpich-Ec-N0MeasurementNotPossible: 'NULL',
+     mRL-FDD-cpich-RSCPMeasurementNotPossible: 'NULL',
+     mRL-FDD-pathlossMeasurementNotPossible: 'NULL',
+     mRL-TDD-primaryCCPCH-RSCPMeasurementNotPossible: 'NULL',
+     mRL-TDD-pathlossMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  wlan-ap-ProvideAssistanceData: {
+   wlan-DataSet: [{
+    plmn-Identity: {
+     mcc: ['INTEGER'],
+     mnc: ['INTEGER']
+     },
+    reference-point: {
+     referencePointUniqueID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      version: 'INTEGER'
+      },
+     referencePointGeographicLocation: {
+      location3D: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER'
+       },
+      location3DwithUncertainty: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER',
+       altitudeDirection: 'ENUMERATED',
+       altitude: 'INTEGER',
+       uncertaintySemiMajor: 'INTEGER',
+       uncertaintySemiMinor: 'INTEGER',
+       orientationMajorAxis: 'INTEGER',
+       uncertaintyAltitude: 'INTEGER',
+       confidence: 'INTEGER'
+       },
+      locationwithhighaccuracy: {
+       latitude: 'INTEGER',
+       longitude: 'INTEGER',
+       cep: 'INTEGER',
+       uncertainty-semimajor: 'INTEGER',
+       uncertainty-semiminor: 'INTEGER',
+       offset-angle: 'INTEGER',
+       confidenceHorizontal: 'INTEGER',
+       altitude: 'INTEGER',
+       uncertainty-altitude: 'INTEGER',
+       confidenceVertical: 'INTEGER'
+       }
+      },
+     referencePointCivicLocation: {
+      countryCode: 'OCTET STRING',
+      civicAddressElementList: [{
+       caType: 'INTEGER',
+       caValue: 'OCTET STRING'
+       }]
+      },
+     referencePointFloorLevel: 'INTEGER',
+     relatedReferencePoints: [{
+      referencePointUniqueID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       version: 'INTEGER'
+       },
+      relativeLocation: {
+       units: 'ENUMERATED',
+       arc-second-units: 'ENUMERATED',
+       relativeNorth: 'INTEGER',
+       relativeEast: 'INTEGER',
+       relativeAltitude: {
+        geodeticRelativeAltitude: {
+         geodetic-height-depth: 'INTEGER',
+         geodetic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         },
+        civicRelativeAltitude: {
+         civic-floors: 'INTEGER',
+         civic-uncertainty-and-confidence: {
+          uncertainty: 'INTEGER',
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       horizontalUncertainty: {
+        uncShape: {
+         circle: 'INTEGER',
+         ellipse: {
+          semimajor: 'INTEGER',
+          semiminor: 'INTEGER',
+          offsetAngle: 'INTEGER'
+          }
+         },
+        confidence: 'INTEGER'
+        }
+       }
+      }],
+     mapDataInformation: [{
+      mapDataUrl: {
+       mapDataUrl: 'VisibleString',
+       mapDataRef: {
+        dataID: {
+         containerID: 'INTEGER'
+         },
+        mapReference: 'OCTET STRING',
+        mapSize: 'INTEGER'
+        }
+       },
+      mapProvider: {
+       sameAsRefPointProvider: 'NULL',
+       notSameAsRefPointProvider: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        }
+       },
+      mapAssociation: {
+       referencePointUniqueID: 'NULL',
+       otherID: 'VisibleString',
+       mapOffset: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       origin: 'NULL'
+       },
+      mapHorizontalOrientation: 'INTEGER'
+      }]
+     },
+    supported-channels-11a: {
+     ch34: 'BOOLEAN',
+     ch36: 'BOOLEAN',
+     ch38: 'BOOLEAN',
+     ch40: 'BOOLEAN',
+     ch42: 'BOOLEAN',
+     ch44: 'BOOLEAN',
+     ch46: 'BOOLEAN',
+     ch48: 'BOOLEAN',
+     ch52: 'BOOLEAN',
+     ch56: 'BOOLEAN',
+     ch60: 'BOOLEAN',
+     ch64: 'BOOLEAN',
+     ch149: 'BOOLEAN',
+     ch153: 'BOOLEAN',
+     ch157: 'BOOLEAN',
+     ch161: 'BOOLEAN'
+     },
+    supported-channels-11bg: {
+     ch1: 'BOOLEAN',
+     ch2: 'BOOLEAN',
+     ch3: 'BOOLEAN',
+     ch4: 'BOOLEAN',
+     ch5: 'BOOLEAN',
+     ch6: 'BOOLEAN',
+     ch7: 'BOOLEAN',
+     ch8: 'BOOLEAN',
+     ch9: 'BOOLEAN',
+     ch10: 'BOOLEAN',
+     ch11: 'BOOLEAN',
+     ch12: 'BOOLEAN',
+     ch13: 'BOOLEAN',
+     ch14: 'BOOLEAN'
+     },
+    wlan-ap-list: [{
+     wlan-ap-id: {
+      apMacAddress: 'BIT STRING'
+      },
+     relative-location: {
+      units: 'ENUMERATED',
+      arc-second-units: 'ENUMERATED',
+      relativeNorth: 'INTEGER',
+      relativeEast: 'INTEGER',
+      relativeAltitude: {
+       geodeticRelativeAltitude: {
+        geodetic-height-depth: 'INTEGER',
+        geodetic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        },
+       civicRelativeAltitude: {
+        civic-floors: 'INTEGER',
+        civic-uncertainty-and-confidence: {
+         uncertainty: 'INTEGER',
+         confidence: 'INTEGER'
+         }
+        }
+       },
+      horizontalUncertainty: {
+       uncShape: {
+        circle: 'INTEGER',
+        ellipse: {
+         semimajor: 'INTEGER',
+         semiminor: 'INTEGER',
+         offsetAngle: 'INTEGER'
+         }
+        },
+       confidence: 'INTEGER'
+       }
+      },
+     location-reliability: 'INTEGER',
+     wlan-ap-Type-Data: [{
+      wlan-AP-Type: 'ENUMERATED',
+      transmit-power: 'INTEGER',
+      antenna-gain: 'INTEGER',
+      coverageArea: {
+       truncation: 'INTEGER',
+       areaType: 'ENUMERATED',
+       confidence: 'INTEGER',
+       componentList: [{
+        refPointAndArea: {
+         referenceLocation: 'ENUMERATED',
+         referencePoint: {
+          providerID: {
+           standard-VendorOrOperatorID: 'INTEGER',
+           nonStandard-VendorOrOperatorID: {
+            encodedID: 'INTEGER',
+            visibleIdentification: 'VisibleString'
+            }
+           },
+          providerAssignedID: 'OCTET STRING',
+          version: 'INTEGER'
+          },
+         locationAndArea: {
+          units: 'ENUMERATED',
+          arc-second-units: 'ENUMERATED',
+          relativeNorth: 'INTEGER',
+          relativeEast: 'INTEGER',
+          relativeAltitude: {
+           geodeticRelativeAltitude: {
+            geodetic-height-depth: 'INTEGER',
+            geodetic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            },
+           civicRelativeAltitude: {
+            civic-floors: 'INTEGER',
+            civic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            }
+           },
+          horizontalUncertainty: {
+           uncShape: {
+            circle: 'INTEGER',
+            ellipse: {
+             semimajor: 'INTEGER',
+             semiminor: 'INTEGER',
+             offsetAngle: 'INTEGER'
+             }
+            },
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        type: 'ENUMERATED',
+        weight: 'INTEGER'
+        }]
+       }
+      }],
+     coverageArea: {
+      truncation: 'INTEGER',
+      areaType: 'ENUMERATED',
+      confidence: 'INTEGER',
+      componentList: [{
+       refPointAndArea: {
+        referenceLocation: 'ENUMERATED',
+        referencePoint: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        locationAndArea: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        },
+       type: 'ENUMERATED',
+       weight: 'INTEGER'
+       }]
+      }
+     }]
+    }],
+   wlan-AP-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     apMandatoryDataUnavailable: 'NULL',
+     apLocationsUnavailable: 'NULL',
+     apLocationReliabilityUnavailable: 'NULL',
+     apTransmitPowerUnavailable: 'NULL',
+     apAntennaGainUnavailable: 'NULL',
+     apCoverageAreaUnavailable: 'NULL',
+     nonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     apSSIDnotAvailable: 'NULL',
+     apSNMeasurementNotPossible: 'NULL',
+     apDevTypeNotAvailable: 'NULL',
+     apPhyTypeNotAvailable: 'NULL',
+     apRSSIMeasurementNotPossible: 'NULL',
+     apChanFreqNotAvailable: 'NULL',
+     apRTDMeasurementNotPossible: 'NULL',
+     ueTPNotAvailable: 'NULL',
+     ueAGNotAvailable: 'NULL',
+     apRecLocNotAvailable: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL',
+     apTPNotAvailable: 'NULL',
+     apAGNotAvailable: 'NULL',
+     ueSNNotAvailable: 'NULL',
+     ueRSSINotAvailable: 'NULL',
+     ocNotAvailable: 'NULL'
+     }
+    }
+   },
+  sensor-ProvideAssistanceData: {
+   atmosphericPressureAD: {
+    referencePressure: 'INTEGER',
+    period: {
+     pressureValidityPeriod: {
+      beginTime: {
+       gnss-TimeID: {
+        gnss-id: 'ENUMERATED'
+        },
+       gnss-DayNumber: 'INTEGER',
+       gnss-TimeOfDay: 'INTEGER',
+       gnss-TimeOfDayFrac-msec: 'INTEGER',
+       notificationOfLeapSecond: 'BIT STRING',
+       gps-TOW-Assist: [{
+        satelliteID: 'INTEGER',
+        tlmWord: 'INTEGER',
+        antiSpoof: 'INTEGER',
+        alert: 'INTEGER',
+        tlmRsvdBits: 'INTEGER'
+        }]
+       },
+      beginTimeAlt: 'INTEGER',
+      duration: 'INTEGER'
+      },
+     referencePressureRate: 'INTEGER'
+     },
+    area: {
+     pressureValidityArea: {
+      centerPoint: {
+       latitudeSign: 'ENUMERATED',
+       degreesLatitude: 'INTEGER',
+       degreesLongitude: 'INTEGER'
+       },
+      validityAreaWidth: 'INTEGER',
+      validityAreaHeight: 'INTEGER'
+      },
+     gN-pressure: 'INTEGER',
+     gE-pressure: 'INTEGER'
+     }
+    }
+   },
+  srn-ProvideAssistanceData: {
+   srnGroup: {
+    srnGroupList: {
+     incompleteFlag: 'BOOLEAN',
+     defaultReferencePoint: {
+      referencePointUniqueID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       version: 'INTEGER'
+       },
+      referencePointGeographicLocation: {
+       location3D: {
+        latitudeSign: 'ENUMERATED',
+        degreesLatitude: 'INTEGER',
+        degreesLongitude: 'INTEGER',
+        altitudeDirection: 'ENUMERATED',
+        altitude: 'INTEGER'
+        },
+       location3DwithUncertainty: {
+        latitudeSign: 'ENUMERATED',
+        degreesLatitude: 'INTEGER',
+        degreesLongitude: 'INTEGER',
+        altitudeDirection: 'ENUMERATED',
+        altitude: 'INTEGER',
+        uncertaintySemiMajor: 'INTEGER',
+        uncertaintySemiMinor: 'INTEGER',
+        orientationMajorAxis: 'INTEGER',
+        uncertaintyAltitude: 'INTEGER',
+        confidence: 'INTEGER'
+        },
+       locationwithhighaccuracy: {
+        latitude: 'INTEGER',
+        longitude: 'INTEGER',
+        cep: 'INTEGER',
+        uncertainty-semimajor: 'INTEGER',
+        uncertainty-semiminor: 'INTEGER',
+        offset-angle: 'INTEGER',
+        confidenceHorizontal: 'INTEGER',
+        altitude: 'INTEGER',
+        uncertainty-altitude: 'INTEGER',
+        confidenceVertical: 'INTEGER'
+        }
+       },
+      referencePointCivicLocation: {
+       countryCode: 'OCTET STRING',
+       civicAddressElementList: [{
+        caType: 'INTEGER',
+        caValue: 'OCTET STRING'
+        }]
+       },
+      referencePointFloorLevel: 'INTEGER',
+      relatedReferencePoints: [{
+       referencePointUniqueID: {
+        providerID: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        providerAssignedID: 'OCTET STRING',
+        version: 'INTEGER'
+        },
+       relativeLocation: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        }
+       }],
+      mapDataInformation: [{
+       mapDataUrl: {
+        mapDataUrl: 'VisibleString',
+        mapDataRef: {
+         dataID: {
+          containerID: 'INTEGER'
+          },
+         mapReference: 'OCTET STRING',
+         mapSize: 'INTEGER'
+         }
+        },
+       mapProvider: {
+        sameAsRefPointProvider: 'NULL',
+        notSameAsRefPointProvider: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         }
+        },
+       mapAssociation: {
+        referencePointUniqueID: 'NULL',
+        otherID: 'VisibleString',
+        mapOffset: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         },
+        origin: 'NULL'
+        },
+       mapHorizontalOrientation: 'INTEGER'
+       }]
+      },
+     groupList: [{
+      srnGroupID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       srnDataVersion: 'INTEGER'
+       },
+      defaultSRNtype: {
+       srnCategory: {
+        srnTechnologyType: {
+         srnTechnologies: 'ENUMERATED'
+         },
+        srnVendorInformation: {
+         vendor: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         vendorInfo: 'OCTET STRING'
+         }
+        },
+       srnERP: 'INTEGER',
+       srnAntennaInfo: {
+        antennaPatternID: 'INTEGER',
+        switchingPatternID: 'INTEGER'
+        }
+       },
+      referencePoint: {
+       referencePointUniqueID: {
+        providerID: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        providerAssignedID: 'OCTET STRING',
+        version: 'INTEGER'
+        },
+       referencePointGeographicLocation: {
+        location3D: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER'
+         },
+        location3DwithUncertainty: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER',
+         uncertaintySemiMajor: 'INTEGER',
+         uncertaintySemiMinor: 'INTEGER',
+         orientationMajorAxis: 'INTEGER',
+         uncertaintyAltitude: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        locationwithhighaccuracy: {
+         latitude: 'INTEGER',
+         longitude: 'INTEGER',
+         cep: 'INTEGER',
+         uncertainty-semimajor: 'INTEGER',
+         uncertainty-semiminor: 'INTEGER',
+         offset-angle: 'INTEGER',
+         confidenceHorizontal: 'INTEGER',
+         altitude: 'INTEGER',
+         uncertainty-altitude: 'INTEGER',
+         confidenceVertical: 'INTEGER'
+         }
+        },
+       referencePointCivicLocation: {
+        countryCode: 'OCTET STRING',
+        civicAddressElementList: [{
+         caType: 'INTEGER',
+         caValue: 'OCTET STRING'
+         }]
+        },
+       referencePointFloorLevel: 'INTEGER',
+       relatedReferencePoints: [{
+        referencePointUniqueID: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        relativeLocation: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        }],
+       mapDataInformation: [{
+        mapDataUrl: {
+         mapDataUrl: 'VisibleString',
+         mapDataRef: {
+          dataID: {
+           containerID: 'INTEGER'
+           },
+          mapReference: 'OCTET STRING',
+          mapSize: 'INTEGER'
+          }
+         },
+        mapProvider: {
+         sameAsRefPointProvider: 'NULL',
+         notSameAsRefPointProvider: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          }
+         },
+        mapAssociation: {
+         referencePointUniqueID: 'NULL',
+         otherID: 'VisibleString',
+         mapOffset: {
+          units: 'ENUMERATED',
+          arc-second-units: 'ENUMERATED',
+          relativeNorth: 'INTEGER',
+          relativeEast: 'INTEGER',
+          relativeAltitude: {
+           geodeticRelativeAltitude: {
+            geodetic-height-depth: 'INTEGER',
+            geodetic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            },
+           civicRelativeAltitude: {
+            civic-floors: 'INTEGER',
+            civic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            }
+           },
+          horizontalUncertainty: {
+           uncShape: {
+            circle: 'INTEGER',
+            ellipse: {
+             semimajor: 'INTEGER',
+             semiminor: 'INTEGER',
+             offsetAngle: 'INTEGER'
+             }
+            },
+           confidence: 'INTEGER'
+           }
+          },
+         origin: 'NULL'
+         },
+        mapHorizontalOrientation: 'INTEGER'
+        }]
+       },
+      globalOrientation: 'NULL',
+      srnsInGroupList: [{
+       srnID: {
+        srn-id: {
+         mac: 'BIT STRING',
+         nfc: {
+          manufacturer: 'BIT STRING',
+          uniqueNumber: 'BIT STRING'
+          },
+         mobileCode: {
+          registryID: 'BIT STRING',
+          remainingPart: 'OCTET STRING',
+          resolutionIdentifier: 'OCTET STRING'
+          },
+         other: 'OCTET STRING'
+         }
+        },
+       srnType: {
+        srnCategory: {
+         srnTechnologyType: {
+          srnTechnologies: 'ENUMERATED'
+          },
+         srnVendorInformation: {
+          vendor: {
+           standard-VendorOrOperatorID: 'INTEGER',
+           nonStandard-VendorOrOperatorID: {
+            encodedID: 'INTEGER',
+            visibleIdentification: 'VisibleString'
+            }
+           },
+          vendorInfo: 'OCTET STRING'
+          }
+         },
+        srnERP: 'INTEGER',
+        srnAntennaInfo: {
+         antennaPatternID: 'INTEGER',
+         switchingPatternID: 'INTEGER'
+         }
+        },
+       relativePosition: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       orientation: {
+        eulerAngles: {
+         alpha: 'INTEGER',
+         beta: 'INTEGER',
+         gamma: 'INTEGER'
+         }
+        }
+       }]
+      }]
+     },
+    srnGroupUpdateResponse: [{
+     srnGroupID: {
+      providerID: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      providerAssignedID: 'OCTET STRING',
+      srnDataVersion: 'INTEGER'
+      },
+     targetDataValidity: 'ENUMERATED',
+     updatedSRNgroup: {
+      srnGroupID: {
+       providerID: {
+        standard-VendorOrOperatorID: 'INTEGER',
+        nonStandard-VendorOrOperatorID: {
+         encodedID: 'INTEGER',
+         visibleIdentification: 'VisibleString'
+         }
+        },
+       providerAssignedID: 'OCTET STRING',
+       srnDataVersion: 'INTEGER'
+       },
+      defaultSRNtype: {
+       srnCategory: {
+        srnTechnologyType: {
+         srnTechnologies: 'ENUMERATED'
+         },
+        srnVendorInformation: {
+         vendor: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         vendorInfo: 'OCTET STRING'
+         }
+        },
+       srnERP: 'INTEGER',
+       srnAntennaInfo: {
+        antennaPatternID: 'INTEGER',
+        switchingPatternID: 'INTEGER'
+        }
+       },
+      referencePoint: {
+       referencePointUniqueID: {
+        providerID: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        providerAssignedID: 'OCTET STRING',
+        version: 'INTEGER'
+        },
+       referencePointGeographicLocation: {
+        location3D: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER'
+         },
+        location3DwithUncertainty: {
+         latitudeSign: 'ENUMERATED',
+         degreesLatitude: 'INTEGER',
+         degreesLongitude: 'INTEGER',
+         altitudeDirection: 'ENUMERATED',
+         altitude: 'INTEGER',
+         uncertaintySemiMajor: 'INTEGER',
+         uncertaintySemiMinor: 'INTEGER',
+         orientationMajorAxis: 'INTEGER',
+         uncertaintyAltitude: 'INTEGER',
+         confidence: 'INTEGER'
+         },
+        locationwithhighaccuracy: {
+         latitude: 'INTEGER',
+         longitude: 'INTEGER',
+         cep: 'INTEGER',
+         uncertainty-semimajor: 'INTEGER',
+         uncertainty-semiminor: 'INTEGER',
+         offset-angle: 'INTEGER',
+         confidenceHorizontal: 'INTEGER',
+         altitude: 'INTEGER',
+         uncertainty-altitude: 'INTEGER',
+         confidenceVertical: 'INTEGER'
+         }
+        },
+       referencePointCivicLocation: {
+        countryCode: 'OCTET STRING',
+        civicAddressElementList: [{
+         caType: 'INTEGER',
+         caValue: 'OCTET STRING'
+         }]
+        },
+       referencePointFloorLevel: 'INTEGER',
+       relatedReferencePoints: [{
+        referencePointUniqueID: {
+         providerID: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          },
+         providerAssignedID: 'OCTET STRING',
+         version: 'INTEGER'
+         },
+        relativeLocation: {
+         units: 'ENUMERATED',
+         arc-second-units: 'ENUMERATED',
+         relativeNorth: 'INTEGER',
+         relativeEast: 'INTEGER',
+         relativeAltitude: {
+          geodeticRelativeAltitude: {
+           geodetic-height-depth: 'INTEGER',
+           geodetic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           },
+          civicRelativeAltitude: {
+           civic-floors: 'INTEGER',
+           civic-uncertainty-and-confidence: {
+            uncertainty: 'INTEGER',
+            confidence: 'INTEGER'
+            }
+           }
+          },
+         horizontalUncertainty: {
+          uncShape: {
+           circle: 'INTEGER',
+           ellipse: {
+            semimajor: 'INTEGER',
+            semiminor: 'INTEGER',
+            offsetAngle: 'INTEGER'
+            }
+           },
+          confidence: 'INTEGER'
+          }
+         }
+        }],
+       mapDataInformation: [{
+        mapDataUrl: {
+         mapDataUrl: 'VisibleString',
+         mapDataRef: {
+          dataID: {
+           containerID: 'INTEGER'
+           },
+          mapReference: 'OCTET STRING',
+          mapSize: 'INTEGER'
+          }
+         },
+        mapProvider: {
+         sameAsRefPointProvider: 'NULL',
+         notSameAsRefPointProvider: {
+          standard-VendorOrOperatorID: 'INTEGER',
+          nonStandard-VendorOrOperatorID: {
+           encodedID: 'INTEGER',
+           visibleIdentification: 'VisibleString'
+           }
+          }
+         },
+        mapAssociation: {
+         referencePointUniqueID: 'NULL',
+         otherID: 'VisibleString',
+         mapOffset: {
+          units: 'ENUMERATED',
+          arc-second-units: 'ENUMERATED',
+          relativeNorth: 'INTEGER',
+          relativeEast: 'INTEGER',
+          relativeAltitude: {
+           geodeticRelativeAltitude: {
+            geodetic-height-depth: 'INTEGER',
+            geodetic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            },
+           civicRelativeAltitude: {
+            civic-floors: 'INTEGER',
+            civic-uncertainty-and-confidence: {
+             uncertainty: 'INTEGER',
+             confidence: 'INTEGER'
+             }
+            }
+           },
+          horizontalUncertainty: {
+           uncShape: {
+            circle: 'INTEGER',
+            ellipse: {
+             semimajor: 'INTEGER',
+             semiminor: 'INTEGER',
+             offsetAngle: 'INTEGER'
+             }
+            },
+           confidence: 'INTEGER'
+           }
+          },
+         origin: 'NULL'
+         },
+        mapHorizontalOrientation: 'INTEGER'
+        }]
+       },
+      globalOrientation: 'NULL',
+      srnsInGroupList: [{
+       srnID: {
+        srn-id: {
+         mac: 'BIT STRING',
+         nfc: {
+          manufacturer: 'BIT STRING',
+          uniqueNumber: 'BIT STRING'
+          },
+         mobileCode: {
+          registryID: 'BIT STRING',
+          remainingPart: 'OCTET STRING',
+          resolutionIdentifier: 'OCTET STRING'
+          },
+         other: 'OCTET STRING'
+         }
+        },
+       srnType: {
+        srnCategory: {
+         srnTechnologyType: {
+          srnTechnologies: 'ENUMERATED'
+          },
+         srnVendorInformation: {
+          vendor: {
+           standard-VendorOrOperatorID: 'INTEGER',
+           nonStandard-VendorOrOperatorID: {
+            encodedID: 'INTEGER',
+            visibleIdentification: 'VisibleString'
+            }
+           },
+          vendorInfo: 'OCTET STRING'
+          }
+         },
+        srnERP: 'INTEGER',
+        srnAntennaInfo: {
+         antennaPatternID: 'INTEGER',
+         switchingPatternID: 'INTEGER'
+         }
+        },
+       relativePosition: {
+        units: 'ENUMERATED',
+        arc-second-units: 'ENUMERATED',
+        relativeNorth: 'INTEGER',
+        relativeEast: 'INTEGER',
+        relativeAltitude: {
+         geodeticRelativeAltitude: {
+          geodetic-height-depth: 'INTEGER',
+          geodetic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          },
+         civicRelativeAltitude: {
+          civic-floors: 'INTEGER',
+          civic-uncertainty-and-confidence: {
+           uncertainty: 'INTEGER',
+           confidence: 'INTEGER'
+           }
+          }
+         },
+        horizontalUncertainty: {
+         uncShape: {
+          circle: 'INTEGER',
+          ellipse: {
+           semimajor: 'INTEGER',
+           semiminor: 'INTEGER',
+           offsetAngle: 'INTEGER'
+           }
+          },
+         confidence: 'INTEGER'
+         }
+        },
+       orientation: {
+        eulerAngles: {
+         alpha: 'INTEGER',
+         beta: 'INTEGER',
+         gamma: 'INTEGER'
+         }
+        }
+       }]
+      }
+     }]
+    },
+   antennaPattern: [{
+    identification: {
+     vendorOrOperator: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     antennaPatternID: 'INTEGER'
+     },
+    antennaData: {
+     antennaPattern: {
+      evenGrid: {
+       inAzimuth: 'INTEGER',
+       inElevation: 'INTEGER'
+       },
+      patternList: [{
+       channelNumber: 'INTEGER',
+       responseInElevation: [{
+        elevation: 'INTEGER',
+        responseInAzimuth: [{
+         azimuth: 'INTEGER',
+         response: {
+          amplitude: 'INTEGER',
+          phase: 'INTEGER'
+          }
+         }]
+        }]
+       }]
+      },
+     antennaContainer: 'OCTET STRING'
+     }
+    }],
+   srnError: {
+    srnLocationServerErrorCauses: {
+     groupErrors: 'ENUMERATED',
+     groupUpdateErrors: 'ENUMERATED',
+     srnAntennaErrors: 'ENUMERATED'
+     },
+    srnTargetDeviceErrorCauses: {
+     srnErrorsPerCategory: [{
+      category: {
+       srnTechnologyType: {
+        srnTechnologies: 'ENUMERATED'
+        },
+       srnVendorInformation: {
+        vendor: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        vendorInfo: 'OCTET STRING'
+        }
+       },
+      srnErrors: 'ENUMERATED',
+      rssiNotAvailable: 'NULL',
+      rtdNotAvailable: 'NULL',
+      multipleSetsNotAvailable: 'NULL',
+      historicMeasurementsNotAvailable: 'NULL'
+      }]
+     }
+    }
+   }
+  },
+ requestLocationInformation: {
+  commonIEsRequestLocationInformation: {
+   iP-Address-Request: {},
+   locationInformationContainerRequest: {
+    vendorOrOperatorID: {
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     },
+    locationInformationContainerRequestList: [{
+     containerID: {
+      containerID: 'INTEGER'
+      },
+     additionalInformation: 'OCTET STRING'
+     }]
+    },
+   requestPeriodicLocInfoWithUpdate: {
+    session-ID: 'OCTET STRING',
+    typeOfLocInfoRequest: 'ENUMERATED'
+    },
+   relativeLocationChange-Request: {
+    numberOfChanges: 'INTEGER'
+    },
+   localPositionRequest: {
+    typeOfRequest: 'ENUMERATED',
+    referencePointReq: [{
+     providerID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     providerAssignedID: 'OCTET STRING',
+     version: 'INTEGER'
+     }]
+    },
+   scheduledLocation-Request: {
+    gnssTime: {
+     gnss-TimeID: {
+      gnss-id: 'ENUMERATED'
+      },
+     gnss-DayNumber: 'INTEGER',
+     gnss-TimeOfDay: 'INTEGER',
+     gnss-TimeOfDayFrac-msec: 'INTEGER',
+     notificationOfLeapSecond: 'BIT STRING',
+     gps-TOW-Assist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    networkTime: {
+     secondsFromFrameStructureStart: 'INTEGER',
+     fractionalSecondsFromFrameStructureStart: 'INTEGER',
+     frameDrift: 'INTEGER',
+     cellID: {
+      eUTRA: {
+       physCellId: 'INTEGER',
+       cellGlobalIdEUTRA: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       earfcn: 'INTEGER',
+       earfcn-v9a0: 'INTEGER'
+       },
+      uTRA: {
+       mode: {
+        fdd: {
+         primary-CPICH-Info: 'INTEGER'
+         },
+        tdd: {
+         cellParameters: 'INTEGER'
+         }
+        },
+       cellGlobalIdUTRA: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       uarfcn: 'INTEGER'
+       },
+      gSM: {
+       bcchCarrier: 'INTEGER',
+       bsic: 'INTEGER',
+       cellGlobalIdGERAN: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        locationAreaCode: 'BIT STRING',
+        cellIdentity: 'BIT STRING'
+        }
+       }
+      }
+     },
+    relativeTime: 'INTEGER',
+    windowSize: 'INTEGER'
+    },
+   accessTypeRequest: {},
+   segmentedLIpreference: 'ENUMERATED',
+   segmentedLIResume: {
+    segmentedLI-session-ID: 'INTEGER',
+    next-segment-number: 'INTEGER'
+    }
+   },
+  agnss-RequestLocationInformation: {
+   positioningInstructions: {
+    highAccuracyMethodRequested: 'BOOLEAN',
+    haGNSSreq: {
+     duration: {
+      duration: 'INTEGER',
+      durationLSB: 'INTEGER'
+      },
+     rate: 'INTEGER',
+     antennaInformationReq: 'ENUMERATED',
+     pressureInformationReq: 'BOOLEAN',
+     signalReqList: [{
+      gnssID: {
+       gnss-id: 'ENUMERATED'
+       },
+      signals: {
+       gnss-SignalIDs: 'BIT STRING'
+       }
+      }]
+     }
+    },
+   ionosphereMeasurementsReq: 'BIT STRING',
+   localSurfaceMeasurementReq: {}
+   },
+  otdoa-RequestLocationInformation: {
+   assistanceAvailability: 'BOOLEAN'
+   },
+  eotd-RequestLocationInformation: {},
+  otdoa-utra-RequestLocationInformation: {},
+  ecid-lte-RequestLocationInformation: {
+   requestedMeasurements: 'BIT STRING'
+   },
+  ecid-gsm-RequestLocationInformation: {
+   requestedMeasurements: 'BIT STRING'
+   },
+  ecid-utra-RequestLocationInformation: {
+   requestedMeasurements: 'BIT STRING'
+   },
+  wlan-ap-RequestLocationInformation: {
+   requestedMeasurements: 'BIT STRING',
+   additionalRequestedMeasurements: 'BIT STRING'
+   },
+  ecid-wimax-RequestLocationInformation: {
+   requestedMeasurements: 'BIT STRING'
+   },
+  sensor-RequestLocationInformation: {
+   motionStateReq: {
+    secondaryMotionStateRequest: 'NULL'
+    }
+   },
+  srn-RequestLocationInformation: {
+   requestInfo: [{
+    category: {
+     srnTechnologyType: {
+      srnTechnologies: 'ENUMERATED'
+      },
+     srnVendorInformation: {
+      vendor: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      vendorInfo: 'OCTET STRING'
+      }
+     },
+    multipleMeasurements: 'ENUMERATED',
+    allowedMeasurements: {
+     srnMeasurements: 'BIT STRING'
+     },
+    historicMeasurementsRequested: 'NULL'
+    }]
+   }
+  },
+ provideLocationInformation: {
+  commonIEsProvideLocationInformation: {
+   highAccuracy3Dposition: {
+    latitude: 'INTEGER',
+    longitude: 'INTEGER',
+    cep: 'INTEGER',
+    uncertainty-semimajor: 'INTEGER',
+    uncertainty-semiminor: 'INTEGER',
+    offset-angle: 'INTEGER',
+    confidenceHorizontal: 'INTEGER',
+    altitude: 'INTEGER',
+    uncertainty-altitude: 'INTEGER',
+    confidenceVertical: 'INTEGER'
+    },
+   localPosition: {
+    referencePoint: {
+     providerID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     providerAssignedID: 'OCTET STRING',
+     version: 'INTEGER'
+     },
+    subjectLocation: {
+     units: 'ENUMERATED',
+     arc-second-units: 'ENUMERATED',
+     relativeNorth: 'INTEGER',
+     relativeEast: 'INTEGER',
+     relativeAltitude: {
+      geodeticRelativeAltitude: {
+       geodetic-height-depth: 'INTEGER',
+       geodetic-uncertainty-and-confidence: {
+        uncertainty: 'INTEGER',
+        confidence: 'INTEGER'
+        }
+       },
+      civicRelativeAltitude: {
+       civic-floors: 'INTEGER',
+       civic-uncertainty-and-confidence: {
+        uncertainty: 'INTEGER',
+        confidence: 'INTEGER'
+        }
+       }
+      },
+     horizontalUncertainty: {
+      uncShape: {
+       circle: 'INTEGER',
+       ellipse: {
+        semimajor: 'INTEGER',
+        semiminor: 'INTEGER',
+        offsetAngle: 'INTEGER'
+        }
+       },
+      confidence: 'INTEGER'
+      }
+     }
+    },
+   highAccuracy3Dvelocity: {
+    enu-origin: {
+     latitude: 'INTEGER',
+     longitude: 'INTEGER',
+     cep: 'INTEGER',
+     uncertainty-semimajor: 'INTEGER',
+     uncertainty-semiminor: 'INTEGER',
+     offset-angle: 'INTEGER',
+     confidenceHorizontal: 'INTEGER',
+     altitude: 'INTEGER',
+     uncertainty-altitude: 'INTEGER',
+     confidenceVertical: 'INTEGER'
+     },
+    east-component: 'INTEGER',
+    negative-sign-east: 'NULL',
+    north-component: 'INTEGER',
+    negative-sign-north: 'NULL',
+    up-component: 'INTEGER',
+    negative-sign-up: 'NULL',
+    cep: 'INTEGER',
+    uncertainty-semimajor: 'INTEGER',
+    uncertainty-semiminor: 'INTEGER',
+    offset-angle: 'INTEGER',
+    confidenceHorizontal: 'INTEGER',
+    uncertainty-up-component: 'INTEGER',
+    confidenceUp: 'INTEGER'
+    },
+   iP-Address-List: [{
+    local-IP-Address: {
+     iPv4: 'BIT STRING',
+     iPv6: 'BIT STRING'
+     },
+    bearer: 'ENUMERATED',
+    nat: 'BOOLEAN'
+    }],
+   locationInformationContainer: {
+    vendorOrOperatorID: {
+     standard-VendorOrOperatorID: 'INTEGER',
+     nonStandard-VendorOrOperatorID: {
+      encodedID: 'INTEGER',
+      visibleIdentification: 'VisibleString'
+      }
+     },
+    locationInformationContainerDataList: [{
+     containerID: {
+      containerID: 'INTEGER'
+      },
+     containerData: 'OCTET STRING'
+     }]
+    },
+   providePeriodicLocInfoWithUpdate: {
+    session-ID: 'OCTET STRING',
+    typeOfLocInfoProvide: 'ENUMERATED'
+    },
+   relativeLocationChangeList: [{
+    relativeTime: 'INTEGER',
+    transactionID: 'INTEGER',
+    relativeLocation: {
+     units: 'ENUMERATED',
+     arc-second-units: 'ENUMERATED',
+     relativeNorth: 'INTEGER',
+     relativeEast: 'INTEGER',
+     relativeAltitude: {
+      geodeticRelativeAltitude: {
+       geodetic-height-depth: 'INTEGER',
+       geodetic-uncertainty-and-confidence: {
+        uncertainty: 'INTEGER',
+        confidence: 'INTEGER'
+        }
+       },
+      civicRelativeAltitude: {
+       civic-floors: 'INTEGER',
+       civic-uncertainty-and-confidence: {
+        uncertainty: 'INTEGER',
+        confidence: 'INTEGER'
+        }
+       }
+      },
+     horizontalUncertainty: {
+      uncShape: {
+       circle: 'INTEGER',
+       ellipse: {
+        semimajor: 'INTEGER',
+        semiminor: 'INTEGER',
+        offsetAngle: 'INTEGER'
+        }
+       },
+      confidence: 'INTEGER'
+      }
+     }
+    }],
+   scheduledLocation: {
+    disposition: 'ENUMERATED',
+    actualWindow: {
+     start: 'INTEGER',
+     duration: 'INTEGER'
+     }
+    },
+   accessTypes: {
+    accessTypeUnknown: 'NULL',
+    fixedAccessTypes: 'BIT STRING',
+    wirelessAccessTypes: 'BIT STRING'
+    },
+   segmentedLITransfer: {
+    segmentedLI-session-ID: 'INTEGER',
+    segment-number: 'INTEGER'
+    },
+   locationInformationTimeStamp: {
+    gnssTime: {
+     gnss-TimeID: {
+      gnss-id: 'ENUMERATED'
+      },
+     gnss-DayNumber: 'INTEGER',
+     gnss-TimeOfDay: 'INTEGER',
+     gnss-TimeOfDayFrac-msec: 'INTEGER',
+     notificationOfLeapSecond: 'BIT STRING',
+     gps-TOW-Assist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    networkTime: {
+     secondsFromFrameStructureStart: 'INTEGER',
+     fractionalSecondsFromFrameStructureStart: 'INTEGER',
+     frameDrift: 'INTEGER',
+     cellID: {
+      eUTRA: {
+       physCellId: 'INTEGER',
+       cellGlobalIdEUTRA: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       earfcn: 'INTEGER',
+       earfcn-v9a0: 'INTEGER'
+       },
+      uTRA: {
+       mode: {
+        fdd: {
+         primary-CPICH-Info: 'INTEGER'
+         },
+        tdd: {
+         cellParameters: 'INTEGER'
+         }
+        },
+       cellGlobalIdUTRA: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       uarfcn: 'INTEGER'
+       },
+      gSM: {
+       bcchCarrier: 'INTEGER',
+       bsic: 'INTEGER',
+       cellGlobalIdGERAN: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        locationAreaCode: 'BIT STRING',
+        cellIdentity: 'BIT STRING'
+        }
+       }
+      }
+     },
+    relativeTime: 'INTEGER'
+    },
+   locationSource: {
+    agnss: 'NULL',
+    otdoa: 'NULL',
+    eotd: 'NULL',
+    otdoaUTRA: 'NULL',
+    ecidLTE: 'NULL',
+    ecidGSM: 'NULL',
+    ecidUTRA: 'NULL',
+    wlanAP: 'NULL',
+    srn: 'NULL',
+    sensors: 'NULL'
+    }
+   },
+  agnss-ProvideLocationInformation: {
+   highAccuracyReferenceTime: {
+    gnss-TimeID: {
+     gnss-id: 'ENUMERATED'
+     },
+    gnss-DayNumber: 'INTEGER',
+    gnss-TimeOfDay: 'INTEGER',
+    gnss-TimeOfDayFrac-msec: 'INTEGER',
+    notificationOfLeapSecond: 'BIT STRING',
+    gps-TOW-Assist: [{
+     satelliteID: 'INTEGER',
+     tlmWord: 'INTEGER',
+     antiSpoof: 'INTEGER',
+     alert: 'INTEGER',
+     tlmRsvdBits: 'INTEGER'
+     }]
+    },
+   highAccuracyMeasurements: {
+    controlParameters: {
+     duration: {
+      duration: 'INTEGER',
+      durationLSB: 'INTEGER'
+      },
+     rate: 'INTEGER',
+     antennaDescription: {
+      antennaDescription: {
+       igsAntennaName: 'VisibleString',
+       proprietaryName: 'VisibleString'
+       },
+      antennaSetupID: 'INTEGER',
+      antennaSerialNumber: 'VisibleString'
+      }
+     },
+    measurements: {
+     position: {
+      latitudeSign: 'ENUMERATED',
+      degreesLatitude: 'INTEGER',
+      degreesLongitude: 'INTEGER',
+      altitudeDirection: 'ENUMERATED',
+      altitude: 'INTEGER',
+      uncertaintySemiMajor: 'INTEGER',
+      uncertaintySemiMinor: 'INTEGER',
+      orientationMajorAxis: 'INTEGER',
+      uncertaintyAltitude: 'INTEGER',
+      confidence: 'INTEGER'
+      },
+     referenceTime: {
+      gnss-TimeID: {
+       gnss-id: 'ENUMERATED'
+       },
+      gnss-DayNumber: 'INTEGER',
+      gnss-TimeOfDay: 'INTEGER',
+      gnss-TimeOfDayFrac-msec: 'INTEGER',
+      notificationOfLeapSecond: 'BIT STRING',
+      gps-TOW-Assist: [{
+       satelliteID: 'INTEGER',
+       tlmWord: 'INTEGER',
+       antiSpoof: 'INTEGER',
+       alert: 'INTEGER',
+       tlmRsvdBits: 'INTEGER'
+       }]
+      },
+     localPressure: {
+      pressure: 'INTEGER',
+      pressureUncertainty: 'INTEGER'
+      },
+     antennaOrientation: {
+      eulerAngles: {
+       alpha: 'INTEGER',
+       beta: 'INTEGER',
+       gamma: 'INTEGER'
+       }
+      },
+     signalMeasurements: [{
+      gnss-ID: {
+       gnss-id: 'ENUMERATED'
+       },
+      haGNSSperSignalList: [{
+       signal-ID: {
+        gnss-SignalID: 'INTEGER'
+        },
+       haGNSSperSVlist: [{
+        svID: {
+         satellite-id: 'INTEGER'
+         },
+        integerCodePhase: 'INTEGER',
+        codePhase: 'INTEGER',
+        codePhaseRMSError: 'INTEGER',
+        multipathDetection: 'ENUMERATED',
+        cnr: 'INTEGER',
+        adr: 'INTEGER',
+        adrRMSerror: 'INTEGER',
+        lockIndicator: 'BOOLEAN'
+        }]
+       }]
+      }]
+     }
+    },
+   ionosphereMeasurements: {
+    gnssTime: {
+     gnss-TimeID: {
+      gnss-id: 'ENUMERATED'
+      },
+     gnss-DayNumber: 'INTEGER',
+     gnss-TimeOfDay: 'INTEGER',
+     gnss-TimeOfDayFrac-msec: 'INTEGER',
+     notificationOfLeapSecond: 'BIT STRING',
+     gps-TOW-Assist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    position: {
+     latitudeSign: 'ENUMERATED',
+     degreesLatitude: 'INTEGER',
+     degreesLongitude: 'INTEGER',
+     altitudeDirection: 'ENUMERATED',
+     altitude: 'INTEGER',
+     uncertaintySemiMajor: 'INTEGER',
+     uncertaintySemiMinor: 'INTEGER',
+     orientationMajorAxis: 'INTEGER',
+     uncertaintyAltitude: 'INTEGER',
+     confidence: 'INTEGER'
+     },
+    tecPerSV: [{
+     azimuth: 'INTEGER',
+     elevation: 'INTEGER',
+     tecValue: 'INTEGER',
+     tecUncertainty: 'INTEGER'
+     }],
+    tecAtZenith: {
+     tecValueAtZenith: 'INTEGER',
+     tecUncertaintyAtZenith: 'INTEGER'
+     }
+    },
+   localSurfaceMeasurements: {
+    gnssTime: {
+     gnss-TimeID: {
+      gnss-id: 'ENUMERATED'
+      },
+     gnss-DayNumber: 'INTEGER',
+     gnss-TimeOfDay: 'INTEGER',
+     gnss-TimeOfDayFrac-msec: 'INTEGER',
+     notificationOfLeapSecond: 'BIT STRING',
+     gps-TOW-Assist: [{
+      satelliteID: 'INTEGER',
+      tlmWord: 'INTEGER',
+      antiSpoof: 'INTEGER',
+      alert: 'INTEGER',
+      tlmRsvdBits: 'INTEGER'
+      }]
+     },
+    position: {
+     latitudeSign: 'ENUMERATED',
+     degreesLatitude: 'INTEGER',
+     degreesLongitude: 'INTEGER',
+     altitudeDirection: 'ENUMERATED',
+     altitude: 'INTEGER',
+     uncertaintySemiMajor: 'INTEGER',
+     uncertaintySemiMinor: 'INTEGER',
+     orientationMajorAxis: 'INTEGER',
+     uncertaintyAltitude: 'INTEGER',
+     confidence: 'INTEGER'
+     },
+    pressure: 'INTEGER',
+    pressureUncertainty: 'INTEGER',
+    temperatureMeasurement: {
+     temperature: 'INTEGER',
+     temperatureUncertainty: 'INTEGER'
+     }
+    },
+   error: {
+    agnss-locationServerErrorCauses: {
+     waIonoErrorCauses: 'ENUMERATED',
+     ccpErrorCauses: 'ENUMERATED'
+     },
+    agnss-targetDeviceErrorCauses: {
+     highAccuracyErrorCauses: 'ENUMERATED',
+     ionosphereMeasurementErrorCauses: 'ENUMERATED',
+     environmentObservationErrorCauses: 'ENUMERATED',
+     haGNSSerrorCauses: 'ENUMERATED'
+     }
+    }
+   },
+  otdoa-ProvideLocationInformation: {
+   otdoaLocationInformation: {
+    systemFrameNumber: 'BIT STRING',
+    physCellId: 'INTEGER',
+    cellGlobalId: {
+     plmn-Identity: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     cellIdentity: {
+      eutra: 'BIT STRING',
+      utra: 'BIT STRING'
+      }
+     }
+    },
+   otdoaError: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    }
+   },
+  eotd-ProvideLocationInformation: {
+   eotdMsrElement: {
+    refFrameNumber: 'INTEGER',
+    referenceTimeSlot: 'INTEGER',
+    toaMeasurementsOfRef: {
+     refQuality: 'BIT STRING',
+     numOfMeasurements: 'BIT STRING'
+     },
+    stdResolution: 'BIT STRING',
+    taCorrection: 'INTEGER',
+    otd-FirstSetMsrs: [{
+     neighborIdentity: {
+      bsicAndCarrier: {
+       bsic: 'INTEGER',
+       bcch: 'INTEGER'
+       },
+      ci: 'INTEGER',
+      multiFrameCarrier: {
+       bcchCarrier: 'INTEGER',
+       multiFrameOffset: 'INTEGER'
+       },
+      requestIndex: 'INTEGER',
+      systemInfoIndex: 'INTEGER',
+      ciAndLac: {
+       locationAreaCode: 'BIT STRING',
+       cellIdentity: 'BIT STRING'
+       }
+      },
+     nborTimeSlot: 'INTEGER',
+     eotdQuality: {
+      nbrOfMeasurements: 'BIT STRING',
+      stdOfEOTD: 'BIT STRING'
+      },
+     otdValue: 'INTEGER'
+     }]
+    },
+   eotdError: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    }
+   },
+  otdoa-utra-ProvideLocationInformation: {
+   otdoaUtraMeasurement: {
+    sfn: 'INTEGER',
+    modeSpecificInfoMeas: {
+     fdd: {
+      referenceCellIdentity: {
+       primaryScramblingCode: 'INTEGER'
+       },
+      ue-RX-TX-TimeDifferenceType2Info: {
+       ue-RX-TX-timeDifferenceType2: 'INTEGER',
+       neighborQuality: {
+        quality: {
+         stdResolution: 'BIT STRING',
+         numberOfOTDOA-Measurements: 'BIT STRING',
+         stdOfOTDOA-Measurements: 'BIT STRING'
+         }
+        }
+       }
+      },
+     tdd: {
+      cellAndChannelIdentity: {
+       burstType: 'ENUMERATED',
+       midambleShift: 'INTEGER',
+       timeslot: 'INTEGER',
+       cellParametersID: 'INTEGER'
+       }
+      }
+     },
+    neighborList: [{
+     modeSpecificInfo: {
+      fdd: {
+       neighborIdentity: {
+        primaryScramblingCode: 'INTEGER'
+        },
+       ue-RX-TX-timeDifferenceType2Info: {
+        ue-RX-TX-timeDifferenceType2: 'INTEGER',
+        neighborQuality: {
+         quality: {
+          stdResolution: 'BIT STRING',
+          numberOfOTDOA-Measurements: 'BIT STRING',
+          stdOfOTDOA-Measurements: 'BIT STRING'
+          }
+         }
+        }
+       },
+      tdd: {
+       cellAndChannelIdentity: {
+        burstType: 'ENUMERATED',
+        midambleShift: 'INTEGER',
+        timeslot: 'INTEGER',
+        cellParametersID: 'INTEGER'
+        },
+       uarfcn: 'INTEGER'
+       }
+      },
+     neighborQuality: {
+      quality: {
+       stdResolution: 'BIT STRING',
+       numberOfOTDOA-Measurements: 'BIT STRING',
+       stdOfOTDOA-Measurements: 'BIT STRING'
+       }
+      },
+     sfn-sfn-ObsTimeDifference2: 'INTEGER'
+     }]
+    },
+   otdoaUtraError: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED'
+     }
+    },
+   timeStampData: {
+    sfn: 'INTEGER',
+    utraCellGlobalID: {
+     plmn-Identity: {
+      mcc: ['INTEGER'],
+      mnc: ['INTEGER']
+      },
+     cellIdentity: {
+      eutra: 'BIT STRING',
+      utra: 'BIT STRING'
+      }
+     },
+    frequencyInfo: {
+     modeSpecificInfo: {
+      fdd: {
+       uarfcn-UL: 'INTEGER',
+       uarfcn-DL: 'INTEGER'
+       },
+      tdd: {
+       uarfcn-Nt: 'INTEGER'
+       }
+      }
+     },
+    nonUniqueCellID: {
+     primaryScramblingCode: 'INTEGER',
+     cellParametersId: 'INTEGER'
+     }
+    }
+   },
+  ecid-lte-ProvideLocationInformation: {
+   ecid-LTE-CombinedLocationInformation: [{
+    ecid-LTE-LocationInformation: {
+     lpp-ECID-SignalMeasurementInformation: {
+      primaryCellMeasuredResults: {
+       physCellId: 'INTEGER',
+       cellGlobalId: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       arfcnEUTRA: 'INTEGER',
+       systemFrameNumber: 'BIT STRING',
+       rsrp-Result: 'INTEGER',
+       rsrq-Result: 'INTEGER',
+       ue-RxTxTimeDiff: 'INTEGER',
+       arfcnEUTRA-v9a0: 'INTEGER'
+       },
+      measuredResultsList: [{
+       physCellId: 'INTEGER',
+       cellGlobalId: {
+        plmn-Identity: {
+         mcc: ['INTEGER'],
+         mnc: ['INTEGER']
+         },
+        cellIdentity: {
+         eutra: 'BIT STRING',
+         utra: 'BIT STRING'
+         }
+        },
+       arfcnEUTRA: 'INTEGER',
+       systemFrameNumber: 'BIT STRING',
+       rsrp-Result: 'INTEGER',
+       rsrq-Result: 'INTEGER',
+       ue-RxTxTimeDiff: 'INTEGER',
+       arfcnEUTRA-v9a0: 'INTEGER'
+       }]
+      }
+     },
+    relativeTimeStamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   ecid-LTE-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     eNodeBMandatoryDataUnavailable: 'NULL',
+     eNodeBLocationsUnavailable: 'NULL',
+     eNodeBcellTransmitPowerUnavailable: 'NULL',
+     eNodeBcellAntennaPortConfigUnavailable: 'NULL',
+     eNodeBcallAntennaGainUnavailable: 'NULL',
+     eNodeBcellBeamWidthUnavailable: 'NULL',
+     eNodeBcellTransmitDirectionUnavailable: 'NULL',
+     eNodeBcellFrequencyAccuracyUnavailable: 'NULL',
+     eNodeBnonservingADUnavailable: 'NULL',
+     heNBMandatoryDataUnavailable: 'NULL',
+     heNBLocationUnavailable: 'NULL',
+     heNBLocationReliabilityUnavailable: 'NULL',
+     heNBcellTransmitPowerUnavailable: 'NULL',
+     heNBcellAntennaPortConfigUnavailable: 'NULL',
+     heNBcellFrequencyAccuracyUnavailable: 'NULL',
+     heNBCoverageAreaUnavailable: 'NULL',
+     heNBnonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     rsrpMeasurementNotPossible: 'NULL',
+     rsrqMeasurementNotPossible: 'NULL',
+     ueRxTxMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  ecid-gsm-ProvideLocationInformation: {
+   ecid-GSM-CombinedLocationInformation: [{
+    ecid-GSM-LocationInformation: {
+     cellGlobalIdGERAN: {
+      plmn-Identity: {
+       mcc: ['INTEGER'],
+       mnc: ['INTEGER']
+       },
+      locationAreaCode: 'BIT STRING',
+      cellIdentity: 'BIT STRING'
+      },
+     rxLevel: 'INTEGER',
+     tA: 'INTEGER',
+     nMR-GERAN: [{
+      cellNonUniqueIDGERAN: {
+       bsic: 'INTEGER',
+       bcch: 'INTEGER'
+       },
+      cellLocalIDGERAN: {
+       locationAreaCode: 'BIT STRING',
+       cellIdentity: 'BIT STRING'
+       },
+      rxLevel: 'INTEGER'
+      }]
+     },
+    relativeTimeStamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   ecid-GSM-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     mandatoryDataUnavailable: 'NULL',
+     bsLocationsUnavailable: 'NULL',
+     cellTransmitPowerUnavailable: 'NULL',
+     callAntennaGainUnavailable: 'NULL',
+     cellBeamWidthUnavailable: 'NULL',
+     cellTransmitDirectionUnavailable: 'NULL',
+     cellFrequencyAccuracyUnavailable: 'NULL',
+     nonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     rxLevelMeasurementNotPossible: 'NULL',
+     taMeasurementNotPossible: 'NULL',
+     nMRMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  ecid-utra-ProvideLocationInformation: {
+   ecid-UTRA-CombinedLocationInformation: [{
+    ecid-utra-LocationInformation: {
+     cellGlobalIdUTRA: {
+      plmn-Identity: {
+       mcc: ['INTEGER'],
+       mnc: ['INTEGER']
+       },
+      cellIdentity: {
+       eutra: 'BIT STRING',
+       utra: 'BIT STRING'
+       }
+      },
+     frequencyInfo: {
+      modeSpecificInfo: {
+       fdd: {
+        uarfcn-UL: 'INTEGER',
+        uarfcn-DL: 'INTEGER'
+        },
+       tdd: {
+        uarfcn-Nt: 'INTEGER'
+        }
+       }
+      },
+     primaryScramblingCode: 'INTEGER',
+     measuredResultsList: [{
+      frequencyInfo: {
+       modeSpecificInfo: {
+        fdd: {
+         uarfcn-UL: 'INTEGER',
+         uarfcn-DL: 'INTEGER'
+         },
+        tdd: {
+         uarfcn-Nt: 'INTEGER'
+         }
+        }
+       },
+      utra-CarrierRSSI: 'INTEGER',
+      cellMeasuredResultsList: [{
+       cellIdentity: 'BIT STRING',
+       modeSpecificInfo: {
+        fdd: {
+         primaryCPICH-Info: 'INTEGER',
+         cpich-Ec-N0: 'INTEGER',
+         cpich-RSCP: 'INTEGER',
+         pathloss: 'INTEGER'
+         },
+        tdd: {
+         cellParametersID: 'INTEGER',
+         primaryCCPCH-RSCP: 'INTEGER',
+         pathloss: 'INTEGER'
+         }
+        }
+       }]
+      }],
+     cellParametersId: 'INTEGER',
+     utratimingAdvance: {
+      tA: 'INTEGER',
+      tAResolution: 'ENUMERATED',
+      chipRate: 'ENUMERATED'
+      }
+     },
+    relativeTimeStamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   ecid-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     nodeBMandatoryDataUnavailable: 'NULL',
+     nodeBLocationUnavailable: 'NULL',
+     nodeBcellTransmitPowerUnavailable: 'NULL',
+     nodeBcallAntennaGainUnavailable: 'NULL',
+     nodeBcellBeamWidthUnavailable: 'NULL',
+     nodeBcellTransmitDirectionUnavailable: 'NULL',
+     nodeBcellFrequencyAccuracyUnavailable: 'NULL',
+     nodeBnonservingADUnavailable: 'NULL',
+     hNBMandatoryDataUnavailable: 'NULL',
+     hNBLocationUnavailable: 'NULL',
+     hNBLocationReliabilityUnavailable: 'NULL',
+     hNBcellTransmitPowerUnavailable: 'NULL',
+     hNBcellFrequencyAccuracyUnavailable: 'NULL',
+     hNBCoverageAreaUnavailable: 'NULL',
+     hNBnonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     mRLMeasurementsNotPossible: 'NULL',
+     tdd-timingAdvanceMeasurementNotPossible: 'NULL',
+     mRL-utra-CarrierRSSIMeasurementNotPossible: 'NULL',
+     mRL-FDD-cpich-Ec-N0MeasurementNotPossible: 'NULL',
+     mRL-FDD-cpich-RSCPMeasurementNotPossible: 'NULL',
+     mRL-FDD-pathlossMeasurementNotPossible: 'NULL',
+     mRL-TDD-primaryCCPCH-RSCPMeasurementNotPossible: 'NULL',
+     mRL-TDD-pathlossMeasurementNotPossible: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  wlan-ap-ProvideLocationInformastion: {
+   wlan-AP-CombinedLocationInformation: [{
+    wlan-AP-LocationInformation: {
+     apMACAddress: {
+      apMacAddress: 'BIT STRING'
+      },
+     apSSID: 'OCTET STRING',
+     apSignaltoNoise: 'INTEGER',
+     apDeviceType: 'ENUMERATED',
+     apPHYtype: 'ENUMERATED',
+     apSignalStrength: 'INTEGER',
+     apChannelFrequency: 'INTEGER',
+     apRoundTripDelay: {
+      rTDValue: 'INTEGER',
+      rTDUnits: 'ENUMERATED',
+      rTDAccuracy: 'INTEGER'
+      },
+     ueTransmitPower: 'INTEGER',
+     ueAntennaGain: 'INTEGER',
+     apReportedLocation: {
+      locationDataLCI: {
+       latitudeResolution: 'BIT STRING',
+       latitude: 'BIT STRING',
+       longitudeResolution: 'BIT STRING',
+       longitude: 'BIT STRING',
+       altitudeType: 'BIT STRING',
+       altitudeResolution: 'BIT STRING',
+       altitude: 'BIT STRING',
+       datum: 'BIT STRING'
+       }
+      },
+     apTransmitPower: 'INTEGER',
+     apAntennaGain: 'INTEGER',
+     ueSignaltoNoise: 'INTEGER',
+     ueSignalStrength: 'INTEGER',
+     apSignalStrengthDelta: 'INTEGER',
+     ueSignalStrengthDelta: 'INTEGER',
+     apSignaltoNoiseDelta: 'INTEGER',
+     ueSignaltoNoiseDelta: 'INTEGER',
+     operatingClass: 'INTEGER'
+     },
+    relativeTimeStamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   wlan-AP-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED',
+     apMandatoryDataUnavailable: 'NULL',
+     apLocationsUnavailable: 'NULL',
+     apLocationReliabilityUnavailable: 'NULL',
+     apTransmitPowerUnavailable: 'NULL',
+     apAntennaGainUnavailable: 'NULL',
+     apCoverageAreaUnavailable: 'NULL',
+     nonservingADUnavailable: 'NULL'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     apSSIDnotAvailable: 'NULL',
+     apSNMeasurementNotPossible: 'NULL',
+     apDevTypeNotAvailable: 'NULL',
+     apPhyTypeNotAvailable: 'NULL',
+     apRSSIMeasurementNotPossible: 'NULL',
+     apChanFreqNotAvailable: 'NULL',
+     apRTDMeasurementNotPossible: 'NULL',
+     ueTPNotAvailable: 'NULL',
+     ueAGNotAvailable: 'NULL',
+     apRecLocNotAvailable: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL',
+     apTPNotAvailable: 'NULL',
+     apAGNotAvailable: 'NULL',
+     ueSNNotAvailable: 'NULL',
+     ueRSSINotAvailable: 'NULL',
+     ocNotAvailable: 'NULL'
+     }
+    }
+   },
+  ecid-wimax-ProvideLocationInformastion: {
+   ecid-wimax-CombinedLocationInformation: [{
+    ecid-wimax-LocationInformation: {
+     wimaxBsID: {
+      bsID-MSB: 'BIT STRING',
+      bsID-LSB: 'BIT STRING'
+      },
+     wimaxRTD: {
+      rTD: 'INTEGER',
+      rTDstd: 'INTEGER'
+      },
+     wimaxNMRList: [{
+      wimaxBsID: {
+       bsID-MSB: 'BIT STRING',
+       bsID-LSB: 'BIT STRING'
+       },
+      relDelay: 'INTEGER',
+      relDelaystd: 'INTEGER',
+      rSSI: 'INTEGER',
+      rSSIstd: 'INTEGER',
+      bSTxPower: 'INTEGER',
+      cINR: 'INTEGER',
+      cINRstd: 'INTEGER',
+      bSLocation: {
+       locationDataLCI: {
+        latitudeResolution: 'BIT STRING',
+        latitude: 'BIT STRING',
+        longitudeResolution: 'BIT STRING',
+        longitude: 'BIT STRING',
+        altitudeType: 'BIT STRING',
+        altitudeResolution: 'BIT STRING',
+        altitude: 'BIT STRING',
+        datum: 'BIT STRING'
+        }
+       }
+      }]
+     },
+    relativeTimeStamp: 'INTEGER',
+    servingFlag: 'BOOLEAN'
+    }],
+   ecid-wimax-Error: {
+    locationServerErrorCauses: {
+     cause: 'ENUMERATED'
+     },
+    targetDeviceErrorCauses: {
+     cause: 'ENUMERATED',
+     rTDMeasurementNotPossible: 'NULL',
+     rTDstdMeasurementNotPossible: 'NULL',
+     nMRMeasurementNotPossible: 'NULL',
+     nMRrelDelayMeasurementNotPossible: 'NULL',
+     nMRrelDelaystdMeasurementNotPossible: 'NULL',
+     nMRrSSIMeasurementNotPossible: 'NULL',
+     nMRrSSIstdMeasurementNotPossible: 'NULL',
+     nMRbSTxPowerMeasurementNotPossible: 'NULL',
+     nMRcINRMeasurementNotPossible: 'NULL',
+     nMRcINRstdMeasurementNotPossible: 'NULL',
+     nMRbSLocationNotAvailable: 'NULL',
+     non-servingMeasurementsNotAvailable: 'NULL',
+     historicMeasurementsNotAvailable: 'NULL'
+     }
+    }
+   },
+  sensor-ProvideLocationInformation: {
+   motionStateList: [{
+    primaryMotionState: 'ENUMERATED',
+    confidence: 'INTEGER',
+    secondaryMotionState: 'BIT STRING'
+    }],
+   sensorError: {
+    targetError: {
+     motionStateError: 'ENUMERATED',
+     secondaryMotionStateError: 'ENUMERATED'
+     }
+    }
+   },
+  srn-ProvideLocationInformation: {
+   srnMeasurementList: [{
+    srnID: {
+     srn-id: {
+      mac: 'BIT STRING',
+      nfc: {
+       manufacturer: 'BIT STRING',
+       uniqueNumber: 'BIT STRING'
+       },
+      mobileCode: {
+       registryID: 'BIT STRING',
+       remainingPart: 'OCTET STRING',
+       resolutionIdentifier: 'OCTET STRING'
+       },
+      other: 'OCTET STRING'
+      }
+     },
+    srnCategory: {
+     srnTechnologyType: {
+      srnTechnologies: 'ENUMERATED'
+      },
+     srnVendorInformation: {
+      vendor: {
+       standard-VendorOrOperatorID: 'INTEGER',
+       nonStandard-VendorOrOperatorID: {
+        encodedID: 'INTEGER',
+        visibleIdentification: 'VisibleString'
+        }
+       },
+      vendorInfo: 'OCTET STRING'
+      }
+     },
+    srnGroupID: {
+     providerID: {
+      standard-VendorOrOperatorID: 'INTEGER',
+      nonStandard-VendorOrOperatorID: {
+       encodedID: 'INTEGER',
+       visibleIdentification: 'VisibleString'
+       }
+      },
+     providerAssignedID: 'OCTET STRING',
+     srnDataVersion: 'INTEGER'
+     },
+    measurementList: [{
+     relativeTimeStamp: 'INTEGER',
+     rssi: 'INTEGER',
+     rtd: {
+      rTDValue: 'INTEGER',
+      rTDUnits: 'ENUMERATED',
+      rTDAccuracy: 'INTEGER'
+      }
+     }]
+    }],
+   srnError: {
+    srnLocationServerErrorCauses: {
+     groupErrors: 'ENUMERATED',
+     groupUpdateErrors: 'ENUMERATED',
+     srnAntennaErrors: 'ENUMERATED'
+     },
+    srnTargetDeviceErrorCauses: {
+     srnErrorsPerCategory: [{
+      category: {
+       srnTechnologyType: {
+        srnTechnologies: 'ENUMERATED'
+        },
+       srnVendorInformation: {
+        vendor: {
+         standard-VendorOrOperatorID: 'INTEGER',
+         nonStandard-VendorOrOperatorID: {
+          encodedID: 'INTEGER',
+          visibleIdentification: 'VisibleString'
+          }
+         },
+        vendorInfo: 'OCTET STRING'
+        }
+       },
+      srnErrors: 'ENUMERATED',
+      rssiNotAvailable: 'NULL',
+      rtdNotAvailable: 'NULL',
+      multipleSetsNotAvailable: 'NULL',
+      historicMeasurementsNotAvailable: 'NULL'
+      }]
+     }
+    }
+   }
+  },
+ error: {
+  commonIEsError: {}
+  },
+ abort: {
+  commonIEsAbort: {
+   abortCause: 'ENUMERATED',
+   periodicSessionIDtoAbort: 'OCTET STRING'
+   },
+  agnssAbort: {
+   targetDeviceAbortCauses: {
+    ccpAbort: 'ENUMERATED',
+    waIonoAbort: 'ENUMERATED'
+    }
+   }
+  }
+ }
+}
